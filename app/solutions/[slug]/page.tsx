@@ -48,23 +48,14 @@ export default async function SolutionPage({
     label: w,
     notLast: i < arr.length - 1,
   }));
-  // 목적격 조사(을/를) — ko의 마지막 글자 받침 여부로 결정
-  const lastCode = active.ko.charCodeAt(active.ko.length - 1);
-  const koParticle =
-    lastCode >= 0xac00 &&
-    lastCode <= 0xd7a3 &&
-    (lastCode - 0xac00) % 28 !== 0
-      ? "을"
-      : "를";
-
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/#solutions">솔루션</Link>
+          <Link href="/#solutions">Solutions</Link>
           <span className="gem-sep">|</span>
           <span className="sol-breadcrumb__current">{active.ko}</span>
         </div>
@@ -86,7 +77,7 @@ export default async function SolutionPage({
             <p className="sol-hero__desc">{active.desc}</p>
             <div className="sol-hero__actions">
               <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
-                문의하기
+                Contact Us
               </Link>
               <p className="sol-hero__trust">{active.trust}</p>
             </div>
@@ -97,7 +88,7 @@ export default async function SolutionPage({
               <div className="sol-shot">
                 <ZoomableImage
                   src={asset(active.image)}
-                  alt={`${active.name} ${active.ko} 화면`}
+                  alt={`${active.name} ${active.ko} screenshot`}
                 />
               </div>
             ) : (
@@ -112,9 +103,9 @@ export default async function SolutionPage({
         <div className="gem-container">
           <Reveal className="sol-section__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>핵심 기능</span>
+              <span>Key Features</span>
             </div>
-            <h2 className="gem-title">{active.ko}에 필요한 모든 것</h2>
+            <h2 className="gem-title">Everything You Need for {active.ko}</h2>
           </Reveal>
 
           <Reveal as="div" className="sol-features">
@@ -146,10 +137,10 @@ export default async function SolutionPage({
           <div className="gem-container">
             <Reveal className="sol-section__head">
               <div className="gem-eyebrow gem-eyebrow--mono">
-                <span>기능 상세</span>
+                <span>Feature Details</span>
               </div>
               <h2 className="gem-title">
-                {active.detailsHeading ?? `다섯 개의 엔진, 하나의 ${active.name}`}
+                {active.detailsHeading ?? `Five Engines, One ${active.name}`}
               </h2>
             </Reveal>
 
@@ -166,7 +157,7 @@ export default async function SolutionPage({
                     }`}
                   >
                     {d.image ? (
-                      <ZoomableImage src={asset(d.image)} alt={`${d.code} ${d.title} 화면`} />
+                      <ZoomableImage src={asset(d.image)} alt={`${d.code} ${d.title} screenshot`} />
                     ) : (
                       <SolutionMock
                         type={d.mock ?? active.mock}
@@ -223,9 +214,9 @@ export default async function SolutionPage({
         <div className="gem-container">
           <Reveal className="sol-section__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>작동 방식</span>
+              <span>How It Works</span>
             </div>
-            <h2 className="gem-title">한 흐름으로 이어지는 워크플로우</h2>
+            <h2 className="gem-title">One Seamless Workflow</h2>
           </Reveal>
 
           <Reveal as="div" className="sol-steps">
@@ -245,9 +236,9 @@ export default async function SolutionPage({
         <div className="gem-container">
           <Reveal className="sol-section__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>성과 · 사양</span>
+              <span>Performance · Specs</span>
             </div>
-            <h2 className="gem-title">검증된 기술, 측정된 성과</h2>
+            <h2 className="gem-title">Proven Technology, Measured Results</h2>
           </Reveal>
 
           <Reveal as="div" className="sol-perf">
@@ -273,13 +264,13 @@ export default async function SolutionPage({
 
       {/* 도입 고객 마키 */}
       {active.clients && active.clients.length > 0 && (
-        <section className="gem-marquee" aria-label={`${active.name} 도입 고객`}>
+        <section className="gem-marquee" aria-label={`${active.name} customers`}>
           <Reveal className="gem-marquee__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>도입 고객</span>
+              <span>Customers</span>
             </div>
             <h2 className="gem-title gem-title--sm">
-              {active.name}를 선택한 고객
+              Customers Who Chose {active.name}
             </h2>
           </Reveal>
           <SolutionClientsMarquee clients={active.clients} />
@@ -292,12 +283,12 @@ export default async function SolutionPage({
           <Reveal className="sol-others__head">
             <div>
               <div className="gem-eyebrow gem-eyebrow--mono">
-                <span>다른 솔루션</span>
+                <span>More Solutions</span>
               </div>
-              <h2 className="gem-title gem-title--sm">미디어 라이프사이클 전체를 하나로</h2>
+              <h2 className="gem-title gem-title--sm">The Entire Media Lifecycle as One</h2>
             </div>
             <Link href="/#solutions" className="gem-news__more">
-              솔루션 전체 보기 →
+              View All Solutions →
             </Link>
           </Reveal>
 
@@ -307,7 +298,7 @@ export default async function SolutionPage({
                 <span className="sol-other__code">{o.code}</span>
                 <h3 className="sol-other__title">{o.ko}</h3>
                 <p className="sol-other__desc">{o.tagline}</p>
-                <span className="gem-arrow">자세히 보기 →</span>
+                <span className="gem-arrow">Learn More →</span>
               </Link>
             ))}
           </Reveal>
@@ -318,10 +309,10 @@ export default async function SolutionPage({
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">{active.name} 도입을 검토 중이신가요?</h2>
+            <h2 className="sol-cta__title">Evaluating {active.name}?</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 {active.ko}
-              {koParticle} 어떻게 적용할지 함께 설계해 드립니다.
+              Tell us about your broadcast workflow and our team will design
+              how {active.ko} fits into it, together with you.
             </p>
           </div>
           <div className="sol-cta__actions">
@@ -329,7 +320,7 @@ export default async function SolutionPage({
               href="/support/#inquiry"
               className="gem-btn gem-btn--invert"
             >
-              문의하기
+              Contact Us
             </Link>
           </div>
         </Reveal>

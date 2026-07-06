@@ -72,10 +72,10 @@ export default function InquiryForm() {
         <span className="inq-done__mark" aria-hidden>
           ✓
         </span>
-        <h3 className="inq-done__title">문의가 접수되었습니다</h3>
+        <h3 className="inq-done__title">Your inquiry has been received</h3>
         <p className="inq-done__desc">
-          남겨주신 내용을 확인한 뒤, 영업일 기준 24시간 이내에 담당자가
-          연락드리겠습니다.
+          We will review your message and get back to you within 24 hours on
+          business days.
         </p>
       </div>
     );
@@ -86,14 +86,14 @@ export default function InquiryForm() {
       {/* 허니팟 — 사람에게는 보이지 않는 칸. 봇이 채우면 제출을 버린다. */}
       <div className="inq-hp" aria-hidden="true">
         <label>
-          웹사이트
+          Website
           <input type="text" name="website" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
 
       <div className="inq-field">
         <label className="inq-label" htmlFor="inq-company">
-          고객사명 <span className="inq-req">*</span>
+          Company Name <span className="inq-req">*</span>
         </label>
         <input
           id="inq-company"
@@ -101,14 +101,14 @@ export default function InquiryForm() {
           className="inq-input"
           required
           maxLength={100}
-          placeholder="회사 · 기관명"
+          placeholder="Company or organization"
           autoComplete="organization"
         />
       </div>
 
       <div className="inq-field">
         <label className="inq-label" htmlFor="inq-name">
-          담당자 성함 <span className="inq-req">*</span>
+          Contact Name <span className="inq-req">*</span>
         </label>
         <input
           id="inq-name"
@@ -116,14 +116,14 @@ export default function InquiryForm() {
           className="inq-input"
           required
           maxLength={50}
-          placeholder="성함"
+          placeholder="Full name"
           autoComplete="name"
         />
       </div>
 
       <div className="inq-field">
         <label className="inq-label" htmlFor="inq-email">
-          이메일 주소 <span className="inq-req">*</span>
+          Email Address <span className="inq-req">*</span>
         </label>
         <input
           id="inq-email"
@@ -139,7 +139,7 @@ export default function InquiryForm() {
 
       <div className="inq-field">
         <label className="inq-label" htmlFor="inq-phone">
-          연락처
+          Phone
         </label>
         <input
           id="inq-phone"
@@ -153,7 +153,7 @@ export default function InquiryForm() {
       </div>
 
       <fieldset className="inq-field inq-field--full inq-fieldset">
-        <legend className="inq-label">관심 있는 솔루션 분야</legend>
+        <legend className="inq-label">Solutions of Interest</legend>
         <div className="inq-chips">
           {INQUIRY_SOLUTIONS.map((o) => {
             const on = solutions.includes(o.value);
@@ -174,7 +174,7 @@ export default function InquiryForm() {
       </fieldset>
 
       <fieldset className="inq-field inq-field--full inq-fieldset">
-        <legend className="inq-label">솔루션 도입 희망 시기</legend>
+        <legend className="inq-label">Desired Implementation Timeline</legend>
         <div className="inq-chips">
           {INQUIRY_TIMELINES.map((o) => {
             const on = timeline === o.value;
@@ -197,7 +197,7 @@ export default function InquiryForm() {
 
       <div className="inq-field inq-field--full">
         <label className="inq-label" htmlFor="inq-message">
-          문의 상세 내용
+          Message
         </label>
         <textarea
           id="inq-message"
@@ -205,13 +205,13 @@ export default function InquiryForm() {
           className="inq-textarea"
           rows={6}
           maxLength={3000}
-          placeholder="도입을 검토 중인 환경(방송사·채널 규모 등)과 일정, 궁금하신 점을 자유롭게 남겨주세요."
+          placeholder="Tell us about your environment (broadcaster, channel scale, etc.), your timeline, and any questions you have."
         />
       </div>
 
       <div className="inq-field inq-field--full">
         <label className="inq-label" htmlFor="inq-referral">
-          어떻게 알게 되셨나요?
+          How did you hear about us?
         </label>
         <select
           id="inq-referral"
@@ -219,7 +219,7 @@ export default function InquiryForm() {
           className="inq-select"
           defaultValue=""
         >
-          <option value="">선택 안 함</option>
+          <option value="">Not specified</option>
           {INQUIRY_REFERRALS.map((o) => (
             <option key={o.value} value={o.value}>
               {o.label}
@@ -230,8 +230,8 @@ export default function InquiryForm() {
 
       {status === "error" && (
         <p className="inq-error inq-field--full" role="alert">
-          전송에 실패했습니다. 잠시 후 다시 시도하시거나{" "}
-          <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>로 보내주세요.
+          Failed to send. Please try again later or email us at{" "}
+          <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>.
         </p>
       )}
 
@@ -241,10 +241,10 @@ export default function InquiryForm() {
           className="gem-btn gem-btn--primary"
           disabled={status === "sending"}
         >
-          {status === "sending" ? "전송 중…" : "문의 보내기"}
+          {status === "sending" ? "Sending…" : "Send Inquiry"}
         </button>
         <p className="inq-privacy">
-          입력하신 정보는 문의 응대 목적으로만 사용됩니다.
+          Your information will be used only to respond to your inquiry.
         </p>
       </div>
     </form>

@@ -60,7 +60,7 @@ export default function ZoomableImage({
             <button
               type="button"
               className="gem-lightbox__close"
-              aria-label="닫기"
+              aria-label="Close"
               onClick={() => setOpen(false)}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">

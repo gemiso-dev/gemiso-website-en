@@ -8,10 +8,10 @@
 
 /** 히어로 상단 요약 지표. */
 export const CERT_STATS: { v: string; k: string }[] = [
-  { v: "5", k: "GS 인증 1등급" },
-  { v: "2", k: "보유 특허" },
-  { v: "1등급", k: "GS 인증 최고 등급" },
-  { v: "TTA", k: "국가 공인 (한국정보통신기술협회)" },
+  { v: "5", k: "GS Certifications, Grade 1" },
+  { v: "2", k: "Registered Patents" },
+  { v: "Grade 1", k: "Highest GS Certification Grade" },
+  { v: "TTA", k: "Nationally Accredited (Telecommunications Technology Association)" },
 ];
 
 /** GS 인증(1등급) 솔루션 목록. */
@@ -28,32 +28,32 @@ export type GsCert = {
 
 export const GS_CERTS: GsCert[] = [
   {
-    name: "프록시마 V6.0",
-    cat: "AI 콘텐츠 관리 솔루션",
+    name: "Proxima V6.0",
+    cat: "AI Content Management Solution",
     tag: "AI MAM",
     img: "/assets/certification/gs-proxima-v6.jpg",
   },
   {
     name: "MYMY v3.0",
-    cat: "콘텐츠 아카이브",
+    cat: "Content Archive",
     tag: "ARCHIVE",
     img: "/assets/certification/gs-mymy-v3.jpg",
   },
   {
-    name: "프록시마 v3.0",
-    cat: "미디어 자산 관리",
+    name: "Proxima v3.0",
+    cat: "Media Asset Management",
     tag: "MAM",
     img: "/assets/certification/gs-proxima-v3.jpg",
   },
   {
-    name: "에어리얼 이미지 아카이브 v1.0",
-    cat: "이미지 아카이브",
+    name: "Ariel Image Archive v1.0",
+    cat: "Image Archive",
     tag: "ARCHIVE",
     img: "/assets/certification/gs-ariel-image-archive.jpg",
   },
   {
-    name: "에어리얼 GPU 트랜스코더 V1.0",
-    cat: "GPU 트랜스코딩",
+    name: "Ariel GPU Transcoder V1.0",
+    cat: "GPU Transcoding",
     tag: "TRANSCODE",
     img: "/assets/certification/gs-ariel-gpu-transcoder.jpg",
   },
@@ -76,17 +76,17 @@ export type Patent = {
 export const PATENTS: Patent[] = [
   {
     no: "PATENT 01",
-    status: "등록",
-    title: "데이터 구조 및 그의 전송방법",
-    desc: "미디어 데이터의 구조 설계와 효율적 전송을 위한 원천 기술 — MXF 기반 파일 전송의 토대가 되었습니다.",
+    status: "Registered",
+    title: "Data Structure and Transmission Method Thereof",
+    desc: "Foundational technology for media data structure design and efficient transmission — the basis of our MXF-based file transfer.",
     img: "/assets/certification/patent-01.jpg",
   },
   {
     no: "PATENT 02",
-    status: "등록",
+    status: "Registered",
     title:
-      "녹화 중 편집 등 특정 기능을 제공하는 서버를 구현하는 데이터 처리 장치 및 방법",
-    desc: "녹화와 동시에 편집 등 기능을 제공하는 서버를 구현하기 위한 데이터 처리 장치 및 방법입니다.",
+      "Data Processing Apparatus and Method for Implementing a Server Providing Specific Functions Such as Editing During Recording",
+    desc: "A data processing apparatus and method for implementing a server that provides functions such as editing simultaneously with recording.",
     img: "/assets/certification/patent-02.jpg",
   },
 ];

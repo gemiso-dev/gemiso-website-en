@@ -4,11 +4,17 @@ import { HISTORY_DETAIL } from "@/components/history-detail-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "상세 연혁",
+  title: "Detailed History",
   description:
-    "2002년 설립 이후 Geminisoft의 구축·개발·계약 실적을 연도별·월별로 모두 담은 상세 연혁.",
+    "The complete record of Geminisoft's deployments, development projects, and contracts since 2002, organized by year and month.",
   path: "/history/detail/",
 });
+
+/** 월 표기("01"~"12") → 영문 월 약어 */
+const MONTHS_EN = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+];
 
 export default function HistoryDetailPage() {
   // 데이터는 연대순(오래된 → 최신). 화면에는 최신순으로 뒤집어 보여준다.
@@ -21,15 +27,15 @@ export default function HistoryDetailPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/#solutions">회사소개</Link>
+          <Link href="/#solutions">About</Link>
           <span className="gem-sep">|</span>
-          <Link href="/history">연혁</Link>
+          <Link href="/history">History</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">상세 연혁</span>
+          <span className="sol-breadcrumb__current">Detailed History</span>
         </div>
       </nav>
 
@@ -39,16 +45,17 @@ export default function HistoryDetailPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">회사소개 · 상세 연혁</span>
+              <span className="hist-eyebrow__label">About · Detailed History</span>
             </div>
-            <h1 className="hist-hero__title">걸어온 길, 빠짐없이</h1>
+            <h1 className="hist-hero__title">Every Step of the Way</h1>
             <p className="hist-hero__desc">
-              2002년 설립 이후 이어온 구축·개발·계약 실적을 연도별·월별로 모두
-              모았습니다. 주요 이정표만 보려면{" "}
+              Every deployment, development project, and contract since our
+              founding in 2002, organized by year and month. For selected
+              highlights only, see the{" "}
               <Link href="/history" className="hist-inline-link">
-                연혁
+                History
               </Link>{" "}
-              페이지를 참고하세요.
+              page.
             </p>
           </Reveal>
         </div>
@@ -60,7 +67,7 @@ export default function HistoryDetailPage() {
           <Reveal className="hist-eyebrow hist-detail__head">
             <span className="hist-eyebrow__tick" />
             <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-              전체 실적 · {latest}–{earliest} · 총 {total}건
+              Full Record · {latest}–{earliest} · {total} entries
             </span>
           </Reveal>
 
@@ -83,7 +90,7 @@ export default function HistoryDetailPage() {
                       {items.map((it, i) => (
                         <li className="hist-detail__item" key={`${it.month ?? ""}-${i}`}>
                           <span className="hist-detail__month">
-                            {it.month ? `${it.month}월` : ""}
+                            {it.month ? MONTHS_EN[Number(it.month) - 1] : ""}
                           </span>
                           <span className="hist-detail__text">{it.text}</span>
                         </li>
@@ -98,7 +105,7 @@ export default function HistoryDetailPage() {
           <Reveal className="hist-foot">
             <span className="hist-foot__mark">↳</span>
             <Link href="/history" className="hist-inline-link">
-              ← 주요 연혁으로 돌아가기
+              ← Back to Key Milestones
             </Link>
           </Reveal>
         </div>
@@ -108,21 +115,21 @@ export default function HistoryDetailPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">다음 장을 함께 쓰시겠어요?</h2>
+            <h2 className="sol-cta__title">Ready to Write the Next Chapter Together?</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 가장 알맞은 솔루션을 함께
-              찾아드립니다.
+              Tell us about your broadcast workflow and our team will help you
+              find the right solution.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link
               href="/#solutions"
               className="gem-btn gem-btn--underline-light"
             >
-              솔루션 살펴보기 →
+              Explore Solutions →
             </Link>
           </div>
         </Reveal>

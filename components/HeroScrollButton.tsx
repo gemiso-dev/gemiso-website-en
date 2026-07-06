@@ -25,7 +25,7 @@ export default function HeroScrollButton() {
     <a
       href="#statement"
       className="gem-hero__scroll"
-      aria-label="아래로 스크롤"
+      aria-label="Scroll down"
       onClick={onClick}
     >
       <svg width="28" height="15" viewBox="0 0 28 15" fill="none" aria-hidden="true">

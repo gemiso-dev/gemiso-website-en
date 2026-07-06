@@ -11,29 +11,29 @@
  * 구글폼 필드를 수정하면 이 파일의 ID·옵션도 함께 갱신할 것.
  */
 
-const FORM_ID = "1FAIpQLSdrCyHy6eAktvfy7OfLjyKaA5KORIYan1n9GoctA4fTvBRvtQ";
+const FORM_ID = "1FAIpQLSfnc3SXzc5kPrc_--P7fm2qXZmnNZ_eyqIFE3TvgY4KyHc9jg";
 
 /** 구글폼 제출 엔드포인트. */
 export const INQUIRY_FORM_ACTION = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
 
 /** 구글폼 필드별 entry ID. */
 export const INQUIRY_ENTRY = {
-  /** 고객사명 (필수) */
-  company: "entry.442751590",
+  /** 고객사명 */
+  company: "entry.1074900279",
   /** 담당자 성함 (필수) */
-  name: "entry.1210470433",
+  name: "entry.245811556",
   /** 연락처 (전화번호) */
-  phone: "entry.666300350",
+  phone: "entry.726976256",
   /** 이메일 주소 (필수) */
-  email: "entry.1084158093",
+  email: "entry.1891017430",
   /** 관심 있는 솔루션 분야 (체크박스, 복수) */
-  solutions: "entry.905502190",
+  solutions: "entry.422132355",
   /** 솔루션 도입 희망 시기 (객관식) */
-  timeline: "entry.635518458",
+  timeline: "entry.1350514734",
   /** 문의 상세 내용 (장문) */
-  message: "entry.440341019",
+  message: "entry.1634809982",
   /** 우리 서비스를 어떻게 알게 되셨나요? (드롭다운) */
-  referral: "entry.570624548",
+  referral: "entry.1824020655",
 } as const;
 
 /** 선택형 옵션 한 개 — label은 화면 표시용, value는 구글폼 제출용 원본. */
@@ -44,29 +44,29 @@ export type InquiryOption = {
 
 /** 관심 있는 솔루션 분야 (복수 선택). */
 export const INQUIRY_SOLUTIONS: InquiryOption[] = [
-  { label: "미디어 자산 관리 Proxima", value: "미디어 자산 관리 Proxima" },
-  { label: "뉴스룸 Zodiac", value: "뉴스룸 Zodiac" },
-  { label: "자동 송출 Talos", value: "자동 송출 Talos" },
-  { label: "라디오 Emotion", value: "라디오 Emotion" },
-  { label: "오디오 파일 시스템 Winner S", value: "오디오 파일 시스템 Winner S" },
-  { label: "AI 기술 MAIA", value: "AI 기술  MAIA" },
-  { label: "콘텐츠 아카이브 MYMY", value: "콘텐츠 아카이브 MYMY" },
-  { label: "콘텐츠 배포 G-SAM", value: "콘텐츠 배포  G-SAM" },
+  { label: "Media Asset Management — Proxima", value: "Media Asset Management — Proxima" },
+  { label: "Newsroom — Zodiac", value: "Newsroom — Zodiac" },
+  { label: "Automated Playout — Talos", value: "Automated Playout — Talos" },
+  { label: "Radio — Emotion", value: "Radio — Emotion" },
+  { label: "Audio File System — Winner S", value: "Audio File System — Winner S" },
+  { label: "AI Technology — MAIA", value: "AI Technology — MAIA" },
+  { label: "Content Archive — MYMY", value: "Content Archive — MYMY" },
+  { label: "Content Distribution — G-SAM", value: "Content Distribution — G-SAM" },
 ];
 
 /** 솔루션 도입 희망 시기 (단일 선택). */
 export const INQUIRY_TIMELINES: InquiryOption[] = [
-  { label: "즉시 도입 희망", value: "즉시 도입 희망" },
-  { label: "1개월 이내", value: "1개월 이내" },
-  { label: "3개월 이내", value: "3개월 이내" },
-  { label: "도입 시기 미정 · 정보 수집 단계", value: "도입 시기 미정/정보 수집 단계" },
+  { label: "As soon as possible", value: "As soon as possible" },
+  { label: "Within 1 month", value: "Within 1 month" },
+  { label: "Within 3 months", value: "Within 3 months" },
+  { label: "Not decided · gathering information", value: "Not decided · gathering information" },
 ];
 
 /** 우리 서비스를 알게 된 경로 (드롭다운). */
 export const INQUIRY_REFERRALS: InquiryOption[] = [
-  { label: "검색 엔진 (Google, Naver 등)", value: "검색 엔진 (Google, Naver 등)" },
-  { label: "SNS 광고", value: "SNS 광고" },
-  { label: "지인 추천", value: "지인 추천" },
-  { label: "기존 거래처", value: "기존 거래처" },
-  { label: "기타", value: "기타" },
+  { label: "Search engine (Google, etc.)", value: "Search engine (Google, etc.)" },
+  { label: "Social media ads", value: "Social media ads" },
+  { label: "Referral", value: "Referral" },
+  { label: "Existing business partner", value: "Existing business partner" },
+  { label: "Other", value: "Other" },
 ];

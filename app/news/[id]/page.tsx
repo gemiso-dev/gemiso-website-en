@@ -51,7 +51,7 @@ export default async function NewsDetailPage({
       <div className="news-back">
         <div className="news-back__inner">
           <Link href="/news/" className="news-back__link">
-            ← 뉴스룸으로 돌아가기
+            ← Back to Newsroom
           </Link>
         </div>
       </div>
@@ -61,7 +61,7 @@ export default async function NewsDetailPage({
         <Reveal className="news-detail__head-inner">
           <div className="news-card__meta">
             <span className="news-detail__code">
-              {active.outlet || "보도자료"}
+              {active.outlet || "Press Release"}
             </span>
             <span className="news-card__date">{active.date}</span>
           </div>
@@ -96,7 +96,7 @@ export default async function NewsDetailPage({
               rel="noopener noreferrer"
               className="gem-btn gem-btn--primary news-article__source"
             >
-              {active.outlet ? `${active.outlet} 원문 보기` : "원문 기사 보기"} ↗
+              {active.outlet ? `Read on ${active.outlet}` : "Read Original Article"} ↗
             </a>
           )}
 
@@ -104,13 +104,13 @@ export default async function NewsDetailPage({
           <div className="news-article__foot">
             <div className="news-article__tags">
               {active.outlet && <span className="news-tag">#{active.outlet}</span>}
-              <span className="news-tag">#제머나이소프트</span>
-              <span className="news-tag">#방송기술</span>
+              <span className="news-tag">#Geminisoft</span>
+              <span className="news-tag">#BroadcastTech</span>
             </div>
             <div className="news-article__share">
               {active.href && (
                 <a href={active.href} target="_blank" rel="noopener noreferrer">
-                  원문 링크
+                  Original Link
                 </a>
               )}
             </div>
@@ -122,7 +122,7 @@ export default async function NewsDetailPage({
       <section className="news-related">
         <div className="gem-container">
           <div className="gem-eyebrow gem-eyebrow--mono news-related__eyebrow">
-            <span>관련 소식</span>
+            <span>Related News</span>
           </div>
           <div className="news-grid">
             {related.map((rel) => (
@@ -142,19 +142,19 @@ export default async function NewsDetailPage({
                 <div className="news-card__body">
                   <div className="news-card__meta">
                     <span className="news-card__code">
-                      {rel.outlet || "보도자료"}
+                      {rel.outlet || "Press Release"}
                     </span>
                     <span className="news-card__date">{rel.date}</span>
                   </div>
                   <h3 className="news-card__title">{rel.title}</h3>
-                  <span className="gem-arrow">자세히 →</span>
+                  <span className="gem-arrow">Learn More →</span>
                 </div>
               </Link>
             ))}
           </div>
           <div className="news-related__foot">
             <Link href="/news/" className="news-more__btn">
-              ← 전체 소식 보기
+              ← View All News
             </Link>
           </div>
         </div>

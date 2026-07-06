@@ -47,7 +47,7 @@ export default function HistoryTimeline({ eras }: { eras: HistoryEraView[] }) {
         <div
           className="hist-tabs"
           role="tablist"
-          aria-label="연혁 시대"
+          aria-label="History eras"
           ref={tabsRef}
         >
           {eras.map((e, i) => {

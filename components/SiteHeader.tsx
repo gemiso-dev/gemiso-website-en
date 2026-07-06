@@ -91,7 +91,7 @@ export default function SiteHeader() {
           <Link
             href="/"
             className="gem-logo"
-            aria-label="Geminisoft 홈"
+            aria-label="Geminisoft home"
             onClick={closeMenu}
           >
             <Image
@@ -103,7 +103,7 @@ export default function SiteHeader() {
             />
           </Link>
 
-          <nav className="gem-nav gem-hide-sm" aria-label="주요 메뉴">
+          <nav className="gem-nav gem-hide-sm" aria-label="Primary navigation">
             {PRIMARY_NAV.map((item, i) => {
               const active = isNavActive(item, pathname);
               return item.children ? (
@@ -167,19 +167,19 @@ export default function SiteHeader() {
 
           <div className="gem-header__actions">
             <span className="gem-lang gem-hide-sm">
-              <a href="https://www.gemiso.co.kr" className="gem-lang__current">
-                KR
-              </a>
+              <a href="https://www.gemiso.co.kr">KR</a>
               <span className="gem-sep">|</span>
-              <a href="#">EN</a>
+              <a href="#" className="gem-lang__current">
+                EN
+              </a>
             </span>
             <Link href="/support/#inquiry" className="gem-header__cta gem-hide-sm">
-              문의하기
+              Contact Us
             </Link>
             <button
               type="button"
               className="gem-menu-btn gem-show-sm"
-              aria-label="메뉴 열기"
+              aria-label="Open menu"
               aria-expanded={menuOpen}
               onClick={() => setMenuOpen((v) => !v)}
             >
@@ -220,7 +220,7 @@ export default function SiteHeader() {
               className="gem-mobile-menu__cta"
               onClick={closeMenu}
             >
-              문의
+              Contact
             </Link>
           </div>
         )}

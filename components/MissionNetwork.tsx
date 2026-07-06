@@ -97,10 +97,10 @@ const LINKS: [string, string][] = [
   ["lr1", "lr2"],
 ];
 
-const HUBS: { key: string; ko: string; en: string; delay: number }[] = [
-  { key: "people", ko: "사람", en: "PEOPLE", delay: 0 },
-  { key: "time", ko: "시간", en: "TIME", delay: 1.1 },
-  { key: "places", ko: "장소", en: "PLACES", delay: 2.2 },
+const HUBS: { key: string; label: string; delay: number }[] = [
+  { key: "people", label: "People", delay: 0 },
+  { key: "time", label: "Time", delay: 1.1 },
+  { key: "places", label: "Places", delay: 2.2 },
 ];
 
 // 중심에서 멀어질수록 옅어지는 투명도 (가장자리에서 더 강하게 사라짐)
@@ -177,7 +177,7 @@ export default function MissionNetwork() {
       className="mission-net__svg"
       viewBox="0 0 440 420"
       role="img"
-      aria-label="사람·시간·장소를 잇는 미디어 네트워크"
+      aria-label="A media network connecting people, time, and places"
     >
       <defs>
         <radialGradient id="netGlow" cx="50%" cy="50%" r="50%">
@@ -267,10 +267,7 @@ export default function MissionNetwork() {
               />
             </g>
             <text x={x} y={y + 30} className="mission-net__ko">
-              {hub.ko}
-            </text>
-            <text x={x} y={y + 44} className="mission-net__en">
-              {hub.en}
+              {hub.label}
             </text>
           </g>
         );

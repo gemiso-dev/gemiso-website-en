@@ -6,9 +6,9 @@ import { MISSION_PILLARS } from "@/components/mission-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "미션",
+  title: "Mission",
   description:
-    "‘사람, 시간, 장소를 연결하는 미디어’라는 미션 아래, 제머나이소프트는 미디어 기술을 개발합니다.",
+    "Under the mission 'Media connecting people, time, and places,' Geminisoft develops media technology.",
   path: "/mission/",
 });
 
@@ -16,13 +16,13 @@ export default function MissionPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/#solutions">회사소개</Link>
+          <Link href="/#solutions">About</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">미션</span>
+          <span className="sol-breadcrumb__current">Mission</span>
         </div>
       </nav>
 
@@ -32,7 +32,7 @@ export default function MissionPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">회사소개 · 미션</span>
+              <span className="hist-eyebrow__label">About · Mission</span>
             </div>
             <h1 className="hist-hero__title">
               Media connecting{" "}
@@ -41,8 +41,8 @@ export default function MissionPage() {
               <span className="mission-hero__hl">Places</span>
             </h1>
             <p className="hist-hero__desc">
-              ‘사람, 시간, 장소를 연결하는 미디어’라는 미션 아래, 제머나이소프트는
-              미디어 기술을 개발합니다.
+              Under the mission ‘Media connecting people, time, and places,’
+              Geminisoft develops media technology.
             </p>
           </Reveal>
 
@@ -93,18 +93,18 @@ export default function MissionPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">미디어로 더 가깝게, 함께 연결해요</h2>
+            <h2 className="sol-cta__title">Closer Through Media — Let's Connect</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 가장 알맞은 솔루션을 함께
-              찾아드립니다.
+              Tell us about your broadcast workflow and our team will help you
+              find the right solution.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link href="/history/" className="gem-btn gem-btn--underline-light">
-              연혁 보기 →
+              View History →
             </Link>
           </div>
         </Reveal>

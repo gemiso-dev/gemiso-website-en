@@ -6,9 +6,9 @@ import { asset } from "@/components/site-config";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "뉴스룸",
+  title: "News",
   description:
-    "제머나이소프트의 언론보도와 보도자료, 제품 소식을 한곳에서 전해드립니다.",
+    "Press coverage, press releases, and product news from Geminisoft — all in one place.",
   path: "/news/",
 });
 
@@ -18,11 +18,11 @@ export default function NewsListPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">뉴스</span>
+          <span className="sol-breadcrumb__current">News</span>
         </div>
       </nav>
 
@@ -33,10 +33,10 @@ export default function NewsListPage() {
             <div className="gem-eyebrow gem-eyebrow--mono">
               <span>NEWSROOM</span>
             </div>
-            <h1 className="news-hero__title">뉴스룸</h1>
+            <h1 className="news-hero__title">Newsroom</h1>
             <p className="news-hero__desc">
-              제머나이소프트의 언론보도와 보도자료, 제품 소식을 한곳에서
-              전해드립니다.
+              Press coverage, press releases, and product news from Geminisoft
+              — all in one place.
             </p>
           </Reveal>
         </div>
@@ -46,7 +46,7 @@ export default function NewsListPage() {
       <section className="news-featured-sec">
         <div className="gem-container">
           <Reveal className="gem-eyebrow gem-eyebrow--mono news-list__eyebrow">
-            <span>주요 소식</span>
+            <span>Featured</span>
           </Reveal>
 
           <Reveal as="div">
@@ -63,13 +63,13 @@ export default function NewsListPage() {
               <div className="news-featured__body">
                 <div className="news-card__meta">
                   <span className="news-card__code">
-                    {featured.outlet || "보도자료"}
+                    {featured.outlet || "Press Release"}
                   </span>
                   <span className="news-card__date">{featured.date}</span>
                 </div>
                 <h2 className="news-featured__title">{featured.title}</h2>
                 <p className="news-featured__excerpt">{featured.summary}</p>
-                <span className="gem-arrow">자세히 보기 →</span>
+                <span className="gem-arrow">Learn More →</span>
               </div>
             </Link>
           </Reveal>
@@ -81,9 +81,9 @@ export default function NewsListPage() {
         <div className="gem-container">
           <div className="news-list__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>전체 소식</span>
+              <span>All News</span>
             </div>
-            <span className="news-list__total">총 {NEWS_ARTICLES.length}건</span>
+            <span className="news-list__total">{NEWS_ARTICLES.length} articles</span>
           </div>
 
           <Reveal as="div">

@@ -82,7 +82,7 @@ export default function CopyField({
           type="button"
           className="gem-copy__text"
           onClick={handleCopy}
-          aria-label={`${label} 복사`}
+          aria-label={`Copy ${label}`}
         >
           {children}
         </button>
@@ -91,8 +91,8 @@ export default function CopyField({
         type="button"
         className={`gem-copy__badge${copied ? " is-copied" : ""}`}
         onClick={handleCopy}
-        aria-label={copied ? `${label} 복사됨` : `${label} 복사`}
-        title={copied ? "복사됨" : "복사"}
+        aria-label={copied ? `${label} copied` : `Copy ${label}`}
+        title={copied ? "Copied" : "Copy"}
       >
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
           {copied ? (
@@ -106,7 +106,7 @@ export default function CopyField({
         </svg>
       </button>
       <span className="gem-sr-only" role="status" aria-live="polite">
-        {copied ? `${label}을(를) 클립보드에 복사했습니다` : ""}
+        {copied ? `${label} copied to clipboard` : ""}
       </span>
     </div>
   );

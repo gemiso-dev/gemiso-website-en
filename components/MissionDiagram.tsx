@@ -63,13 +63,13 @@ function Time() {
       {/* 오른쪽 화살촉 */}
       <path d="M280,100 l-9,-5 l0,10 z" className="mission-diagram__arrow" />
       <text x={77} y={62} className="mission-diagram__label">
-        과거
+        Past
       </text>
       <text x={160} y={62} className="mission-diagram__label mission-diagram__label--accent">
-        현재
+        Present
       </text>
       <text x={243} y={62} className="mission-diagram__label">
-        미래
+        Future
       </text>
       <Node x={77} y={100} s={11} />
       <Node x={243} y={100} s={11} />

@@ -5,9 +5,9 @@ import { CERT_STATS, GS_CERTS, PATENTS } from "@/components/certification-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "인증 현황",
+  title: "Certifications",
   description:
-    "Geminisoft의 핵심 솔루션은 국가 공인 소프트웨어 품질 인증 GS 1등급과 원천 기술 특허로 완성도를 입증합니다.",
+    "Geminisoft's core solutions are validated by Grade 1 GS certification — Korea's national software quality standard — and by patents on our source technologies.",
   path: "/certification/",
 });
 
@@ -15,13 +15,13 @@ export default function CertificationPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/#solutions">회사소개</Link>
+          <Link href="/#solutions">About</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">인증 현황</span>
+          <span className="sol-breadcrumb__current">Certifications</span>
         </div>
       </nav>
 
@@ -31,12 +31,13 @@ export default function CertificationPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">회사소개 · 인증 현황</span>
+              <span className="hist-eyebrow__label">About · Certifications</span>
             </div>
-            <h1 className="hist-hero__title">검증된 기술, 공인된 품질</h1>
+            <h1 className="hist-hero__title">Proven Technology, Certified Quality</h1>
             <p className="hist-hero__desc">
-              Geminisoft의 핵심 솔루션은 국가 공인 소프트웨어 품질 인증 GS
-              1등급과 원천 기술 특허로 그 완성도를 입증합니다.
+              Geminisoft's core solutions are validated by Grade 1 GS
+              certification — Korea's national software quality standard — and
+              by patents on our source technologies.
             </p>
           </Reveal>
 
@@ -56,13 +57,15 @@ export default function CertificationPage() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>GS 인증 · GOOD SOFTWARE</span>
+              <span>GS CERTIFICATION · GOOD SOFTWARE</span>
             </div>
-            <h2 className="gem-title">국가 공인 소프트웨어 품질, 최고 등급</h2>
+            <h2 className="gem-title">Top Grade in Korea's National Software Quality Certification</h2>
             <p className="gem-lead">
-              한국정보통신기술협회(TTA)가 기능성 · 신뢰성 · 사용성을 평가해
-              부여하는 GS 인증에서, 핵심 솔루션이 최고 등급인{" "}
-              <span className="cert-lead__hl">1등급</span>을 획득했습니다.
+              Our core solutions earned{" "}
+              <span className="cert-lead__hl">Grade 1</span> — the highest grade
+              — in GS certification, awarded by the Telecommunications
+              Technology Association (TTA) for functionality, reliability, and
+              usability.
             </p>
           </Reveal>
 
@@ -70,14 +73,14 @@ export default function CertificationPage() {
             {GS_CERTS.map((c) => (
               <div className="cert-card" key={c.name}>
                 <div className="cert-card__top">
-                  <span className="cert-card__kind">GS 인증서</span>
-                  <span className="cert-card__grade">1등급</span>
+                  <span className="cert-card__kind">GS Certificate</span>
+                  <span className="cert-card__grade">Grade 1</span>
                 </div>
                 <div className="cert-card__shot">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={asset(c.img)}
-                    alt={`${c.name} GS 인증서`}
+                    alt={`${c.name} GS certificate`}
                     loading="lazy"
                   />
                 </div>
@@ -86,7 +89,7 @@ export default function CertificationPage() {
                   <h3 className="cert-card__name">{c.name}</h3>
                   <span className="cert-card__cat">{c.cat}</span>
                   <span className="cert-card__org">
-                    TTA · 한국정보통신기술협회
+                    TTA · Telecommunications Technology Association
                   </span>
                 </div>
               </div>
@@ -100,12 +103,13 @@ export default function CertificationPage() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow gem-eyebrow--mono">
-              <span>특허 · PATENTS</span>
+              <span>PATENTS</span>
             </div>
-            <h2 className="gem-title">원천 기술을 특허로</h2>
+            <h2 className="gem-title">Source Technology, Secured by Patents</h2>
             <p className="gem-lead">
-              미디어 데이터 처리의 핵심 기술을 특허로 확보해, 외산에 의존하지
-              않는 독자적인 경쟁력을 갖췄습니다.
+              We hold patents on the core technologies of media data processing
+              — an independent competitive edge, free of reliance on foreign
+              solutions.
             </p>
           </Reveal>
 
@@ -114,7 +118,7 @@ export default function CertificationPage() {
               <div className="pat-card" key={p.no}>
                 <div className="pat-shot">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={asset(p.img)} alt={`${p.title} 특허증`} loading="lazy" />
+                  <img src={asset(p.img)} alt={`${p.title} patent certificate`} loading="lazy" />
                   <span className="pat-shot__label">PATENT</span>
                 </div>
                 <div className="pat-body">
@@ -132,8 +136,8 @@ export default function CertificationPage() {
           <Reveal className="hist-foot">
             <span className="hist-foot__mark">↳</span>
             <span>
-              인증서 · 특허증 사본 등 기술 검증 자료는 영업팀을 통해 제공해
-              드립니다.
+              Copies of certificates, patents, and other technical validation
+              materials are available through our sales team.
             </span>
           </Reveal>
         </div>
@@ -143,21 +147,21 @@ export default function CertificationPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">기술 검증 자료가 필요하신가요?</h2>
+            <h2 className="sol-cta__title">Need Technical Validation Materials?</h2>
             <p className="sol-cta__desc">
-              인증서·특허 사본 등 도입 검토에 필요한 자료를 영업팀이 빠르게
-              안내해 드립니다.
+              Our sales team will promptly provide certificate and patent
+              copies and any other materials you need for your evaluation.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link
               href="/#solutions"
               className="gem-btn gem-btn--underline-light"
             >
-              솔루션 살펴보기 →
+              Explore Solutions →
             </Link>
           </div>
         </Reveal>

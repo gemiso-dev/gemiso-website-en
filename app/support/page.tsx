@@ -10,9 +10,9 @@ import {
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "고객지원",
+  title: "Support",
   description:
-    "글로벌 미디어 기술 기업 Geminisoft의 솔루션 도입 상담과 기술 지원을 안내합니다. 전화·이메일 연락처와 서울·호치민 거점 정보를 확인하세요.",
+    "Solution consultations and technical support from Geminisoft, a global media technology company. Find phone and email contacts plus our Seoul and Ho Chi Minh City locations.",
   path: "/support/",
 });
 
@@ -20,11 +20,11 @@ export default function SupportPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">고객지원</span>
+          <span className="sol-breadcrumb__current">Support</span>
         </div>
       </nav>
 
@@ -34,12 +34,13 @@ export default function SupportPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">고객지원 · CONTACT</span>
+              <span className="hist-eyebrow__label">Support · CONTACT</span>
             </div>
-            <h1 className="hist-hero__title">기술지원 · 문의</h1>
+            <h1 className="hist-hero__title">Technical Support & Inquiries</h1>
             <p className="hist-hero__desc">
-              글로벌 미디어 기술 기업 Geminisoft의 솔루션 도입 상담과 기술 지원을
-              안내합니다. 방송 워크플로우에 대한 어떤 문의든 환영합니다.
+              Solution consultations and technical support from Geminisoft, a
+              global media technology company. Any question about your broadcast
+              workflow is welcome.
             </p>
             <div className="sup-tags">
               {SUPPORT_HERO_TAGS.map((t) => (
@@ -59,7 +60,7 @@ export default function SupportPage() {
           <div className="hist-eyebrow sup-section-eyebrow">
             <span className="hist-eyebrow__tick" />
             <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-              연락처 · GET IN TOUCH
+              GET IN TOUCH
             </span>
           </div>
           <div className="sup-contact">
@@ -92,18 +93,19 @@ export default function SupportPage() {
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
               <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-                문의 · INQUIRY
+                INQUIRY
               </span>
             </div>
-            <h2 className="inq-title">솔루션 도입 문의</h2>
+            <h2 className="inq-title">Solution Inquiry</h2>
             <p className="inq-desc">
-              문의 내용을 남겨주시면 담당자가 영업일 기준 24시간 이내에
-              연락드립니다. 도입 상담·견적·기술 문의 모두 환영합니다.
+              Leave your inquiry and we will get back to you within 24 business
+              hours. Consultations, quotes, and technical questions are all
+              welcome.
             </p>
             <p className="inq-side-note">
-              급하신 경우 <a href={COMPANY.telHref}>02-857-1101</a> 또는{" "}
-              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>으로 바로
-              연락 주세요.
+              For urgent matters, reach us directly at{" "}
+              <a href={COMPANY.telHref}>02-857-1101</a> or{" "}
+              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>.
             </p>
           </Reveal>
           <Reveal>
@@ -120,13 +122,13 @@ export default function SupportPage() {
               <div className="hist-eyebrow">
                 <span className="hist-eyebrow__tick" />
                 <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-                  오피스 · OFFICES
+                  OFFICES
                 </span>
               </div>
-              <h2 className="sup-offices__title">서울과 호치민, 3개 거점</h2>
+              <h2 className="sup-offices__title">Three Locations Across Seoul and Ho Chi Minh City</h2>
               <p className="sup-offices__desc">
-                본사와 미디어 컨트롤 센터, 베트남 대표 사무소가 방송 고객을
-                가까이에서 지원합니다.
+                Our headquarters, media control center, and Vietnam
+                representative office support broadcast customers up close.
               </p>
             </div>
           </div>
@@ -148,7 +150,7 @@ export default function SupportPage() {
                   rel="noopener noreferrer"
                   className="sup-office__map"
                 >
-                  지도에서 보기 ↗
+                  View on Map ↗
                 </a>
               </div>
             ))}
@@ -160,18 +162,18 @@ export default function SupportPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">솔루션 도입을 검토 중이신가요?</h2>
+            <h2 className="sol-cta__title">Evaluating a Solution?</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우와 규모를 알려주시면, 가장 알맞은 구성과 견적을
-              제안해 드립니다.
+              Tell us about your broadcast workflow and scale, and we will
+              propose the right configuration and quote.
             </p>
           </div>
           <div className="sol-cta__actions">
             <a href="#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </a>
             <Link href="/#solutions" className="gem-btn gem-btn--underline-light">
-              솔루션 살펴보기 →
+              Explore Solutions →
             </Link>
           </div>
         </Reveal>

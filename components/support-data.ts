@@ -7,9 +7,9 @@
 
 /** 히어로 하단 안내 칩. */
 export const SUPPORT_HERO_TAGS: string[] = [
-  "1영업일 이내 회신",
-  "원격 · 현장 기술 지원",
-  "솔루션 도입 상담",
+  "Response within 1 business day",
+  "Remote & on-site technical support",
+  "Solution adoption consulting",
 ];
 
 /** 연락처 한 칸(전화/팩스/이메일/운영시간). */
@@ -25,15 +25,15 @@ export type ContactMethod = {
 };
 
 export const CONTACT_METHODS: ContactMethod[] = [
-  { label: "TEL", value: "02-857-1101", note: "대표 전화", href: "tel:+82285711101" },
-  { label: "FAX", value: "02-6009-9031", note: "팩스" },
+  { label: "TEL", value: "02-857-1101", note: "Main line", href: "tel:+82285711101" },
+  { label: "FAX", value: "02-6009-9031", note: "Fax" },
   {
     label: "E-MAIL",
     value: "sales@gemiso.com",
-    note: "영업 · 기술 문의",
+    note: "Sales & technical inquiries",
     href: "mailto:sales@gemiso.com",
   },
-  { label: "HOURS", value: "09:00–18:00", note: "평일 · KST" },
+  { label: "HOURS", value: "09:00–18:00", note: "Weekdays · KST" },
 ];
 
 /** 오피스(거점) 한 곳. */
@@ -59,19 +59,19 @@ function mapHref(query: string): string {
 export const OFFICES: Office[] = [
   {
     tag: "KR · SEOUL",
-    name: "서울 본사",
-    addr: "서울특별시 마포구 월드컵북로 402, 케이지아이티센터 1802호",
+    name: "Seoul Headquarters",
+    addr: "Suite 1802, KGIT Center, 402 World Cup buk-ro, Mapo-gu, Seoul, Korea",
     mapHref: mapHref("서울특별시 마포구 월드컵북로 402 케이지아이티센터"),
   },
   {
     tag: "KR · SEOUL",
-    name: "MCC · 미디어 컨트롤 센터",
-    addr: "서울특별시 구로구 디지털로33길 11, 에이스테크노타워8차 408호",
+    name: "MCC · Media Control Center",
+    addr: "Suite 408, Ace Techno Tower 8, 11 Digital-ro 33-gil, Guro-gu, Seoul, Korea",
     mapHref: mapHref("서울특별시 구로구 디지털로33길 11 에이스테크노타워8차"),
   },
   {
     tag: "VN · HO CHI MINH",
-    name: "베트남 대표 사무소",
+    name: "Vietnam Representative Office",
     addr: "1444 Đường 3/2, Phường 2, Quận 11, Thành phố Hồ Chí Minh, Vietnam",
     mapHref: mapHref("1444 Duong 3/2 Phuong 2 Quan 11 Ho Chi Minh Vietnam"),
   },

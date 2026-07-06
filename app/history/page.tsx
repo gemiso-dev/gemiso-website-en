@@ -5,9 +5,9 @@ import { HISTORY_ERAS, HISTORY_STATS } from "@/components/history-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "연혁",
+  title: "History",
   description:
-    "2002년 설립 이후 미디어 자산 관리부터 뉴스룸·아카이브·자동 송출, AI까지 — Geminisoft가 걸어온 길.",
+    "From media asset management to newsroom, archive, automated playout, and AI — the road Geminisoft has traveled since its founding in 2002.",
   path: "/history/",
 });
 
@@ -33,13 +33,13 @@ export default function HistoryPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/#solutions">회사소개</Link>
+          <Link href="/#solutions">About</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">연혁</span>
+          <span className="sol-breadcrumb__current">History</span>
         </div>
       </nav>
 
@@ -49,13 +49,14 @@ export default function HistoryPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">회사소개 · 연혁</span>
+              <span className="hist-eyebrow__label">About · History</span>
             </div>
-            <h1 className="hist-hero__title">Geminisoft가 걸어온 길</h1>
+            <h1 className="hist-hero__title">The Geminisoft Journey</h1>
             <p className="hist-hero__desc">
-              2002년 설립 이후, 미디어 자산 관리부터 뉴스룸·아카이브·자동 송출,
-              그리고 AI까지 — 방송 미디어 기술을 직접 개발하며 고객과 함께 성장해
-              왔습니다.
+              Since our founding in 2002 — from media asset management to
+              newsroom, archive, automated playout, and AI — we have grown
+              alongside our customers, building broadcast media technology
+              in-house.
             </p>
           </Reveal>
 
@@ -76,7 +77,7 @@ export default function HistoryPage() {
           <Reveal className="hist-eyebrow">
             <span className="hist-eyebrow__tick" />
             <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-              주요 발자취
+              Key Milestones
             </span>
           </Reveal>
 
@@ -85,10 +86,10 @@ export default function HistoryPage() {
           <Reveal className="hist-foot">
             <span className="hist-foot__mark">↳</span>
             <span>
-              주요 이정표를 추렸습니다. 2002년부터 오늘까지 600여 건의
-              구축·개발 실적이 이어지고 있습니다.{" "}
+              These are selected highlights — our track record spans some 600
+              deployment and development projects from 2002 to today.{" "}
               <Link href="/history/detail" className="hist-inline-link">
-                상세 연혁 전체 보기 →
+                View the Full Detailed History →
               </Link>
             </span>
           </Reveal>
@@ -99,21 +100,21 @@ export default function HistoryPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">다음 장을 함께 쓰시겠어요?</h2>
+            <h2 className="sol-cta__title">Ready to Write the Next Chapter Together?</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 가장 알맞은 솔루션을 함께
-              찾아드립니다.
+              Tell us about your broadcast workflow and our team will help you
+              find the right solution.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link
               href="/#solutions"
               className="gem-btn gem-btn--underline-light"
             >
-              솔루션 살펴보기 →
+              Explore Solutions →
             </Link>
           </div>
         </Reveal>

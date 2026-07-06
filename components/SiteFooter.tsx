@@ -16,8 +16,8 @@ export default function SiteFooter() {
               height={28}
             />
             <p className="gem-footer__tagline">
-              방송을 위한 디지털 미디어 관리 플랫폼. Geminisoft가 직접 개발하고
-              기술 지원까지 책임집니다.
+              The digital media management platform for broadcasting — built by
+              Geminisoft and backed by our own technical support.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function SiteFooter() {
             ))}
 
             <div>
-              <div className="gem-footer__heading">문의</div>
+              <div className="gem-footer__heading">Contact</div>
               <div className="gem-footer__links">
                 <span>
                   {COMPANY.addressLines[0]}
@@ -54,11 +54,11 @@ export default function SiteFooter() {
           <span>© 2026 {COMPANY.name}. All rights reserved.</span>
           <div className="gem-footer__legal">
             <span className="gem-lang">
-              <a href="https://www.gemiso.co.kr" className="gem-lang__current">
-                KR
-              </a>
+              <a href="https://www.gemiso.co.kr">KR</a>
               <span className="gem-sep">|</span>
-              <a href="#">EN</a>
+              <a href="#" className="gem-lang__current">
+                EN
+              </a>
             </span>
           </div>
         </div>

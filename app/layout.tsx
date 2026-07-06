@@ -7,15 +7,15 @@ import { SITE_URL } from "@/components/site-config";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "제미소 | GEMISO — 방송을 위한 디지털 미디어 관리 플랫폼",
+    default: "GEMISO — Digital Media Management Platform for Broadcasting",
     template: "%s | GEMISO",
   },
   description:
-    "Geminisoft는 인제스트, 아카이브, 뉴스룸, 자동 송출까지 방송을 위한 미디어 솔루션을 직접 개발하고 보유합니다.",
+    "Geminisoft builds and owns its own media solutions for broadcasting — from ingest and archive to newsroom and automated playout.",
   openGraph: {
     type: "website",
     siteName: "GEMISO",
-    locale: "ko_KR",
+    locale: "en_US",
     images: [{ url: "/assets/geminisoft-logo.png" }],
   },
   twitter: { card: "summary_large_image" },
@@ -27,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <head>
         {/* 폰트: Pretendard(본문 한글) + Montserrat(영문 디스플레이) + IBM Plex Mono(모노 캡션) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

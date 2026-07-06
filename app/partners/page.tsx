@@ -5,9 +5,9 @@ import { PARTNER_STATS, PARTNER_GROUPS } from "@/components/partners-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "파트너",
+  title: "Partners",
   description:
-    "Geminisoft는 세계적인 미디어 기술 기업, 국제 표준 얼라이언스, 그리고 대학과 협력하여 더 나은 방송 미디어 환경을 함께 만들어 갑니다.",
+    "Geminisoft partners with world-class media technology companies, international standards alliances, and universities to build a better broadcast media environment together.",
   path: "/partners/",
 });
 
@@ -15,13 +15,13 @@ export default function PartnersPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <Link href="/support/">고객지원</Link>
+          <Link href="/support/">Support</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">파트너</span>
+          <span className="sol-breadcrumb__current">Partners</span>
         </div>
       </nav>
 
@@ -31,12 +31,13 @@ export default function PartnersPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">고객지원 · 파트너</span>
+              <span className="hist-eyebrow__label">Support · Partners</span>
             </div>
-            <h1 className="hist-hero__title">함께 만드는 미디어 생태계</h1>
+            <h1 className="hist-hero__title">Building the Media Ecosystem Together</h1>
             <p className="hist-hero__desc">
-              Geminisoft는 세계적인 미디어 기술 기업, 국제 표준 얼라이언스, 그리고
-              대학과 협력하여 더 나은 방송 미디어 환경을 함께 만들어 갑니다.
+              Geminisoft partners with world-class media technology companies,
+              international standards alliances, and universities to build a
+              better broadcast media environment together.
             </p>
           </Reveal>
 
@@ -72,7 +73,7 @@ export default function PartnersPage() {
                   <p className="part-group__desc">{g.desc}</p>
                 </div>
                 <span className="part-group__count">
-                  {String(g.items.length).padStart(2, "0")}개사
+                  {String(g.items.length).padStart(2, "0")} partners
                 </span>
               </div>
 
@@ -95,7 +96,7 @@ export default function PartnersPage() {
                       <div className="part-card__logo">
                         <img
                           src={asset(p.logo)}
-                          alt={`${p.name} 로고`}
+                          alt={`${p.name} logo`}
                           loading="lazy"
                         />
                       </div>
@@ -115,18 +116,19 @@ export default function PartnersPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">파트너십을 제안하시겠어요?</h2>
+            <h2 className="sol-cta__title">Interested in Partnering with Us?</h2>
             <p className="sol-cta__desc">
-              기술 협력, 총판, 산학 협력 등 다양한 파트너십 제안을 환영합니다.
-              함께할 방법을 알려주세요.
+              We welcome partnership proposals of every kind — technology
+              collaboration, distribution, and industry-academia cooperation.
+              Tell us how we can work together.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link href="/#solutions" className="gem-btn gem-btn--underline-light">
-              솔루션 살펴보기 →
+              Explore Solutions →
             </Link>
           </div>
         </Reveal>

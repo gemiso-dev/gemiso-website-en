@@ -78,7 +78,7 @@ export default function CustomersExplorer() {
       ? CUSTOMERS
       : CUSTOMERS.filter((x) => x.cat === filter);
   const activeLabel =
-    CUSTOMER_CATEGORIES.find((c) => c.id === filter)?.label ?? "전체";
+    CUSTOMER_CATEGORIES.find((c) => c.id === filter)?.label ?? "All";
 
   return (
     <>
@@ -87,7 +87,7 @@ export default function CustomersExplorer() {
         <div
           className="cust-tabs"
           role="tablist"
-          aria-label="고객사 분야"
+          aria-label="Customer categories"
           ref={tabsRef}
         >
           {tabs.map((tb) => {
@@ -120,7 +120,7 @@ export default function CustomersExplorer() {
           <div className="cust-grid__foot">
             <span className="cust-grid__mark">↳</span>
             <span>
-              {activeLabel} · 총 {visible.length}곳 표시
+              {activeLabel} · Showing {visible.length} companies
             </span>
           </div>
         </div>

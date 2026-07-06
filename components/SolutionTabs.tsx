@@ -28,7 +28,7 @@ export default function SolutionTabs({ activeId }: { activeId: string }) {
       <div
         className="gem-container sol-tabs"
         role="tablist"
-        aria-label="솔루션"
+        aria-label="Solutions"
         ref={tabsRef}
       >
         {SOLUTIONS.map((s) => {

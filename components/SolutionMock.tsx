@@ -53,7 +53,7 @@ function MockGrid() {
             color: "var(--gem-subtle)",
           }}
         >
-          자산 검색
+          Search assets
         </div>
         <span style={{ width: 32, height: 32, border: "1px solid var(--gem-border)" }} />
         <span style={{ width: 32, height: 32, border: "1px solid var(--gem-border)" }} />
@@ -127,19 +127,19 @@ function MockGrid() {
 
 const rundownCols = "26px 52px 1fr 54px";
 const rundownRows = [
-  { no: "01", time: "00:30", item: "오프닝 · 헤드라인", st: "완료", stColor: "#0e8a52" },
-  { no: "02", time: "02:10", item: "[종합] 예산안 처리", st: "완료", stColor: "#0e8a52" },
-  { no: "03", time: "01:20", item: "[속보] 현장 연결", st: "송고", stColor: accent, active: true },
-  { no: "04", time: "00:45", item: "날씨", st: "검토", stColor: "#a06a00" },
-  { no: "05", time: "01:40", item: "국제 · 정상회담", st: "작성중", stColor: "#8c8c8c" },
-  { no: "06", time: "00:20", item: "클로징", st: "대기", stColor: "#8c8c8c" },
+  { no: "01", time: "00:30", item: "Opening · Headlines", st: "Done", stColor: "#0e8a52" },
+  { no: "02", time: "02:10", item: "[Report] Budget Bill Vote", st: "Done", stColor: "#0e8a52" },
+  { no: "03", time: "01:20", item: "[Breaking] Live from the Scene", st: "Filed", stColor: accent, active: true },
+  { no: "04", time: "00:45", item: "Weather", st: "Review", stColor: "#a06a00" },
+  { no: "05", time: "01:40", item: "World · Summit Talks", st: "Drafting", stColor: "#8c8c8c" },
+  { no: "06", time: "00:20", item: "Closing", st: "Standby", stColor: "#8c8c8c" },
 ];
 
 function MockRundown() {
   return (
     <div style={{ padding: "12px 14px" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-        <span style={{ fontSize: 12, fontWeight: 600 }}>뉴스데스크 큐시트</span>
+        <span style={{ fontSize: 12, fontWeight: 600 }}>News Desk Rundown</span>
         <span style={{ fontFamily: mono, fontSize: 10, color: "var(--gem-muted)" }}>19:00:00 / 26:30</span>
       </div>
       <div
@@ -191,18 +191,18 @@ function MockRundown() {
 
 const schedCols = "74px 1fr 50px 54px";
 const schedRows = [
-  { start: "19:00:00", prog: "뉴스데스크", dur: "LIVE", st: "ON AIR", stColor: accent, active: true },
-  { start: "19:28:30", prog: "스테이션 ID", dur: "00:10", st: "대기", stColor: "#8c8c8c" },
-  { start: "19:28:40", prog: "광고 블록 A", dur: "00:30", st: "대기", stColor: "#8c8c8c" },
-  { start: "19:29:10", prog: "일기예보", dur: "02:00", st: "대기", stColor: "#8c8c8c" },
-  { start: "19:31:10", prog: "프로그램 예고", dur: "00:20", st: "대기", stColor: "#8c8c8c" },
+  { start: "19:00:00", prog: "News Desk", dur: "LIVE", st: "ON AIR", stColor: accent, active: true },
+  { start: "19:28:30", prog: "Station ID", dur: "00:10", st: "Standby", stColor: "#8c8c8c" },
+  { start: "19:28:40", prog: "Ad Block A", dur: "00:30", st: "Standby", stColor: "#8c8c8c" },
+  { start: "19:29:10", prog: "Weather Forecast", dur: "02:00", st: "Standby", stColor: "#8c8c8c" },
+  { start: "19:31:10", prog: "Program Promo", dur: "00:20", st: "Standby", stColor: "#8c8c8c" },
 ];
 
 function MockSchedule() {
   return (
     <div style={{ padding: "12px 14px" }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 10 }}>
-        <span style={{ fontSize: 12, fontWeight: 600 }}>CH 1 · 자동 송출</span>
+        <span style={{ fontSize: 12, fontWeight: 600 }}>CH 1 · Automated Playout</span>
         <span style={{ display: "inline-flex", alignItems: "center", gap: 12, fontFamily: mono, fontSize: 9, color: "var(--gem-muted)" }}>
           <span style={{ display: "inline-flex", alignItems: "center", gap: 4 }}>
             <span style={{ width: 7, height: 7, background: "#0e8a52" }} />
@@ -280,7 +280,7 @@ function MockWaveform() {
   return (
     <div style={{ padding: 14 }}>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 12 }}>
-        <span style={{ fontSize: 12, fontWeight: 600 }}>멀티트랙 세션</span>
+        <span style={{ fontSize: 12, fontWeight: 600 }}>Multitrack Session</span>
         <span style={{ fontFamily: mono, fontSize: 10, color: "var(--gem-muted)" }}>00:01:24:12</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
@@ -331,7 +331,7 @@ function MockWaveform() {
   );
 }
 
-const aiTags = ["앵커", "스튜디오", "한국어", "영어", "뉴스"];
+const aiTags = ["Anchor", "Studio", "Korean", "English", "News"];
 
 function MockAi() {
   return (
@@ -343,15 +343,15 @@ function MockAi() {
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: 8 }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <span style={{ fontSize: 11, color: "var(--gem-muted)" }}>자막 자동 생성</span>
+            <span style={{ fontSize: 11, color: "var(--gem-muted)" }}>Auto Caption Generation</span>
             <span style={{ fontFamily: mono, fontSize: 11, color: accent }}>98%</span>
           </div>
           <div style={{ position: "relative", height: 6, background: "#e8eaef", overflow: "hidden" }}>
             <div style={{ position: "absolute", top: 0, bottom: 0, left: 0, width: "98%", background: accent }} />
           </div>
           <div style={{ marginTop: 2, display: "flex", flexDirection: "column", gap: 5, fontFamily: mono, fontSize: 9.5, lineHeight: 1.5, color: "#3d4757" }}>
-            <span>[00:03] 안녕하십니까, 아리랑뉴스입니다.</span>
-            <span>[00:09] 오늘의 주요 소식입니다.</span>
+            <span>[00:03] Hello, this is Arirang News.</span>
+            <span>[00:09] Here are today&apos;s top stories.</span>
           </div>
         </div>
       </div>

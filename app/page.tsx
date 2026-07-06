@@ -9,9 +9,9 @@ import { NEWS_ARTICLES } from "@/components/news-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "레거시를 넘어 AX로, 방송의 미래를 여는 AI 미디어 플랫폼",
+  title: "Beyond Legacy to AX — The AI Media Platform for the Future of Broadcasting",
   description:
-    "Geminisoft는 AI 기반 플랫폼 어웨어(Platform-Aware) 방송을 위한 AX 기술을 제공합니다. 전 세계 방송사·글로벌 OTT와 어깨를 나란히 할 새로운 미디어 비즈니스 모델을 만듭니다.",
+    "Geminisoft delivers AX technology for AI-driven, platform-aware broadcasting. We build new media business models that put broadcasters shoulder to shoulder with global OTT services.",
   path: "/",
 });
 
@@ -24,50 +24,50 @@ const SOLUTIONS = [
   {
     num: "01",
     tag: "PROXIMA",
-    title: "미디어 자산 관리",
-    desc: "소프트웨어 코덱과 긴밀한 NLE 연동으로 모든 자산을 인제스트·인코딩·카탈로깅하고 관리합니다.",
+    title: "Media Asset Management",
+    desc: "Ingest, encode, catalog, and manage every asset with software codecs and tight NLE integration.",
   },
   {
     num: "02",
     tag: "ZODIAC",
-    title: "뉴스룸 (NRCS)",
-    desc: "기획·취재·기사 작성·큐시트 구성부터 송출까지 — PC와 모바일에서 하나의 뉴스룸 워크플로우로.",
+    title: "Newsroom (NRCS)",
+    desc: "From planning and reporting to scripting, rundown building, and playout — one newsroom workflow on PC and mobile.",
   },
   {
     num: "03",
     tag: "TALOS",
-    title: "자동 송출 (APC)",
-    desc: "편성표를 수신하거나 직접 구성하고 비디오 서버를 제어해 완전 이중화된 무중단 송출을 구현합니다.",
+    title: "Automated Playout (APC)",
+    desc: "Receive or build program schedules and control video servers for fully redundant, uninterrupted playout.",
   },
   {
     num: "04",
     tag: "EMOTION",
-    title: "라디오",
-    desc: "하드웨어에 종속되지 않는 라디오 제작과 송출 — 멀티트랙 편집과 큐시트를 지원합니다.",
+    title: "Radio",
+    desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
   },
   {
     num: "05",
     tag: "WINNER-S",
-    title: "오디오 파일 시스템",
-    desc: "제작·편성·광고·생방송·자동 송출·관제까지 — 아홉 개의 단말로 잇는 디지털 오디오 파일 시스템.",
+    title: "Audio File System",
+    desc: "Production, scheduling, advertising, live, automated playout, and monitoring — a digital audio file system linked across nine terminals.",
   },
   {
     num: "06",
     tag: "MAIA",
-    title: "AI 기술",
-    desc: "미디어를 위한 AI — 방송 데이터로 학습한 메타데이터, 자막, 동적 보정 기술.",
+    title: "AI Technology",
+    desc: "AI built for media — metadata, subtitling, and dynamic enhancement trained on broadcast data.",
   },
   {
     num: "07",
     tag: "MYMY",
-    title: "콘텐츠 아카이브",
-    desc: "검색이 자유롭고 계속 늘어나는 미디어 라이브러리를 위한 안정적인 장기 디지털·영상 아카이빙.",
+    title: "Content Archive",
+    desc: "Reliable long-term digital and video archiving for a fully searchable, ever-growing media library.",
   },
   {
     num: "08",
     tag: "G-SAM",
-    title: "콘텐츠 배포",
-    desc: "하나의 콘텐츠를 YouTube·Instagram·X·TikTok 등 여러 SNS 플랫폼에 배포하고 통계로 관리합니다.",
+    title: "Content Distribution",
+    desc: "Publish one piece of content to YouTube, Instagram, X, TikTok, and more — and manage it all with analytics.",
   },
 ];
 
@@ -80,8 +80,8 @@ const REASONS = [
         <path d="M21 9 L28 9 L28 16" />
       </svg>
     ),
-    title: "미디어 처리 기술의 진화",
-    desc: "빠르게 변하는 미디어 환경에 맞춰 처리 기술을 발전시켜, 고객이 플랫폼을 교체하지 않고도 변화에 발맞출 수 있습니다.",
+    title: "Ever-Evolving Media Processing",
+    desc: "We advance our processing technology in step with the fast-changing media landscape, so customers keep pace with change without replacing their platform.",
   },
   {
     icon: (
@@ -91,8 +91,8 @@ const REASONS = [
         <path d="M13 4 V8 M19 4 V8 M13 24 V28 M19 24 V28 M4 13 H8 M4 19 H8 M24 13 H28 M24 19 H28" />
       </svg>
     ),
-    title: "자체 보유한 핵심 기술",
-    desc: "주도적인 엔지니어들이 핵심 원천 기술을 직접 개발하고 보유합니다 — 한국 방송 환경에 맞춰 미디어 관리를 토착화한 연구의 결과입니다.",
+    title: "Core Technology, Built In-House",
+    desc: "Our engineers develop and own the core source technologies — the result of research localizing media management for Korea's broadcast environment.",
   },
   {
     icon: (
@@ -102,8 +102,8 @@ const REASONS = [
         <path d="M23 20 L24 23 L27 24 L24 25 L23 28 L22 25 L19 24 L22 23 Z" />
       </svg>
     ),
-    title: "한발 앞선 AX·AI 기술 지원",
-    desc: "방송에 필요한 AX·AI 기술을 먼저 연구하고 현장에 적용해, 고객이 변화에 앞서 대응하도록 지원합니다.",
+    title: "AX and AI, One Step Ahead",
+    desc: "We research the AX and AI technologies broadcasting needs first and put them to work in the field, helping customers stay ahead of change.",
   },
   {
     icon: (
@@ -115,8 +115,8 @@ const REASONS = [
         <path d="M10 9 H16 a3 3 0 0 1 3 3 V15 M10 23 H16 a3 3 0 0 0 3 -3 V17 M19 16 H22" />
       </svg>
     ),
-    title: "방송 워크플로우에 대한 이해",
-    desc: "제작부터 송출까지 방송 서비스의 흐름을 깊이 이해하고, 현장에 맞는 시스템을 설계합니다.",
+    title: "Deep Broadcast Workflow Expertise",
+    desc: "We understand the full flow of broadcast services, from production to playout, and design systems that fit real-world operations.",
   },
   {
     icon: (
@@ -126,28 +126,28 @@ const REASONS = [
         <circle cx="20" cy="16" r="7" />
       </svg>
     ),
-    title: "상생하는 성장",
-    desc: "고객 및 파트너와의 진정한 협력으로 사업을 키우고, 모든 구축의 성과를 함께 나눕니다.",
+    title: "Growing Together",
+    desc: "We grow through genuine collaboration with customers and partners, and share the success of every deployment.",
   },
 ];
 
 const STATS = [
-  { num: "20년+", label: "축적된 미디어 엔지니어링" },
-  { num: "1등급", label: "GS 인증 — Proxima v3.0" },
-  { num: "2015", label: "방송장비 분야 히든챔피언 선정" },
-  { num: "전국", label: "국내 주요 방송사에서 운영 중" },
+  { num: "20+ yrs", label: "Of accumulated media engineering" },
+  { num: "Grade 1", label: "GS Certification — Proxima v3.0" },
+  { num: "2015", label: "Named a Hidden Champion in broadcast equipment" },
+  { num: "Nationwide", label: "In operation at Korea's major broadcasters" },
 ];
 
 const TECH_ITEMS = [
-  { n: "01", t: "인제스트 & 비디오 인코딩", d: "방송 현장에서 실제로 쓰는 포맷으로의 소프트웨어 코덱 인코딩" },
-  { n: "02", t: "NLE 연동", d: "편집 시스템 및 파일 기반 워크플로우와의 네이티브 연동" },
-  { n: "03", t: "미디어 프로세싱", d: "대규모 미디어의 트랜스코딩·변환·정규화" },
-  { n: "04", t: "컷 편집", d: "프레임 단위로 정확한 빠른 트리밍과 클립 구성" },
-  { n: "05", t: "아카이브 시스템", d: "계속 늘어나는 라이브러리를 위한 안정적이고 검색 가능한 장기 저장" },
-  { n: "06", t: "카탈로그", d: "모든 자산을 찾을 수 있게 하는 풍부한 메타데이터와 인덱싱" },
-  { n: "07", t: "미디어 전송", d: "Transfer Manager를 통한 MOV–MXF, LXF–MXF 전송 관리" },
-  { n: "08", t: "워크플로우 관리", d: "작업과 승인을 처음부터 끝까지 오케스트레이션" },
-  { n: "09", t: "뉴스 워크플로우", d: "기획·취재·데스크·큐시트를 하나의 뉴스룸에서" },
+  { n: "01", t: "Ingest & Video Encoding", d: "Software codec encoding to the formats broadcasters actually use" },
+  { n: "02", t: "NLE Integration", d: "Native integration with editing systems and file-based workflows" },
+  { n: "03", t: "Media Processing", d: "Transcoding, conversion, and normalization of media at scale" },
+  { n: "04", t: "Cut Editing", d: "Fast, frame-accurate trimming and clip assembly" },
+  { n: "05", t: "Archive System", d: "Reliable, searchable long-term storage for ever-growing libraries" },
+  { n: "06", t: "Cataloging", d: "Rich metadata and indexing that make every asset findable" },
+  { n: "07", t: "Media Transfer", d: "MOV–MXF and LXF–MXF transfer management via Transfer Manager" },
+  { n: "08", t: "Workflow Management", d: "End-to-end orchestration of tasks and approvals" },
+  { n: "09", t: "News Workflow", d: "Planning, reporting, desk, and rundowns in one newsroom" },
 ];
 
 /* ------------------------------------------------------------------ 페이지 */
@@ -170,17 +170,17 @@ export default function Home() {
               <span>Broadcast AX Technology Partner</span>
             </div>
             <h1 className="gem-hero__title">
-              레거시를 넘어 <span className="gem-hero__hl">AX</span>로,
+              Beyond Legacy to <span className="gem-hero__hl">AX</span> —
               <br />
-              방송의 미래를 설계하다
+              Designing the Future of Broadcasting
             </h1>
             <div className="gem-hero__actions">
               <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
-                AX 전략 상담하기
+                Talk AX Strategy
               </Link>
             </div>
             <p className="gem-hero__note">
-              MBC, YTN, SBS, EBS, KTV, TBS, 아리랑 TV가 신뢰합니다.
+              Trusted by MBC, YTN, SBS, EBS, KTV, TBS, and Arirang TV.
             </p>
           </Reveal>
         </div>
@@ -194,14 +194,14 @@ export default function Home() {
             <ScrollHighlightText
               className="gem-statement__text"
               lines={[
-                "누구나 AX를 말하지만, Geminisoft는 현장에서 증명합니다.",
-                "국내 주요 방송사가 선택한 기술 위에 AI를 더해,",
-                "방송의 다음 단계를 함께 만들어갑니다.",
+                "Everyone talks about AX. Geminisoft proves it in the field.",
+                "Building AI onto technology chosen by Korea's leading broadcasters,",
+                "we're shaping the next chapter of broadcasting together.",
               ]}
             />
             <div className="gem-statement__actions">
               <a href="#solutions" className="gem-btn gem-btn--link">
-                솔루션 살펴보기 →
+                Explore Solutions →
               </a>
             </div>
           </Reveal>
@@ -213,14 +213,14 @@ export default function Home() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow">
-              <span>솔루션</span>
+              <span>Solutions</span>
             </div>
             <h2 className="gem-title gem-title--nowrap">
-              미디어 라이프사이클 전체를 하나의 플랫폼으로
+              The Entire Media Lifecycle on One Platform
             </h2>
             <p className="gem-lead">
-              카메라에서 송출, 그리고 아카이브까지 — 모든 단계가 Geminisoft가
-              직접 개발하고 보유한 솔루션 위에서 작동합니다.
+              From camera to playout to archive — every step runs on solutions
+              Geminisoft develops and owns in-house.
             </p>
           </Reveal>
 
@@ -237,7 +237,7 @@ export default function Home() {
                 </div>
                 <h3 className="gem-card__title">{s.title}</h3>
                 <p className="gem-card__desc">{s.desc}</p>
-                <span className="gem-arrow">자세히 보기 →</span>
+                <span className="gem-arrow">Learn More →</span>
               </Link>
             ))}
           </div>
@@ -245,13 +245,13 @@ export default function Home() {
       </section>
 
       {/* 고객사 마키 */}
-      <section className="gem-marquee" aria-label="고객사">
+      <section className="gem-marquee" aria-label="Customers">
         <Reveal className="gem-marquee__head">
           <div className="gem-eyebrow">
-            <span>고객사</span>
+            <span>Customers</span>
           </div>
           <h2 className="gem-title gem-title--sm">
-            많은 고객이 보내준 신뢰, 흔들림 없는 기술 지원으로 답합니다
+            Trusted by many — and we answer with unwavering technical support
           </h2>
         </Reveal>
         <CustomerMarquee />
@@ -262,9 +262,9 @@ export default function Home() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow">
-              <span>Geminisoft의 강점</span>
+              <span>Why Geminisoft</span>
             </div>
-            <h2 className="gem-title">방송사가 Geminisoft를 선택하는 이유</h2>
+            <h2 className="gem-title">Why Broadcasters Choose Geminisoft</h2>
           </Reveal>
 
           <Reveal as="div" className="gem-reasons">
@@ -293,12 +293,12 @@ export default function Home() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow">
-              <span>기술</span>
+              <span>Technology</span>
             </div>
-            <h2 className="gem-title">직접 개발한 핵심 미디어 기술</h2>
+            <h2 className="gem-title">Core Media Technology, Built In-House</h2>
             <p className="gem-lead">
-              Geminisoft는 미디어 자산 관리, 아카이빙, 뉴스룸 컴퓨팅 전반에 걸쳐
-              전문 역량을 보유하고 있습니다.
+              Geminisoft brings deep expertise across media asset management,
+              archiving, and newsroom computing.
             </p>
           </Reveal>
 
@@ -320,12 +320,12 @@ export default function Home() {
           <Reveal className="gem-news__head">
             <div>
               <div className="gem-eyebrow">
-                <span>소식</span>
+                <span>News</span>
               </div>
-              <h2 className="gem-title">Geminisoft의 최신 소식</h2>
+              <h2 className="gem-title">The Latest from Geminisoft</h2>
             </div>
             <Link href="/news/" className="gem-news__more">
-              전체 뉴스 보기 →
+              View All News →
             </Link>
           </Reveal>
 
@@ -347,7 +347,7 @@ export default function Home() {
                 <div className="gem-news-card__body">
                   <div className="gem-news-card__meta">
                     <span className="gem-news-card__cat">
-                      {n.outlet || "보도자료"}
+                      {n.outlet || "Press Release"}
                     </span>
                     {n.date && (
                       <span className="gem-news-card__date">{n.date}</span>
@@ -355,7 +355,7 @@ export default function Home() {
                   </div>
                   <h3 className="gem-news-card__title">{n.title}</h3>
                   <p className="gem-news-card__desc">{n.summary}</p>
-                  <span className="gem-arrow">자세히 →</span>
+                  <span className="gem-arrow">Read More →</span>
                 </div>
               </Link>
             ))}
@@ -367,51 +367,51 @@ export default function Home() {
       <section id="contact" className="gem-contact">
         <Reveal className="gem-container gem-contact__grid">
           <div>
-            <h2 className="gem-contact__title">더 자세한 정보가 필요하신가요?</h2>
+            <h2 className="gem-contact__title">Need More Information?</h2>
             <p className="gem-contact__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 가장 알맞은 솔루션을 함께
-              찾아드립니다.
+              Tell us about your broadcast workflow and our team will help you
+              find the right solution.
             </p>
             <div className="gem-contact__actions">
               <Link
                 href="/support/#inquiry"
                 className="gem-btn gem-btn--invert"
               >
-                문의하기
+                Contact Us
               </Link>
               <a
                 href="#solutions"
                 className="gem-btn gem-btn--underline-light"
               >
-                솔루션 살펴보기 →
+                Explore Solutions →
               </a>
             </div>
           </div>
 
           <div className="gem-contact__info">
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">전화</div>
+              <div className="gem-info-cell__label">Phone</div>
               <div className="gem-info-cell__value">{COMPANY.tel}</div>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">이메일</div>
+              <div className="gem-info-cell__label">Email</div>
               <CopyField
                 text={COMPANY.email}
-                label="이메일"
+                label="Email"
                 href={`mailto:${COMPANY.email}`}
               >
                 {COMPANY.email}
               </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">팩스</div>
+              <div className="gem-info-cell__label">Fax</div>
               <div className="gem-info-cell__value">{COMPANY.fax}</div>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">주소</div>
+              <div className="gem-info-cell__label">Address</div>
               <CopyField
                 text={COMPANY.addressLines.join(" ")}
-                label="주소"
+                label="Address"
                 small
               >
                 {COMPANY.addressLines[0]}

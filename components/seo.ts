@@ -35,7 +35,7 @@ export function pageMetadata({ title, description, path, image }: PageMeta): Met
     openGraph: {
       type: "website",
       siteName: SITE_NAME,
-      locale: "ko_KR",
+      locale: "en_US",
       url: path,
       title: fullTitle,
       description,

@@ -46,12 +46,12 @@ export default function NewsGrid({
             </div>
             <div className="news-card__body">
               <div className="news-card__meta">
-                <span className="news-card__code">{art.outlet || "보도자료"}</span>
+                <span className="news-card__code">{art.outlet || "Press Release"}</span>
                 <span className="news-card__date">{art.date}</span>
               </div>
               <h3 className="news-card__title">{art.title}</h3>
               <p className="news-card__desc">{art.summary}</p>
-              <span className="gem-arrow">자세히 →</span>
+              <span className="gem-arrow">Learn More →</span>
             </div>
           </Link>
         ))}
@@ -64,11 +64,11 @@ export default function NewsGrid({
             className="news-more__btn"
             onClick={() => setVisible((v) => v + step)}
           >
-            더 보기
+            View More
           </button>
         )}
         <div className="news-more__count">
-          전체 {total}건 중 {shown}건 표시
+          Showing {shown} of {total}
         </div>
       </div>
     </>

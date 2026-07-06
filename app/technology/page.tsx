@@ -6,9 +6,9 @@ import { TECHNOLOGIES } from "@/components/technology-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "보유기술",
+  title: "Technology",
   description:
-    "인제스트·인코딩부터 미디어 처리, NLE 연동, 아카이브, 전송, 워크플로우, AI까지 — 제머나이소프트가 자체 연구개발로 확보한 핵심 기술을 소개합니다.",
+    "From ingest and encoding to media processing, NLE integration, archive, transfer, workflow, and AI — the core technologies Geminisoft has built through in-house R&D.",
   path: "/technology/",
 });
 
@@ -16,11 +16,11 @@ export default function TechnologyPage() {
   return (
     <>
       {/* 브레드크럼 */}
-      <nav className="sol-breadcrumb" aria-label="위치">
+      <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
-          <Link href="/">홈</Link>
+          <Link href="/">Home</Link>
           <span className="gem-sep">|</span>
-          <span className="sol-breadcrumb__current">보유기술</span>
+          <span className="sol-breadcrumb__current">Technology</span>
         </div>
       </nav>
 
@@ -30,20 +30,20 @@ export default function TechnologyPage() {
           <Reveal className="hist-hero__intro">
             <div className="hist-eyebrow">
               <span className="hist-eyebrow__tick" />
-              <span className="hist-eyebrow__label">보유기술</span>
+              <span className="hist-eyebrow__label">Technology</span>
             </div>
             <h1 className="hist-hero__title">
-              수집부터 송출까지, 고객의 워크플로우를 함께 만드는 기술
+              From Acquisition to Playout — Technology That Shapes Your Workflow
             </h1>
             <p className="hist-hero__desc">
-              인제스트·인코딩부터 미디어 처리, NLE 연동, 아카이브, 전송,
-              워크플로우, AI까지 — 방송 워크플로우 전 과정을 직접 개발한 기술로
-              함께합니다.
+              From ingest and encoding to media processing, NLE integration,
+              archive, transfer, workflow, and AI — we cover the entire
+              broadcast workflow with technology we built ourselves.
             </p>
           </Reveal>
 
           {/* 기술 목차 (앵커 점프) */}
-          <Reveal as="nav" className="tech-toc" aria-label="기술 목차">
+          <Reveal as="nav" className="tech-toc" aria-label="Technology contents">
             {TECHNOLOGIES.map((t) => (
               <a key={t.id} href={`#${t.id}`} className="tech-toc__link">
                 {t.title}
@@ -93,7 +93,7 @@ export default function TechnologyPage() {
                               // eslint-disable-next-line @next/next/no-img-element
                               <img
                                 src={asset(b.image)}
-                                alt={`${b.code} ${b.title} 다이어그램`}
+                                alt={`${b.code} ${b.title} diagram`}
                                 style={{
                                   width: b.imageWidth,
                                   transform: b.imageScale
@@ -104,7 +104,7 @@ export default function TechnologyPage() {
                             ) : (
                               <ZoomableImage
                                 src={asset(b.image)}
-                                alt={`${b.code} ${b.title} 다이어그램`}
+                                alt={`${b.code} ${b.title} diagram`}
                               />
                             )}
                           </div>
@@ -158,21 +158,21 @@ export default function TechnologyPage() {
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>
-            <h2 className="sol-cta__title">필요한 기술을 함께 설계해요</h2>
+            <h2 className="sol-cta__title">Let's Design the Technology You Need</h2>
             <p className="sol-cta__desc">
-              방송 워크플로우를 알려주시면, 저희 팀이 가장 알맞은 기술과 솔루션을
-              함께 찾아드립니다.
+              Tell us about your broadcast workflow and our team will help you
+              find the right technology and solutions.
             </p>
           </div>
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
-              문의하기
+              Contact Us
             </Link>
             <Link
               href="/solutions/proxima/"
               className="gem-btn gem-btn--underline-light"
             >
-              솔루션 보기 →
+              View Solutions →
             </Link>
           </div>
         </Reveal>
