@@ -175,7 +175,7 @@ export const CUSTOMERS: Customer[] = [
     ["Huimai Group (China)", "huimai"],
     ["Ethiopia Educational Broadcasting", "ebc-ethiopia"],
     ["Radio Pakistan", "radio-pakistan"],
-    ["Paraguay National TV", "py-tv"],
+    ["Paraguay\nNational TV", "py-tv"],
     ["Bangladesh Education Institute", "bd-edu"],
   ]),
 ];

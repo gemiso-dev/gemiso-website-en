@@ -9,7 +9,7 @@ import { NEWS_ARTICLES } from "@/components/news-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "Beyond Legacy to AX — The AI Media Platform for the Future of Broadcasting",
+  title: "Broadcasting, Rebuilt with AX — AI Media Platform for Broadcasters",
   description:
     "Geminisoft delivers AX technology for AI-driven, platform-aware broadcasting. We build new media business models that put broadcasters shoulder to shoulder with global OTT services.",
   path: "/",
@@ -25,7 +25,7 @@ const SOLUTIONS = [
     num: "01",
     tag: "PROXIMA",
     title: "Media Asset Management",
-    desc: "Ingest, encode, catalog, and manage every asset with software codecs and tight NLE integration.",
+    desc: "Ingest, encode, catalog, and manage every asset with software-based codecs and seamless NLE integration.",
   },
   {
     num: "02",
@@ -80,8 +80,8 @@ const REASONS = [
         <path d="M21 9 L28 9 L28 16" />
       </svg>
     ),
-    title: "Ever-Evolving Media Processing",
-    desc: "We advance our processing technology in step with the fast-changing media landscape, so customers keep pace with change without replacing their platform.",
+    title: "Evolving Media Processing",
+    desc: "We continuously advance our media processing technology to keep pace with a rapidly changing media landscape — helping customers adapt without replacing their existing platform.",
   },
   {
     icon: (
@@ -91,8 +91,8 @@ const REASONS = [
         <path d="M13 4 V8 M19 4 V8 M13 24 V28 M19 24 V28 M4 13 H8 M4 19 H8 M24 13 H28 M24 19 H28" />
       </svg>
     ),
-    title: "Core Technology, Built In-House",
-    desc: "Our engineers develop and own the core source technologies — the result of research localizing media management for Korea's broadcast environment.",
+    title: "Proprietary Core Technology",
+    desc: "Our engineers develop and own the core technologies behind our solutions — built to support the needs of modern broadcast environments worldwide.",
   },
   {
     icon: (
@@ -102,8 +102,8 @@ const REASONS = [
         <path d="M23 20 L24 23 L27 24 L24 25 L23 28 L22 25 L19 24 L22 23 Z" />
       </svg>
     ),
-    title: "AX and AI, One Step Ahead",
-    desc: "We research the AX and AI technologies broadcasting needs first and put them to work in the field, helping customers stay ahead of change.",
+    title: "AX and AI, Ahead of the Curve",
+    desc: "We research and apply the AX and AI technologies broadcasters need — helping customers stay ahead of change and lead what comes next.",
   },
   {
     icon: (
@@ -115,8 +115,8 @@ const REASONS = [
         <path d="M10 9 H16 a3 3 0 0 1 3 3 V15 M10 23 H16 a3 3 0 0 0 3 -3 V17 M19 16 H22" />
       </svg>
     ),
-    title: "Deep Broadcast Workflow Expertise",
-    desc: "We understand the full flow of broadcast services, from production to playout, and design systems that fit real-world operations.",
+    title: "Broadcast Workflow Expertise",
+    desc: "We understand the full broadcast workflow, from production to playout, and design systems that fit real-world operations.",
   },
   {
     icon: (
@@ -127,7 +127,7 @@ const REASONS = [
       </svg>
     ),
     title: "Growing Together",
-    desc: "We grow through genuine collaboration with customers and partners, and share the success of every deployment.",
+    desc: "We grow through genuine collaboration with customers and partners, sharing the value created in every project.",
   },
 ];
 
@@ -139,7 +139,7 @@ const STATS = [
 ];
 
 const TECH_ITEMS = [
-  { n: "01", t: "Ingest & Video Encoding", d: "Software codec encoding to the formats broadcasters actually use" },
+  { n: "01", t: "Ingest & Video Encoding", d: "Software-based codec encoding for the formats broadcasters use every day" },
   { n: "02", t: "NLE Integration", d: "Native integration with editing systems and file-based workflows" },
   { n: "03", t: "Media Processing", d: "Transcoding, conversion, and normalization of media at scale" },
   { n: "04", t: "Cut Editing", d: "Fast, frame-accurate trimming and clip assembly" },
@@ -170,13 +170,13 @@ export default function Home() {
               <span>Broadcast AX Technology Partner</span>
             </div>
             <h1 className="gem-hero__title">
-              Beyond Legacy to <span className="gem-hero__hl">AX</span> —
+              Beyond Legacy —
               <br />
-              Designing the Future of Broadcasting
+              Broadcasting, Rebuilt with <span className="gem-hero__hl">AX</span>
             </h1>
             <div className="gem-hero__actions">
               <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
-                Talk AX Strategy
+                Discuss AX Strategy
               </Link>
             </div>
             <p className="gem-hero__note">
@@ -194,9 +194,9 @@ export default function Home() {
             <ScrollHighlightText
               className="gem-statement__text"
               lines={[
-                "Everyone talks about AX. Geminisoft proves it in the field.",
-                "Building AI onto technology chosen by Korea's leading broadcasters,",
-                "we're shaping the next chapter of broadcasting together.",
+                "Everyone talks about AX, but Geminisoft proves it in the field.",
+                "Built on technology trusted by leading broadcasters,",
+                "we're shaping what's next in broadcasting with AI.",
               ]}
             />
             <div className="gem-statement__actions">
@@ -219,8 +219,8 @@ export default function Home() {
               The Entire Media Lifecycle on One Platform
             </h2>
             <p className="gem-lead">
-              From camera to playout to archive — every step runs on solutions
-              Geminisoft develops and owns in-house.
+              From camera to playout and archive, every step is powered by
+              proprietary solutions developed by Geminisoft.
             </p>
           </Reveal>
 
@@ -295,10 +295,11 @@ export default function Home() {
             <div className="gem-eyebrow">
               <span>Technology</span>
             </div>
-            <h2 className="gem-title">Core Media Technology, Built In-House</h2>
+            <h2 className="gem-title">Proprietary Core Media Technologies</h2>
             <p className="gem-lead">
-              Geminisoft brings deep expertise across media asset management,
-              archiving, and newsroom computing.
+              Geminisoft develops and owns the core media technologies behind
+              its solutions — spanning media asset management, archiving, and
+              newsroom workflows.
             </p>
           </Reveal>
 
