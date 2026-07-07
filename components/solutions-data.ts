@@ -73,8 +73,8 @@ export const SOLUTIONS: Solution[] = [
     short: "Asset Management",
     mock: "grid",
     image: "/assets/solutions/proxima/main.png",
-    tagline: "From acquisition to distribution — the full media asset lifecycle",
-    desc: "The workflow begins the moment media arrives. Proxima controls and manages the entire pipeline — ingest, transcoding, storage, analysis, and distribution — in a single system, with every capability built through our own R&D.",
+    tagline: "Manage the Full Media Asset Lifecycle",
+    desc: "Proxima manages the entire media pipeline from the moment content arrives — from ingest and transcoding to storage, analysis, and distribution — all in one system developed through Geminisoft's own R&D.",
     trust: "In production at broadcasters and government agencies in Korea and abroad",
     stats: [
       { v: "Under 10 min", k: "Proxy generation for 1 hour of video" },
@@ -191,8 +191,8 @@ export const SOLUTIONS: Solution[] = [
     short: "Newsroom",
     mock: "rundown",
     image: "/assets/solutions/zodiac/main.png",
-    tagline: "From planning to playout, one newsroom",
-    desc: "Zodiac is the newsroom computer system (NRCS) behind TV news. From story management — assignment, writing, and filing — to news rundowns and rundown-driven playout automation, it connects the entire newsroom workflow from planning to on-air, on both PC and mobile.",
+    tagline: "From Planning to Playout, All in One Newsroom",
+    desc: "Zodiac manages the full TV news production workflow in a single system — from planning and reporting to script writing, rundown creation, and playout automation. Across desktop and mobile, it keeps every step connected through to on-air.",
     trust: "Deployed at MBC, YTN, KTV, TBS, cpbc, Arirang TV, and more",
     stats: [
       { v: "PC & Mobile", k: "Identical working environment" },
