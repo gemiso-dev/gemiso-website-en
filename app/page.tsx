@@ -20,7 +20,14 @@ const LATEST_NEWS = NEWS_ARTICLES.slice(0, 3);
 
 /* ----------------------------------------------------------------- 데이터 */
 
-const SOLUTIONS = [
+const SOLUTIONS: {
+  num: string;
+  tag: string;
+  title: string;
+  desc: string;
+  /** true면 목록에서 숨긴다(코드는 유지, 플래그만 제거하면 복구). */
+  hidden?: boolean;
+}[] = [
   {
     num: "01",
     tag: "PROXIMA",
@@ -44,6 +51,8 @@ const SOLUTIONS = [
     tag: "EMOTION",
     title: "Radio",
     desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
+    // 현재 미취급 솔루션 — 숨김. 복구하려면 이 줄을 지운다.
+    hidden: true,
   },
   {
     num: "05",
@@ -225,14 +234,14 @@ export default function Home() {
           </Reveal>
 
           <div className="gem-grid-cards">
-            {SOLUTIONS.map((s) => (
+            {SOLUTIONS.filter((s) => !s.hidden).map((s, i) => (
               <Link
-                key={s.num}
+                key={s.tag}
                 href={`/solutions/${s.tag.toLowerCase()}/`}
                 className="gem-card"
               >
                 <div className="gem-card__meta">
-                  <span className="gem-card__num">{s.num}</span>
+                  <span className="gem-card__num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="gem-card__tag">{s.tag}</span>
                 </div>
                 <h3 className="gem-card__title">{s.title}</h3>

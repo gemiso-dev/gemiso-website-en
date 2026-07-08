@@ -47,7 +47,8 @@ export const INQUIRY_SOLUTIONS: InquiryOption[] = [
   { label: "Media Asset Management — Proxima", value: "Media Asset Management — Proxima" },
   { label: "Newsroom — Zodiac", value: "Newsroom — Zodiac" },
   { label: "Automated Playout — Talos", value: "Automated Playout — Talos" },
-  { label: "Radio — Emotion", value: "Radio — Emotion" },
+  // 현재 미취급 솔루션 — 숨김. 복구하려면 주석을 해제한다.
+  // { label: "Radio — Emotion", value: "Radio — Emotion" },
   { label: "Audio File System — Winner S", value: "Audio File System — Winner S" },
   { label: "AI Technology — MAIA", value: "AI Technology — MAIA" },
   { label: "Content Archive — MYMY", value: "Content Archive — MYMY" },

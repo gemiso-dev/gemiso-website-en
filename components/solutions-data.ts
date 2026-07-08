@@ -61,6 +61,9 @@ export type Solution = {
     /** 헤더 → 번호 기능 리스트 사이 간격을 넓게(항목별 예외). */
     wideGap?: boolean;
   }[];
+  /** true면 사이트 전반(홈·솔루션 탭·내비·사이트맵)에서 숨긴다.
+      코드·상세 데이터는 유지하며, 이 플래그만 제거하면 복구된다. */
+  hidden?: boolean;
 };
 
 export const SOLUTIONS: Solution[] = [
@@ -374,6 +377,8 @@ export const SOLUTIONS: Solution[] = [
     short: "Radio",
     mock: "waveform",
     image: "/assets/solutions/emotion/track.png",
+    // 현재 미취급 솔루션 — 사이트 전반에서 숨김. 복구하려면 이 줄을 지운다.
+    hidden: true,
     tagline: "Radio without hardware lock-in",
     desc: "Emotion integrates six radio modules into one solution — recording, production, live broadcast, automated playout, monitoring, and quality control. Designed around the needs of radio producers and technical directors, it supports stable production and playout.",
     trust: "An integrated solution distilled from 40+ years of radio operations expertise",
@@ -480,13 +485,13 @@ export const SOLUTIONS: Solution[] = [
     id: "winner-s",
     code: "WINNER S",
     name: "Winner S",
-    ko: "Audio File System",
-    cat: "Audio File System",
-    short: "Audio File System",
+    ko: "Radio",
+    cat: "Radio · Radio Broadcast System",
+    short: "Radio",
     mock: "waveform",
     image: "/assets/solutions/winner-s/chain.png",
-    tagline: "An audio file system optimized for the digital era",
-    desc: "Winner S is an audio file system optimized for digital operations, built on networking and a high-capacity database. It organizes programs, broadcast material, commercials, and music in a database, and connects the entire audio broadcast chain — production, scheduling, commercials, live broadcast, automated playout, and monitoring — across nine workstations.",
+    tagline: "Audio File System for Radio Operations",
+    desc: "Winner S is a networked, database-backed audio file system for radio operations. Across nine connected terminals, it manages audio assets and supports recording, production, scheduling, playout, and monitoring.",
     trust: "A digital audio file system built on networking and a high-capacity database",
     stats: [
       { v: "Up to 32 channels", k: "Multichannel audio editing" },
@@ -552,13 +557,13 @@ export const SOLUTIONS: Solution[] = [
       },
       {
         code: "WINNER S Recording",
-        title: "Production",
-        sub: "Recording & Production",
-        desc: "A production workstation that unifies recording and editing. It handles multichannel audio and keeps production stable with robust recovery.",
+        title: "Recording & Editing",
+        sub: "Non-Linear Editing",
+        desc: "A production environment with dedicated recording and editing terminals. It supports multichannel audio, multiple formats, live broadcast integration, and reliable recovery for stable production.",
         points: [
-          "Multichannel production — record and edit in the audio editor and save as schedule material (up to 32 channels; 6 recommended).",
-          "Live integration & dual monitors — integrates with the live broadcast program and supports dual-monitor setups.",
-          "Automatic remaining-time calculation & unlimited undo — calculates remaining time automatically while editing, with unlimited undo for powerful recovery.",
+          "Multichannel Recording & Editing — record and edit up to 32 channels, with 6 channels recommended, and save audio as broadcast-ready material.",
+          "Multiple Formats & Sound Card Independent — edit WAV, MP3, MP2, WMA, ASF, FLAC, and more, and extract audio from video files. Works independently of any specific sound card.",
+          "Live Broadcast Integration & Unlimited Undo — integrate with live broadcasts and automatically calculate remaining time during broadcast editing. Restore edits reliably with unlimited undo.",
         ],
         image: "/assets/solutions/winner-s/recording.png",
       },
@@ -573,18 +578,6 @@ export const SOLUTIONS: Solution[] = [
           "Schedule error flagging & permissions — highlights scheduling errors and sets editing permissions per user.",
         ],
         image: "/assets/solutions/winner-s/manager.png",
-      },
-      {
-        code: "WINNER S Winnerwave",
-        title: "Audio Editing (NLE)",
-        sub: "Non-Linear Editor",
-        desc: "A non-linear editor for audio production. It handles a wide range of formats, edits multichannel audio, and is independent of the sound card.",
-        points: [
-          "Wide format support — supports WAV, MP3, MP2, WMA, ASF, FLAC, and more, and extracts audio from video.",
-          "Multichannel editing & sharing — edit beyond 32 channels and share your edits.",
-          "Sound-card independence & recovery — runs regardless of sound card and recovers robustly from unexpected errors.",
-        ],
-        image: "/assets/solutions/winner-s/recording.png",
       },
       {
         code: "WINNER S CF",
@@ -858,11 +851,14 @@ export const SOLUTIONS: Solution[] = [
   },
 ];
 
+/** 사이트 전반에 노출하는 솔루션 목록(hidden 제외). 숨김 처리의 단일 기준점. */
+export const VISIBLE_SOLUTIONS = SOLUTIONS.filter((s) => !s.hidden);
+
 /** generateStaticParams / 링크에서 쓰는 슬러그 목록. */
-export const SOLUTION_SLUGS = SOLUTIONS.map((s) => s.id);
+export const SOLUTION_SLUGS = VISIBLE_SOLUTIONS.map((s) => s.id);
 
 /** 헤더/푸터 내비게이션에서 쓰는 솔루션 드롭다운 링크 목록(순서는 SOLUTIONS 기준). */
-export const SOLUTION_NAV = SOLUTIONS.map((s) => ({
+export const SOLUTION_NAV = VISIBLE_SOLUTIONS.map((s) => ({
   label: `${s.name} · ${s.short}`,
   href: `/solutions/${s.id}/`,
 }));
