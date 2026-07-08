@@ -289,8 +289,8 @@ export const SOLUTIONS: Solution[] = [
     short: "Playout",
     mock: "schedule",
     image: "/assets/solutions/talos/sec.png",
-    tagline: "Automated playout that never stops",
-    desc: "TALOS receives schedules — or lets you build them — and controls video servers and other playout equipment to put content on air in order. From broadcasters to playout service providers, corporate channels, and YouTube Live, it automates playout without interruption.",
+    tagline: "Always-On Automated Playout",
+    desc: "TALOS automates program schedule management and controls video servers and playout equipment in one APC system. It keeps on-air operations stable and uninterrupted across broadcast channels, playout service providers, internal broadcasts, and YouTube Live.",
     trust: "On air at major Korean channels",
     stats: [
       { v: "Multi-channel", k: "Simultaneous automated playout" },
@@ -375,7 +375,7 @@ export const SOLUTIONS: Solution[] = [
     mock: "waveform",
     image: "/assets/solutions/emotion/track.png",
     tagline: "Radio without hardware lock-in",
-    desc: "Emotion is an integrated radio broadcasting solution built for working radio producers and technical directors. Six modules connect the entire chain — recording and production, live broadcast, automated playout, monitoring, and quality control.",
+    desc: "Emotion integrates six radio modules into one solution — recording, production, live broadcast, automated playout, monitoring, and quality control. Designed around the needs of radio producers and technical directors, it supports stable production and playout.",
     trust: "An integrated solution distilled from 40+ years of radio operations expertise",
     stats: [
       { v: "30%+", k: "Reduction in editing time" },
