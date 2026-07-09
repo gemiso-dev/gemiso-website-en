@@ -32,19 +32,19 @@ const SOLUTIONS: {
     num: "01",
     tag: "PROXIMA",
     title: "Media Asset Management",
-    desc: "Ingest, encode, catalog, and manage every asset with software-based codecs and seamless NLE integration.",
+    desc: "Manage media assets from ingest to distribution with software codecs and NLE integration.",
   },
   {
     num: "02",
     tag: "ZODIAC",
     title: "Newsroom (NRCS)",
-    desc: "From planning and reporting to scripting, rundown building, and playout — one newsroom workflow on PC and mobile.",
+    desc: "Connect newsroom workflows across desktop and mobile, from planning and script writing to rundown creation and playout.",
   },
   {
     num: "03",
     tag: "TALOS",
     title: "Automated Playout (APC)",
-    desc: "Receive or build program schedules and control video servers for fully redundant, uninterrupted playout.",
+    desc: "Automate program schedules and video server control in one APC system for stable on-air operations.",
   },
   {
     num: "04",
@@ -58,25 +58,25 @@ const SOLUTIONS: {
     num: "05",
     tag: "WINNER-S",
     title: "Audio File System",
-    desc: "Production, scheduling, advertising, live, automated playout, and monitoring — a digital audio file system linked across nine terminals.",
+    desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
   },
   {
     num: "06",
     tag: "MAIA",
     title: "AI Technology",
-    desc: "AI built for media — metadata, subtitling, and dynamic enhancement trained on broadcast data.",
+    desc: "Automate metadata, subtitle generation, and dynamic correction for media, powered by broadcast data.",
   },
   {
     num: "07",
     tag: "MYMY",
     title: "Content Archive",
-    desc: "Reliable long-term digital and video archiving for a fully searchable, ever-growing media library.",
+    desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
   },
   {
     num: "08",
     tag: "G-SAM",
     title: "Content Distribution",
-    desc: "Publish one piece of content to YouTube, Instagram, X, TikTok, and more — and manage it all with analytics.",
+    desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
   },
 ];
 
