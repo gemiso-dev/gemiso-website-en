@@ -40,9 +40,9 @@ export const MISSION_PILLARS: MissionPillar[] = [
     en: "Media Connecting People",
     title: ["Connecting", "People"],
     lead:
-      "Through the technology Geminisoft develops, we express our commitment to connecting people and building communities.",
+      "Media technology connects people and builds community through shared ideas and experiences.",
     body:
-      "Geminisoft develops powerful media platform technologies for mass media industries such as TV and YouTube. These media can help individuals connect and interact regardless of time and place. We hold a somewhat naive dream of using media technology to bring people together as one — across the barriers of time and distance — while respecting their diversity.",
+      "Geminisoft develops reliable media platform technologies for television and digital platforms. Media connects people beyond time and place, allowing ideas and experiences to be shared.\nGeminisoft builds media technologies that bring people and content together beyond boundaries.",
     diagram: "people",
     caption: "PEOPLE · Connection & Interaction",
   },
@@ -51,9 +51,9 @@ export const MISSION_PILLARS: MissionPillar[] = [
     mono: "MEDIA CONNECTING TIME",
     en: "Media Connecting Time",
     title: ["Connecting", "Time"],
-    lead: "Media exists beyond time, connecting the past with the present.",
+    lead: "Media technology bridges time, connecting records of the past with the experiences of today.",
     body:
-      "Through books written a thousand years ago, we look into the past, create new content, and pass it on to future generations. When media content such as video is archived, we can bring different eras and different moments of history a little closer together. Geminisoft develops technology to archive video — the data that is hardest to archive. Through media archived with our technology, people will be able to experience the events and cultures of the past, and we believe this archived content will connect people across time, from the past into the future.",
+      "Recorded content does not disappear with time. When rediscovered and reused, it gains new meaning. Old footage and materials carry memory, culture, and experience to future generations.\nGeminisoft builds media archive technologies that preserve content reliably and make past records accessible for the present and the future.",
     diagram: "time",
     caption: "TIME · From the Past to the Future",
     surface: true,
@@ -64,9 +64,9 @@ export const MISSION_PILLARS: MissionPillar[] = [
     en: "Media Connecting Places",
     title: ["Connecting", "Places"],
     lead:
-      "It reflects our belief that through media, people in different places can expand and share cultures, ideas, and experiences.",
+      "Media technology carries cultures, experiences, and ideas beyond physical distance, connecting regions more broadly.",
     body:
-      "We take on the challenge of developing media technologies that help the culture and content of one place reach beyond geographic limits and extend to another. Media is a medium for discovering and conveying new cultural experiences and values. Through media, we will connect people across regions by offering better insight into one another's worlds. With the media technology we create, we will build global connections that transcend physical boundaries, where diverse cultures and perspectives can be shared and appreciated.",
+      "Culture and content do not remain in one place. Through media, they reach a wider world, where people share perspectives and experiences, gaining a deeper understanding of different cultures.\nGeminisoft builds media technologies that carry cultures and ideas across regions, platforms, and physical boundaries.",
     diagram: "places",
     caption: "PLACES · Beyond Boundaries",
   },
