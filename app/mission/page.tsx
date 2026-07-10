@@ -35,11 +35,14 @@ export default function MissionPage() {
               <span className="hist-eyebrow__label">About · Mission</span>
             </div>
             <h1 className="hist-hero__title">
-              Media connecting{" "}
-              <span className="mission-hero__hl">People</span>,{" "}
-              <span className="mission-hero__hl">Time</span>,
-              <br className="mission-hero__br" /> and{" "}
-              <span className="mission-hero__hl">Places</span>
+              <span className="hist-hero__title-seg">
+                Media connecting{" "}
+                <span className="mission-hero__hl">People</span>,{" "}
+                <span className="mission-hero__hl">Time</span>,
+              </span>{" "}
+              <span className="hist-hero__title-seg">
+                and <span className="mission-hero__hl">Places</span>
+              </span>
             </h1>
             <p className="hist-hero__desc">
               Under the mission ‘Media connecting people, time, and places,’
@@ -83,7 +86,11 @@ export default function MissionPage() {
               {/* 우측 하단: 리드 + 본문 */}
               <div className="mission-pillar__body">
                 <p className="mission-pillar__lead">{p.lead}</p>
-                <p className="mission-pillar__text">{p.body}</p>
+                {p.body.split("\n").map((para, i) => (
+                  <p key={i} className="mission-pillar__text">
+                    {para}
+                  </p>
+                ))}
               </div>
             </Reveal>
           </div>
