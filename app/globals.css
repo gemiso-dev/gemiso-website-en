@@ -4113,6 +4113,15 @@ a.sup-contact__cell:hover {
   font-weight: 600;
   color: var(--gem-fg);
 }
+/* 히어로 제목 강제 개행 — PC(861px↑)에서만. 모바일에선 숨겨 자연 줄바꿈. */
+.mission-hero__br {
+  display: none;
+}
+@media (min-width: 861px) {
+  .mission-hero__br {
+    display: inline;
+  }
+}
 
 /* 히어로 하단 커넥터 (사람 · 시간 · 장소) */
 .mission-connector {

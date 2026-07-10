@@ -37,7 +37,8 @@ export default function MissionPage() {
             <h1 className="hist-hero__title">
               Media connecting{" "}
               <span className="mission-hero__hl">People</span>,{" "}
-              <span className="mission-hero__hl">Time</span>, and{" "}
+              <span className="mission-hero__hl">Time</span>,
+              <br className="mission-hero__br" /> and{" "}
               <span className="mission-hero__hl">Places</span>
             </h1>
             <p className="hist-hero__desc">
