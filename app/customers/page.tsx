@@ -80,7 +80,13 @@ export default function CustomersPage() {
                 </div>
                 <h3 className="case-card__outcome">{c.outcome}</h3>
                 <p className="case-card__desc">{c.desc}</p>
-                <span className="gem-arrow case-card__more">View Case Study →</span>
+                <span className="gem-arrow case-card__more">
+                  View Case Study
+                  <span className="gem-arrow-slide" aria-hidden="true">
+                    <span>→</span>
+                    <span>→</span>
+                  </span>
+                </span>
               </a>
             ))}
           </Reveal>
@@ -119,12 +125,20 @@ export default function CustomersPage() {
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
               Contact Us
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
             <Link
               href="/#solutions"
               className="gem-btn gem-btn--underline-light"
             >
-              Explore Solutions →
+              Explore Solutions
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         </Reveal>

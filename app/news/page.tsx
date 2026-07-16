@@ -69,7 +69,13 @@ export default function NewsListPage() {
                 </div>
                 <h2 className="news-featured__title">{featured.title}</h2>
                 <p className="news-featured__excerpt">{featured.summary}</p>
-                <span className="gem-arrow">Learn More →</span>
+                <span className="gem-arrow">
+                  Learn More
+                  <span className="gem-arrow-slide" aria-hidden="true">
+                    <span>→</span>
+                    <span>→</span>
+                  </span>
+                </span>
               </div>
             </Link>
           </Reveal>

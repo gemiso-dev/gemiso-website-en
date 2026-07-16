@@ -173,7 +173,11 @@ export default function SupportPage() {
               Contact Us
             </a>
             <Link href="/#solutions" className="gem-btn gem-btn--underline-light">
-              Explore Solutions →
+              Explore Solutions
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         </Reveal>

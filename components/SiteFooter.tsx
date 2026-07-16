@@ -54,10 +54,10 @@ export default function SiteFooter() {
           <span>© 2026 {COMPANY.name}. All rights reserved.</span>
           <div className="gem-footer__legal">
             <span className="gem-lang">
-              <a href="https://www.gemiso.co.kr">KR</a>
+              <a href="https://www.gemiso.co.kr">KOR</a>
               <span className="gem-sep">|</span>
               <a href="#" className="gem-lang__current">
-                EN
+                ENG
               </a>
             </span>
           </div>

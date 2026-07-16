@@ -110,9 +110,17 @@ export default function MissionPage() {
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
               Contact Us
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
             <Link href="/history/" className="gem-btn gem-btn--underline-light">
-              View History →
+              View History
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         </Reveal>

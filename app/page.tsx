@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import ScrollHighlightText from "@/components/ScrollHighlightText";
@@ -64,7 +65,7 @@ const SOLUTIONS: {
     num: "06",
     tag: "MAIA",
     title: "AI Technology",
-    desc: "Automate metadata, subtitle generation, and dynamic correction for media, powered by broadcast data.",
+    desc: "Generate metadata and subtitles with broadcast-trained AI, making media libraries fully searchable.",
   },
   {
     num: "07",
@@ -167,30 +168,40 @@ export default function Home() {
       {/* 히어로 */}
       <section
         className="gem-hero gem-hero--center"
-        style={{
-          backgroundImage: `radial-gradient(ellipse 72% 85% at 50% 50%, rgba(255,255,255,0.8) 16%, rgba(255,255,255,0.85) 52%, rgba(255,255,255,0.94) 84%), url(${asset(
-            "/assets/hero/hero-bg5.webp",
-          )})`,
-        }}
+        style={
+          {
+            // 데스크탑/모바일 배경을 CSS 변수로 넘겨 globals.css에서 미디어쿼리로 갈아끼운다.
+            "--hero-bg": `url(${asset("/assets/hero/hero-bg5.webp")})`,
+            "--hero-bg-sm": `url(${asset("/assets/hero/hero-bg5-mobile.webp")})`,
+          } as CSSProperties
+        }
       >
         <div className="gem-container gem-hero__grid gem-hero__grid--center">
           <Reveal>
             <div className="gem-eyebrow gem-eyebrow--badge">
-              <span>Broadcast AX Technology Partner</span>
+              <span>Broadcast AI Transformation Partner</span>
             </div>
             <h1 className="gem-hero__title">
               Beyond Legacy —
               <br />
-              Broadcasting, Rebuilt with <span className="gem-hero__hl">AX</span>
+              Broadcasting,{" "}
+              <br className="br-sm" />
+              Rebuilt with <span className="gem-hero__hl">AX</span>
             </h1>
             <div className="gem-hero__actions">
               <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
                 Discuss AX Strategy
+                <span className="gem-arrow-slide" aria-hidden="true">
+                  <span>→</span>
+                  <span>→</span>
+                </span>
               </Link>
             </div>
+            {/* 신뢰 문구 임시 숨김
             <p className="gem-hero__note">
               Trusted by MBC, YTN, SBS, EBS, KTV, TBS, and Arirang TV.
             </p>
+            */}
           </Reveal>
         </div>
         <HeroScrollButton />
@@ -210,8 +221,16 @@ export default function Home() {
             />
             <div className="gem-statement__actions">
               <a href="#solutions" className="gem-btn gem-btn--link">
-                Explore Solutions →
+                Explore Solutions
+                <span className="gem-arrow-slide" aria-hidden="true">
+                  <span>→</span>
+                  <span>→</span>
+                </span>
               </a>
+            </div>
+            {/* 고객사 롤링 배너 — Explore Solutions 버튼 아래 */}
+            <div className="gem-marquee gem-marquee--inline" aria-label="Customers">
+              <CustomerMarquee />
             </div>
           </Reveal>
         </div>
@@ -246,24 +265,17 @@ export default function Home() {
                 </div>
                 <h3 className="gem-card__title">{s.title}</h3>
                 <p className="gem-card__desc">{s.desc}</p>
-                <span className="gem-arrow">Learn More →</span>
+                <span className="gem-arrow">
+                  Learn More
+                  <span className="gem-arrow-slide" aria-hidden="true">
+                    <span>→</span>
+                    <span>→</span>
+                  </span>
+                </span>
               </Link>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* 고객사 마키 */}
-      <section className="gem-marquee" aria-label="Customers">
-        <Reveal className="gem-marquee__head">
-          <div className="gem-eyebrow">
-            <span>Customers</span>
-          </div>
-          <h2 className="gem-title gem-title--sm">
-            Trusted by many — and we answer with unwavering technical support
-          </h2>
-        </Reveal>
-        <CustomerMarquee />
       </section>
 
       {/* 선택 이유 + 통계 */}
@@ -365,7 +377,13 @@ export default function Home() {
                   </div>
                   <h3 className="gem-news-card__title">{n.title}</h3>
                   <p className="gem-news-card__desc">{n.summary}</p>
-                  <span className="gem-arrow">Read More →</span>
+                  <span className="gem-arrow">
+                    Read More
+                    <span className="gem-arrow-slide" aria-hidden="true">
+                      <span>→</span>
+                      <span>→</span>
+                    </span>
+                  </span>
                 </div>
               </Link>
             ))}
@@ -393,7 +411,11 @@ export default function Home() {
                 href="#solutions"
                 className="gem-btn gem-btn--underline-light"
               >
-                Explore Solutions →
+                Explore Solutions
+                <span className="gem-arrow-slide" aria-hidden="true">
+                  <span>→</span>
+                  <span>→</span>
+                </span>
               </a>
             </div>
           </div>

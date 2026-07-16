@@ -124,12 +124,20 @@ export default function HistoryDetailPage() {
           <div className="sol-cta__actions">
             <Link href="/support/#inquiry" className="gem-btn gem-btn--invert">
               Contact Us
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
             <Link
               href="/#solutions"
               className="gem-btn gem-btn--underline-light"
             >
-              Explore Solutions →
+              Explore Solutions
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         </Reveal>

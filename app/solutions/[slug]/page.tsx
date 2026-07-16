@@ -78,6 +78,10 @@ export default async function SolutionPage({
             <div className="sol-hero__actions">
               <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
                 Contact Us
+                <span className="gem-arrow-slide" aria-hidden="true">
+                  <span>→</span>
+                  <span>→</span>
+                </span>
               </Link>
               <p className="sol-hero__trust">{active.trust}</p>
             </div>
@@ -298,7 +302,13 @@ export default async function SolutionPage({
                 <span className="sol-other__code">{o.code}</span>
                 <h3 className="sol-other__title">{o.ko}</h3>
                 <p className="sol-other__desc">{o.tagline}</p>
-                <span className="gem-arrow">Learn More →</span>
+                <span className="gem-arrow">
+                  Learn More
+                  <span className="gem-arrow-slide" aria-hidden="true">
+                    <span>→</span>
+                    <span>→</span>
+                  </span>
+                </span>
               </Link>
             ))}
           </Reveal>
@@ -321,6 +331,10 @@ export default async function SolutionPage({
               className="gem-btn gem-btn--invert"
             >
               Contact Us
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         </Reveal>

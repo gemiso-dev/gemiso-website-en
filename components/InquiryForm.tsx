@@ -242,6 +242,10 @@ export default function InquiryForm() {
           disabled={status === "sending"}
         >
           {status === "sending" ? "Sending…" : "Send Inquiry"}
+          <span className="gem-arrow-slide" aria-hidden="true">
+            <span>→</span>
+            <span>→</span>
+          </span>
         </button>
         <p className="inq-privacy">
           Your information will be used only to respond to your inquiry.

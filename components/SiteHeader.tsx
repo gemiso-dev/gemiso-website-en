@@ -167,10 +167,10 @@ export default function SiteHeader() {
 
           <div className="gem-header__actions">
             <span className="gem-lang gem-hide-sm">
-              <a href="https://www.gemiso.co.kr">KR</a>
+              <a href="https://www.gemiso.co.kr">KOR</a>
               <span className="gem-sep">|</span>
               <a href="#" className="gem-lang__current">
-                EN
+                ENG
               </a>
             </span>
             <Link href="/support/#inquiry" className="gem-header__cta gem-hide-sm">
@@ -220,7 +220,11 @@ export default function SiteHeader() {
               className="gem-mobile-menu__cta"
               onClick={closeMenu}
             >
-              Contact
+              Contact Us
+              <span className="gem-arrow-slide" aria-hidden="true">
+                <span>→</span>
+                <span>→</span>
+              </span>
             </Link>
           </div>
         )}
