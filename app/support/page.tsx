@@ -104,7 +104,7 @@ export default function SupportPage() {
             </p>
             <p className="inq-side-note">
               For urgent matters, reach us directly at{" "}
-              <a href={COMPANY.telHref}>02-857-1101</a> or{" "}
+              <a href={COMPANY.telHref}>{COMPANY.tel}</a> or{" "}
               <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>.
             </p>
           </Reveal>

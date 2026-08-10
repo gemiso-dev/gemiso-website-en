@@ -147,7 +147,7 @@ export default function InquiryForm() {
           type="tel"
           className="inq-input"
           maxLength={30}
-          placeholder="02-0000-0000"
+          placeholder="+82-2-0000-0000"
           autoComplete="tel"
         />
       </div>

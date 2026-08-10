@@ -25,8 +25,8 @@ export type ContactMethod = {
 };
 
 export const CONTACT_METHODS: ContactMethod[] = [
-  { label: "TEL", value: "02-857-1101", note: "Main line", href: "tel:+82285711101" },
-  { label: "FAX", value: "02-6009-9031", note: "Fax" },
+  { label: "TEL", value: "+82‑2‑857‑1101", note: "Main line", href: "tel:+82285711101" },
+  { label: "FAX", value: "+82‑2‑6009‑9031", note: "Fax" },
   {
     label: "E-MAIL",
     value: "sales@gemiso.com",
