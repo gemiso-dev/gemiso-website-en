@@ -8,7 +8,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "News",
   description:
-    "Press coverage, press releases, and product news from Geminisoft — all in one place.",
+    "Press coverage, press releases, and product news from GEMISO — all in one place.",
   path: "/news/",
 });
 
@@ -35,7 +35,7 @@ export default function NewsListPage() {
             </div>
             <h1 className="news-hero__title">Newsroom</h1>
             <p className="news-hero__desc">
-              Press coverage, press releases, and product news from Geminisoft
+              Press coverage, press releases, and product news from GEMISO
               — all in one place.
             </p>
           </Reveal>

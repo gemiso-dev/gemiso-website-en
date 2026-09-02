@@ -8,7 +8,7 @@
 
 /** 히어로 상단 요약 지표. */
 export const PARTNER_STATS: { v: string; k: string }[] = [
-  { v: "13", k: "Partner Companies" },
+  { v: "14", k: "Partner Companies" },
   { v: "7+ Countries", k: "Global Collaboration" },
   { v: "SRT", k: "International Standards Alliance" },
   { v: "Academia", k: "University Partnerships" },
@@ -60,13 +60,6 @@ export const PARTNER_GROUPS: PartnerGroup[] = [
         logo: "/assets/partners/elecard.png",
       },
       {
-        name: "Masstech",
-        kind: "Media Management",
-        desc: "Cloud-based media asset management and archiving",
-        disp: "www.masstech.com",
-        logo: "/assets/partners/masstech.png",
-      },
-      {
         name: "Nablet",
         kind: "Codec SDK",
         desc: "Broadcast codecs and editing engine components",
@@ -107,6 +100,20 @@ export const PARTNER_GROUPS: PartnerGroup[] = [
         desc: "Broadcast and media technology solutions partner",
         disp: "www.advancedigitaltech.com",
         logo: "/assets/partners/advance-digital-tech.png",
+      },
+      {
+        name: "SFS Media",
+        kind: "Long-term Archive",
+        desc: "Enterprise content archive and storage management across tape, disk, and cloud",
+        disp: "www.sfs-media.com",
+        logo: "/assets/partners/sfs-media.svg",
+      },
+      {
+        name: "Scale Logic",
+        kind: "Shared Storage",
+        desc: "Shared storage and media workflow platforms for production teams",
+        disp: "scalelogicinc.com",
+        logo: "/assets/partners/scale-logic.png",
       },
     ],
   },

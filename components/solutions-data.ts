@@ -77,11 +77,11 @@ export const SOLUTIONS: Solution[] = [
     mock: "grid",
     image: "/assets/solutions/proxima/main.png",
     tagline: "Manage the Full Media Asset Lifecycle",
-    desc: "Proxima manages the entire media pipeline from the moment content arrives — from ingest and transcoding to storage, analysis, and distribution — all in one system developed through Geminisoft's own R&D.",
-    trust: "In production at broadcasters and government agencies in Korea and abroad",
+    desc: "Proxima manages the entire media pipeline from the moment content arrives — from ingest and transcoding to storage, analysis, and distribution — all in one system developed through GEMISO's own R&D.",
+    trust: "In production at broadcast networks and government agencies across Asia and beyond",
     stats: [
       { v: "Under 10 min", k: "Proxy generation for 1 hour of video" },
-      { v: "Korea's first", k: "Web browser-based MAM (2006)" },
+      { v: "2006", k: "Shipping a web browser-based MAM" },
     ],
     features: [
       { t: "Versatile Media Ingest", d: "Supports multiple ingest paths — video servers, DeckLink IO boards, file ingest, and automated watch-folder monitoring." },
@@ -90,7 +90,7 @@ export const SOLUTIONS: Solution[] = [
       { t: "Web-Based Unified Search", d: "Find assets in a web interface as intuitive as a search engine, then double-click to play or edit instantly. No installation required." },
       { t: "Dynamic Metadata Schema", d: "Administrators define content types and metadata to fit each site, and new fields become searchable the moment they are added." },
       { t: "Native NLE Integration", d: "Plugins for Adobe Premiere, Final Cut Pro, and EDIUS send finished edits straight into the MAM." },
-      { t: "AI Analysis Integration", d: "Connects to Geminisoft's MAIA AI to analyze video and generate captions and metadata from STT and object recognition.", ai: true },
+      { t: "AI Analysis Integration", d: "Connects to GEMISO's MAIA AI to analyze video and generate captions and metadata from STT and object recognition.", ai: true },
       { t: "Secure Storage & Archive", d: "Archives to LTO and ODA via the LTFS-based IMArchive, and reduces ransomware risk with object storage." },
     ],
     workflow: ["Ingest", "Proxy & Transcode", "Cataloging", "Search & Metadata", "Production Integration", "Archive & Distribution"],
@@ -148,7 +148,7 @@ export const SOLUTIONS: Solution[] = [
         code: "PROXIMA Search",
         title: "Search & Metadata",
         sub: "Search & Metadata",
-        desc: "Find assets in a web interface as intuitive as any search engine. In 2006, Proxima launched as Korea's first web browser-based MAM.",
+        desc: "Find assets in a web interface as intuitive as any search engine. Proxima shipped as a web browser-based MAM back in 2006, years ahead of the field.",
         points: [
           "Web-based search — double-click a result to play it instantly, then view and edit its metadata.",
           "Dynamic metadata schema — administrators define field types such as text, tree, checkbox, date, and number, and new fields become searchable immediately.",
@@ -208,7 +208,7 @@ export const SOLUTIONS: Solution[] = [
       { t: "Video & Graphics Integration", d: "Search and preview video and graphics in the MAM, request edits, and map finished material to stories." },
       { t: "Playout Automation", d: "Controls video servers, CG, and prompters to take the rundown to air exactly as built, reflecting rundown changes in real time." },
       { t: "Mobile Newsroom", d: "Reporters in the field write and manage stories, search video, and check rundowns from their phones." },
-      { t: "AI Analysis Integration", d: "Connects to Geminisoft's MAIA AI to analyze video and generate captions and metadata from STT and object recognition.", ai: true },
+      { t: "AI Analysis Integration", d: "Connects to GEMISO's MAIA AI to analyze video and generate captions and metadata from STT and object recognition.", ai: true },
     ],
     workflow: ["Planning", "Coverage", "Story Writing", "Desk Approval", "Rundown", "Playout"],
     specs: [
@@ -294,7 +294,7 @@ export const SOLUTIONS: Solution[] = [
     image: "/assets/solutions/talos/sec.png",
     tagline: "Always-On Automated Playout",
     desc: "TALOS automates program schedule management and controls video servers and playout equipment in one APC system. It keeps on-air operations stable and uninterrupted across broadcast channels, playout service providers, internal broadcasts, and YouTube Live.",
-    trust: "On air at major Korean channels",
+    trust: "On air at national broadcast networks",
     stats: [
       { v: "Multi-channel", k: "Simultaneous automated playout" },
       { v: "Dual & triple", k: "Redundant, uninterrupted playout" },

@@ -331,7 +331,7 @@ function MockWaveform() {
   );
 }
 
-const aiTags = ["Anchor", "Studio", "Korean", "English", "News"];
+const aiTags = ["Anchor", "Studio", "Interview", "English", "News"];
 
 function MockAi() {
   return (

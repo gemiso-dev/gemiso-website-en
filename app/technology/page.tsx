@@ -8,7 +8,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Technology",
   description:
-    "From ingest and encoding to media processing, NLE integration, archive, transfer, workflow, and AI — the core technologies Geminisoft has built through in-house R&D.",
+    "From ingest and encoding to media processing, NLE integration, archive, transfer, workflow, and AI — the core technologies GEMISO has built through in-house R&D.",
   path: "/technology/",
 });
 

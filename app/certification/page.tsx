@@ -7,7 +7,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Certifications",
   description:
-    "Geminisoft's core solutions are validated by Grade 1 GS certification — Korea's national software quality standard — and by patents on our source technologies.",
+    "GEMISO's core solutions are validated by Grade 1 GS (Good Software) certification — awarded on independently tested quality criteria — and by patents on our source technologies.",
   path: "/certification/",
 });
 
@@ -35,9 +35,9 @@ export default function CertificationPage() {
             </div>
             <h1 className="hist-hero__title">Proven Technology, Certified Quality</h1>
             <p className="hist-hero__desc">
-              Geminisoft's core solutions are validated by Grade 1 GS
-              certification — Korea's national software quality standard — and
-              by patents on our source technologies.
+              GEMISO's core solutions are validated by Grade 1 GS (Good
+              Software) certification — awarded on independently tested quality
+              criteria — and by patents on our source technologies.
             </p>
           </Reveal>
 
@@ -59,7 +59,7 @@ export default function CertificationPage() {
             <div className="gem-eyebrow gem-eyebrow--mono">
               <span>GS CERTIFICATION · GOOD SOFTWARE</span>
             </div>
-            <h2 className="gem-title">Top Grade in Korea's National Software Quality Certification</h2>
+            <h2 className="gem-title">Top Grade in Accredited Software Quality Certification</h2>
             <p className="gem-lead">
               Our core solutions earned{" "}
               <span className="cert-lead__hl">Grade 1</span> — the highest grade

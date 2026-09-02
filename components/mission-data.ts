@@ -42,7 +42,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     lead:
       "Media technology connects people and builds community through shared ideas and experiences.",
     body:
-      "Geminisoft develops reliable media platform technologies for television and digital platforms. Media connects people beyond time and place, allowing ideas and experiences to be shared.\nGeminisoft builds media technologies that bring people and content together beyond boundaries.",
+      "GEMISO develops reliable media platform technologies for television and digital platforms. Media connects people beyond time and place, allowing ideas and experiences to be shared.\nGEMISO builds media technologies that bring people and content together beyond boundaries.",
     diagram: "people",
     caption: "PEOPLE · Connection & Interaction",
   },
@@ -53,7 +53,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     title: ["Connecting", "Time"],
     lead: "Media technology bridges time, connecting records of the past with the experiences of today.",
     body:
-      "Recorded content does not disappear with time. When rediscovered and reused, it gains new meaning. Old footage and materials carry memory, culture, and experience to future generations.\nGeminisoft builds media archive technologies that preserve content reliably and make past records accessible for the present and the future.",
+      "Recorded content does not disappear with time. When rediscovered and reused, it gains new meaning. Old footage and materials carry memory, culture, and experience to future generations.\nGEMISO builds media archive technologies that preserve content reliably and make past records accessible for the present and the future.",
     diagram: "time",
     caption: "TIME · From the Past to the Future",
     surface: true,
@@ -66,7 +66,7 @@ export const MISSION_PILLARS: MissionPillar[] = [
     lead:
       "Media technology carries cultures, experiences, and ideas beyond physical distance, connecting regions more broadly.",
     body:
-      "Culture and content do not remain in one place. Through media, they reach a wider world, where people share perspectives and experiences, gaining a deeper understanding of different cultures.\nGeminisoft builds media technologies that carry cultures and ideas across regions, platforms, and physical boundaries.",
+      "Culture and content do not remain in one place. Through media, they reach a wider world, where people share perspectives and experiences, gaining a deeper understanding of different cultures.\nGEMISO builds media technologies that carry cultures and ideas across regions, platforms, and physical boundaries.",
     diagram: "places",
     caption: "PLACES · Beyond Boundaries",
   },

@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     template: "%s | GEMISO",
   },
   description:
-    "Geminisoft builds and owns its own media solutions for broadcasting — from ingest and archive to newsroom and automated playout.",
+    "GEMISO builds and owns its own media solutions for broadcasting — from ingest and archive to newsroom and automated playout.",
   openGraph: {
     type: "website",
     siteName: "GEMISO",
     locale: "en_US",
-    images: [{ url: "/assets/geminisoft-logo.png" }],
+    images: [{ url: "/assets/og-cover.png" }],
   },
   twitter: { card: "summary_large_image" },
 };
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* 폰트: Pretendard(본문 한글) + Montserrat(영문 디스플레이) + IBM Plex Mono(모노 캡션) */}
+        {/* Fonts: Plus Jakarta Sans (display) + Roboto (body) + IBM Plex Mono (captions). */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -39,10 +39,6 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
       </head>
       <body>

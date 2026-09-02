@@ -33,3 +33,6 @@ pnpm-debug.log*
 .claude/settings.local.json
 
 temp/
+
+# 분리 작업 전 원본 백업 (저장소에 올리지 않는다)
+_backup-pre-en-separation/

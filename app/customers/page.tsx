@@ -7,7 +7,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Customers",
   description:
-    "From terrestrial and news channels to public institutions, enterprises, education, finance, and broadcasters abroad — Geminisoft's media technology runs in the field every day.",
+    "From terrestrial and news channels to public institutions, enterprises, education, finance, and broadcasters abroad — GEMISO's media technology runs in the field every day.",
   path: "/customers/",
 });
 
@@ -37,7 +37,7 @@ export default function CustomersPage() {
             <p className="hist-hero__desc">
               From terrestrial and news channels to public institutions,
               enterprises, education, finance, and broadcasters abroad —
-              Geminisoft's media technology runs in the field every day.
+              GEMISO's media technology runs in the field every day.
             </p>
           </Reveal>
 

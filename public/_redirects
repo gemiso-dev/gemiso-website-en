@@ -1,0 +1,20 @@
+# Cloudflare Pages redirect rules.
+#
+# The newsroom was retired when gemiso.com became a standalone English site.
+# The route still exists in app/_news (a Next.js private folder, so it is not
+# built) and components/news-data.ts is untouched, which means the pages can be
+# restored later without losing their article IDs.
+#
+# Until then the old article URLs are sent to the homepage so search traffic
+# does not hit a 404.
+#
+# Deliberately NOT redirected to gemiso.co.kr: a 301 to the Korean site tells
+# search engines the two domains are the same property, which is exactly what
+# separating gemiso.com was meant to avoid.
+#
+# If a curated English newsroom is restored later, drop the matching IDs from
+# these rules first — the article IDs are unchanged.
+
+/news       /   301
+/news/      /   301
+/news/*     /   301

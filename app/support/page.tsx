@@ -2,24 +2,20 @@ import Link from "next/link";
 import InquiryForm from "@/components/InquiryForm";
 import Reveal from "@/components/Reveal";
 import { COMPANY } from "@/components/site-config";
-import {
-  SUPPORT_HERO_TAGS,
-  CONTACT_METHODS,
-  OFFICES,
-} from "@/components/support-data";
+import { SUPPORT_HERO_TAGS, CONTACT_METHODS } from "@/components/support-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: "Support",
   description:
-    "Solution consultations and technical support from Geminisoft, a global media technology company. Find phone and email contacts plus our Seoul and Ho Chi Minh City locations.",
+    "Solution consultations and technical support from GEMISO, a global media technology company. Reach sales and technical support by email, or send an inquiry and we will respond within one business day.",
   path: "/support/",
 });
 
 export default function SupportPage() {
   return (
     <>
-      {/* 브레드크럼 */}
+      {/* Breadcrumb */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
@@ -28,7 +24,7 @@ export default function SupportPage() {
         </div>
       </nav>
 
-      {/* 히어로 */}
+      {/* Hero */}
       <section className="hist-hero">
         <div className="gem-container hist-hero__inner">
           <Reveal className="hist-hero__intro">
@@ -38,7 +34,7 @@ export default function SupportPage() {
             </div>
             <h1 className="hist-hero__title">Technical Support & Inquiries</h1>
             <p className="hist-hero__desc">
-              Solution consultations and technical support from Geminisoft, a
+              Solution consultations and technical support from GEMISO, a
               global media technology company. Any question about your broadcast
               workflow is welcome.
             </p>
@@ -54,7 +50,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* 연락처 밴드 */}
+      {/* Contact band */}
       <section className="sup-contact-section">
         <div className="gem-container">
           <div className="hist-eyebrow sup-section-eyebrow">
@@ -86,7 +82,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* 문의 폼 */}
+      {/* Inquiry form */}
       <section id="inquiry" className="inq-section">
         <div className="gem-container inq-grid">
           <Reveal className="inq-intro">
@@ -103,9 +99,10 @@ export default function SupportPage() {
               welcome.
             </p>
             <p className="inq-side-note">
-              For urgent matters, reach us directly at{" "}
-              <a href={COMPANY.telHref}>{COMPANY.tel}</a> or{" "}
-              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>.
+              Prefer email? Reach sales at{" "}
+              <a href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> or
+              technical support at{" "}
+              <a href={`mailto:${COMPANY.techEmail}`}>{COMPANY.techEmail}</a>.
             </p>
           </Reveal>
           <Reveal>
@@ -114,51 +111,7 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* 오피스 */}
-      <section className="sup-offices">
-        <div className="gem-container">
-          <div className="sup-offices__head">
-            <div className="sup-offices__intro">
-              <div className="hist-eyebrow">
-                <span className="hist-eyebrow__tick" />
-                <span className="hist-eyebrow__label hist-eyebrow__label--muted">
-                  OFFICES
-                </span>
-              </div>
-              <h2 className="sup-offices__title">Three Locations Across Seoul and Ho Chi Minh City</h2>
-              <p className="sup-offices__desc">
-                Our headquarters, media control center, and Vietnam
-                representative office support broadcast customers up close.
-              </p>
-            </div>
-          </div>
-
-          <div className="sup-office-grid">
-            {OFFICES.map((o, i) => (
-              <div key={o.name} className="sup-office">
-                <div className="sup-office__top">
-                  <span className="sup-office__tag">{o.tag}</span>
-                  <span className="sup-office__idx">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="sup-office__name">{o.name}</h3>
-                <p className="sup-office__addr">{o.addr}</p>
-                <a
-                  href={o.mapHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sup-office__map"
-                >
-                  View on Map ↗
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA (accent 배경) */}
+      {/* CTA (accent background) */}
       <section className="sol-cta">
         <Reveal className="gem-container sol-cta__grid">
           <div>

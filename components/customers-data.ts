@@ -14,7 +14,7 @@
 /** 히어로 상단 요약 지표. */
 export const CUSTOMER_STATS: { v: string; k: string }[] = [
   { v: "600+", k: "Deployment & Development Projects" },
-  { v: "Nationwide", k: "Major Broadcasters in Operation" },
+  { v: "Tier-1", k: "National Broadcast Networks in Operation" },
   { v: "8+ Countries", k: "Overseas System Deployments" },
   { v: "20+ Years", k: "of Earned Trust" },
 ];

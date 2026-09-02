@@ -8,7 +8,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Mission",
   description:
-    "Under the mission 'Media connecting people, time, and places,' Geminisoft develops media technology.",
+    "Under the mission 'Media connecting people, time, and places,' GEMISO develops media technology.",
   path: "/mission/",
 });
 
@@ -46,7 +46,7 @@ export default function MissionPage() {
             </h1>
             <p className="hist-hero__desc">
               Under the mission ‘Media connecting people, time, and places,’
-              Geminisoft develops media technology.
+              GEMISO develops media technology.
             </p>
           </Reveal>
 

@@ -30,7 +30,7 @@ export type DetailYear = {
 export const HISTORY_DETAIL: DetailYear[] = [
   {
     year: "2002",
-    items: [{ month: "10", text: "Founded Geminisoft Co., Ltd." }],
+    items: [{ month: "10", text: "Founded GEMISO Co., Ltd." }],
   },
   {
     year: "2003",

@@ -91,14 +91,14 @@ export default function SiteHeader() {
           <Link
             href="/"
             className="gem-logo"
-            aria-label="Geminisoft home"
+            aria-label="GEMISO home"
             onClick={closeMenu}
           >
             <Image
-              src={asset("/assets/geminisoft-logo.png")}
-              alt="Geminisoft"
-              width={136}
-              height={28}
+              src={asset("/assets/gemiso-logo.svg")}
+              alt="GEMISO"
+              width={154}
+              height={36}
               priority
             />
           </Link>
@@ -166,13 +166,6 @@ export default function SiteHeader() {
           </nav>
 
           <div className="gem-header__actions">
-            <span className="gem-lang gem-hide-sm">
-              <a href="https://www.gemiso.co.kr">KOR</a>
-              <span className="gem-sep">|</span>
-              <a href="#" className="gem-lang__current">
-                ENG
-              </a>
-            </span>
             <Link href="/support/#inquiry" className="gem-header__cta gem-hide-sm">
               Contact Us
             </Link>

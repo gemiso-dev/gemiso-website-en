@@ -1,7 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/components/site-config";
 import { SOLUTION_SLUGS } from "@/components/solutions-data";
-import { NEWS_ARTICLES } from "@/components/news-data";
 
 // output: "export"에서 정적 sitemap.xml로 출력한다.
 export const dynamic = "force-static";
@@ -15,7 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/certification/",
     "/customers/",
     "/technology/",
-    "/news/",
     "/support/",
     "/partners/",
   ];
@@ -28,11 +26,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/solutions/${s}/`,
   }));
 
-  const newsEntries: MetadataRoute.Sitemap = NEWS_ARTICLES.map((n) => ({
-    url: `${SITE_URL}/news/${n.id}/`,
-    // 발행일(YYYY.MM.DD)을 ISO(YYYY-MM-DD)로 변환해 신선도 신호로 사용.
-    lastModified: n.date.replace(/\./g, "-"),
-  }));
-
-  return [...staticEntries, ...solutionEntries, ...newsEntries];
+  // Newsroom is hidden while gemiso.com runs as a standalone English site.
+  // The route lives in app/_news (a Next.js private folder, so it is not
+  // built) and news-data.ts is untouched — rename the folder back and restore
+  // the nav/footer/sitemap entries to bring it back.
+  return [...staticEntries, ...solutionEntries];
 }

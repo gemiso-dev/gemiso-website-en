@@ -11,7 +11,7 @@ export const CERT_STATS: { v: string; k: string }[] = [
   { v: "5", k: "GS Certifications, Grade 1" },
   { v: "2", k: "Registered Patents" },
   { v: "Grade 1", k: "Highest GS Certification Grade" },
-  { v: "TTA", k: "Nationally Accredited (Telecommunications Technology Association)" },
+  { v: "TTA", k: "Certified by the Telecommunications Technology Association" },
 ];
 
 /** GS 인증(1등급) 솔루션 목록. */

@@ -11,8 +11,8 @@
 import type { Metadata } from "next";
 
 const SITE_NAME = "GEMISO";
-/** 임시 OG 대표 이미지(로고). 추후 1200×630 전용 이미지로 교체. */
-const DEFAULT_OG_IMAGE = "/assets/geminisoft-logo.png";
+/** Default OG image — 1200×630 brand cover. */
+const DEFAULT_OG_IMAGE = "/assets/og-cover.png";
 
 type PageMeta = {
   /** 페이지 고유 제목(접미사 "| GEMISO" 없이) — 예: "연혁" */

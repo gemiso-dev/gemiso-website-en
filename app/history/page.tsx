@@ -7,7 +7,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "History",
   description:
-    "From media asset management to newsroom, archive, automated playout, and AI — the road Geminisoft has traveled since its founding in 2002.",
+    "From media asset management to newsroom, archive, automated playout, and AI — the road GEMISO has traveled since its founding in 2002.",
   path: "/history/",
 });
 
@@ -51,7 +51,7 @@ export default function HistoryPage() {
               <span className="hist-eyebrow__tick" />
               <span className="hist-eyebrow__label">About · History</span>
             </div>
-            <h1 className="hist-hero__title">The Geminisoft Journey</h1>
+            <h1 className="hist-hero__title">The GEMISO Journey</h1>
             <p className="hist-hero__desc">
               Since our founding in 2002 — from media asset management to
               newsroom, archive, automated playout, and AI — we have grown

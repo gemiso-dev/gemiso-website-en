@@ -6,7 +6,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Detailed History",
   description:
-    "The complete record of Geminisoft's deployments, development projects, and contracts since 2002, organized by year and month.",
+    "The complete record of GEMISO's deployments, development projects, and contracts since 2002, organized by year and month.",
   path: "/history/detail/",
 });
 

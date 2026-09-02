@@ -29,7 +29,6 @@ export const PRIMARY_NAV: NavItem[] = [
     href: "/technology/",
     children: TECHNOLOGY_NAV,
   },
-  { label: "News", href: "/news/" },
   {
     label: "Support",
     href: "/support/",
@@ -45,13 +44,20 @@ export const PRIMARY_NAV: NavItem[] = [
 export const SITE_URL = "https://www.gemiso.com";
 
 export const COMPANY = {
-  name: "Geminisoft Co., Ltd.",
-  location: "Seoul, South Korea",
-  tel: "+82‑2‑857‑1101",
-  telHref: "tel:+82285711101",
-  fax: "+82‑2‑6009‑9031",
+  name: "GEMISO",
+  /** Sales, quotes, partnerships. */
   email: "sales@gemiso.com",
-  addressLines: ["402 World Cup buk-ro, Mapo-gu", "Seoul, South Korea (03925)"],
+  /** Deployment and operations support. */
+  techEmail: "tech@gemiso.com",
+  /**
+   * Toll-free voice line. Left empty until the US number is live —
+   * every surface that shows a phone number checks `tel` first and
+   * simply omits the field while it is blank.
+   * When the number is ready, fill both values:
+   *   tel: "+1‑800‑000‑0000", telHref: "tel:+18000000000"
+   */
+  tel: "",
+  telHref: "",
 };
 
 export const FOOTER_COLUMNS: { heading: string; links: NavItem[] }[] = [
@@ -73,7 +79,6 @@ export const FOOTER_COLUMNS: { heading: string; links: NavItem[] }[] = [
     links: [
       { label: "Support", href: "/support/" },
       { label: "Partners", href: "/partners/" },
-      { label: "News", href: "/news/" },
     ],
   },
 ];

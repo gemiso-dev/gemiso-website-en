@@ -6,18 +6,14 @@ import HeroScrollButton from "@/components/HeroScrollButton";
 import CustomerMarquee from "@/components/CustomerMarquee";
 import CopyField from "@/components/CopyField";
 import { COMPANY, asset } from "@/components/site-config";
-import { NEWS_ARTICLES } from "@/components/news-data";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: "Broadcasting, Rebuilt with AX — AI Media Platform for Broadcasters",
   description:
-    "Geminisoft delivers AX technology for AI-driven, platform-aware broadcasting. We build new media business models that put broadcasters shoulder to shoulder with global OTT services.",
+    "GEMISO delivers AX technology for AI-driven, platform-aware broadcasting. We build new media business models that put broadcasters shoulder to shoulder with global OTT services.",
   path: "/",
 });
-
-/** 홈 뉴스 섹션 — 뉴스룸 데이터의 최신 3건과 연동. */
-const LATEST_NEWS = NEWS_ARTICLES.slice(0, 3);
 
 /* ----------------------------------------------------------------- 데이터 */
 
@@ -145,7 +141,7 @@ const STATS = [
   { num: "20+ yrs", label: "Of accumulated media engineering" },
   { num: "Grade 1", label: "GS Certification — Proxima v3.0" },
   { num: "2015", label: "Named a Hidden Champion in broadcast equipment" },
-  { num: "Nationwide", label: "In operation at Korea's major broadcasters" },
+  { num: "Tier-1", label: "In operation at national broadcast networks" },
 ];
 
 const TECH_ITEMS = [
@@ -214,7 +210,7 @@ export default function Home() {
             <ScrollHighlightText
               className="gem-statement__text"
               lines={[
-                "Everyone talks about AX, but Geminisoft proves it in the field.",
+                "Everyone talks about AX, but GEMISO proves it in the field.",
                 "Built on technology trusted by leading broadcasters,",
                 "we're shaping what's next in broadcasting with AI.",
               ]}
@@ -248,7 +244,7 @@ export default function Home() {
             </h2>
             <p className="gem-lead">
               From camera to playout and archive, every step is powered by
-              proprietary solutions developed by Geminisoft.
+              proprietary solutions developed by GEMISO.
             </p>
           </Reveal>
 
@@ -283,9 +279,9 @@ export default function Home() {
         <div className="gem-container">
           <Reveal className="gem-section__head">
             <div className="gem-eyebrow">
-              <span>Why Geminisoft</span>
+              <span>Why GEMISO</span>
             </div>
-            <h2 className="gem-title">Why Broadcasters Choose Geminisoft</h2>
+            <h2 className="gem-title">Why Broadcasters Choose GEMISO</h2>
           </Reveal>
 
           <Reveal as="div" className="gem-reasons">
@@ -318,7 +314,7 @@ export default function Home() {
             </div>
             <h2 className="gem-title">Proprietary Core Media Technologies</h2>
             <p className="gem-lead">
-              Geminisoft develops and owns the core media technologies behind
+              GEMISO develops and owns the core media technologies behind
               its solutions — spanning media asset management, archiving, and
               newsroom workflows.
             </p>
@@ -336,62 +332,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 뉴스 */}
-      <section id="news" className="gem-section">
-        <div className="gem-container">
-          <Reveal className="gem-news__head">
-            <div>
-              <div className="gem-eyebrow">
-                <span>News</span>
-              </div>
-              <h2 className="gem-title">The Latest from Geminisoft</h2>
-            </div>
-            <Link href="/news/" className="gem-news__more">
-              View All News →
-            </Link>
-          </Reveal>
-
-          <Reveal as="div" className="gem-news-grid">
-            {LATEST_NEWS.map((n) => (
-              <Link
-                key={n.id}
-                href={`/news/${n.id}/`}
-                className="gem-news-card"
-              >
-                <div className="gem-news-card__thumb">
-                  {n.image ? (
-                    /* eslint-disable-next-line @next/next/no-img-element */
-                    <img src={asset(n.image)} alt={n.title} loading="lazy" />
-                  ) : (
-                    <span className="news-thumb__ph">GEMISO NEWS</span>
-                  )}
-                </div>
-                <div className="gem-news-card__body">
-                  <div className="gem-news-card__meta">
-                    <span className="gem-news-card__cat">
-                      {n.outlet || "Press Release"}
-                    </span>
-                    {n.date && (
-                      <span className="gem-news-card__date">{n.date}</span>
-                    )}
-                  </div>
-                  <h3 className="gem-news-card__title">{n.title}</h3>
-                  <p className="gem-news-card__desc">{n.summary}</p>
-                  <span className="gem-arrow">
-                    Read More
-                    <span className="gem-arrow-slide" aria-hidden="true">
-                      <span>→</span>
-                      <span>→</span>
-                    </span>
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 컨택트 CTA */}
+      {/* Contact CTA */}
       <section id="contact" className="gem-contact">
         <Reveal className="gem-container gem-contact__grid">
           <div>
@@ -422,34 +363,45 @@ export default function Home() {
 
           <div className="gem-contact__info">
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Phone</div>
-              <div className="gem-info-cell__value">{COMPANY.tel}</div>
-            </div>
-            <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Email</div>
+              <div className="gem-info-cell__label">Sales</div>
               <CopyField
                 text={COMPANY.email}
-                label="Email"
+                label="Sales email"
                 href={`mailto:${COMPANY.email}`}
               >
                 {COMPANY.email}
               </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Fax</div>
-              <div className="gem-info-cell__value">{COMPANY.fax}</div>
+              <div className="gem-info-cell__label">Technical Support</div>
+              <CopyField
+                text={COMPANY.techEmail}
+                label="Support email"
+                href={`mailto:${COMPANY.techEmail}`}
+              >
+                {COMPANY.techEmail}
+              </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Address</div>
-              <CopyField
-                text={COMPANY.addressLines.join(" ")}
-                label="Address"
-                small
-              >
-                {COMPANY.addressLines[0]}
+              <div className="gem-info-cell__label">Hours</div>
+              <div className="gem-info-cell__value gem-info-cell__value--sm">
+                9 AM – 6 PM Pacific Time
                 <br />
-                {COMPANY.addressLines[1]}
-              </CopyField>
+                Monday–Friday
+              </div>
+            </div>
+            {/* Takes the toll-free number as soon as COMPANY.tel is filled in. */}
+            <div className="gem-info-cell">
+              <div className="gem-info-cell__label">
+                {COMPANY.tel ? "Phone" : "Response"}
+              </div>
+              <div className="gem-info-cell__value gem-info-cell__value--sm">
+                {COMPANY.tel ? (
+                  <a href={COMPANY.telHref}>{COMPANY.tel}</a>
+                ) : (
+                  "Within 1 business day"
+                )}
+              </div>
             </div>
           </div>
         </Reveal>

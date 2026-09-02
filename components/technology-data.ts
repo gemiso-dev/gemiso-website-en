@@ -58,7 +58,7 @@ export const TECHNOLOGIES: Technology[] = [
         desc: "Controls commercial video servers such as Harmonic, Grass Valley, and Imagine to acquire media. For customers who need only ingest management, it also integrates with third-party MAM and storage systems.",
         points: [
           "Commercial video server control — Controls major video servers such as Harmonic, Grass Valley, and Imagine via VDCP and transfers media over FTP.",
-          "Flexible integration — Delivers ingest results to Geminisoft MAM via RESTful + MXF, and to third-party MAM via XML + MXF.",
+          "Flexible integration — Delivers ingest results to GEMISO MAM via RESTful + MXF, and to third-party MAM via XML + MXF.",
           "Standalone ingest — The ingest management function can be deployed on its own, running on top of your existing MAM and storage.",
         ],
         image: "/assets/technology/ingest/ariel-ingest-manager.jpg",
@@ -195,7 +195,7 @@ export const TECHNOLOGIES: Technology[] = [
     summary:
       "Third-party archive solution integration and our in-house IMArchive keep media stored safely and economically.",
     intro:
-      "Keeping media data only on shared storage such as SAN or NAS makes instant access convenient, but drives up costs and increases the risk of data loss. Geminisoft overcomes this limitation through archive solution integration, storing media safely and economically.",
+      "Keeping media data only on shared storage such as SAN or NAS makes instant access convenient, but drives up costs and increases the risk of data loss. GEMISO overcomes this limitation through archive solution integration, storing media safely and economically.",
     blocks: [
       {
         code: "3rd Party Archive",
@@ -203,7 +203,7 @@ export const TECHNOLOGIES: Technology[] = [
         sub: "3rd Party Integration",
         desc: "Integrates with a wide range of external archive solutions, layering directly on top of the archive environment already in operation.",
         points: [
-          "Multi-solution support — Integrates with Oracle DIVArchive, Masstech-SGL FlashNet, Quantum StorNext (Artico), and SpectraLogic BlackPearl.",
+          "Multi-solution support — Integrates with Oracle DIVArchive, SGL FlashNet, Quantum StorNext (Artico), and SpectraLogic BlackPearl.",
           "Leverage existing environments — Connects your deployed archive solution to the MAM workflow without replacing it.",
           "Workflow automation — Automates archiving and restoration through workflows.",
         ],
@@ -213,7 +213,7 @@ export const TECHNOLOGIES: Technology[] = [
         code: "IMArchive",
         title: "In-House Archive Platform IMArchive",
         sub: "In-house Archive Platform",
-        desc: "An archive platform developed in-house by Geminisoft. Stores media on a range of media types, from LTFS-based tape to ODA.",
+        desc: "An archive platform developed in-house by GEMISO. Stores media on a range of media types, from LTFS-based tape to ODA.",
         points: [
           "LTFS-based archiving — Archives media to LTFS libraries from Quantum, Oracle, and others.",
           "ODA archiving — Uses SONY ODA hardware to store media on optical disc.",

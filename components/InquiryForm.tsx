@@ -83,7 +83,7 @@ export default function InquiryForm() {
 
   return (
     <form className="inq-form" onSubmit={handleSubmit}>
-      {/* 허니팟 — 사람에게는 보이지 않는 칸. 봇이 채우면 제출을 버린다. */}
+      {/* Honeypot — invisible to people. If a bot fills it, the submit is dropped. */}
       <div className="inq-hp" aria-hidden="true">
         <label>
           Website
@@ -147,7 +147,7 @@ export default function InquiryForm() {
           type="tel"
           className="inq-input"
           maxLength={30}
-          placeholder="+82-2-0000-0000"
+          placeholder="+1 555 000 0000"
           autoComplete="tel"
         />
       </div>

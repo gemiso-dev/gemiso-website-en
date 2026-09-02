@@ -7,7 +7,7 @@ import { pageMetadata } from "@/components/seo";
 export const metadata = pageMetadata({
   title: "Partners",
   description:
-    "Geminisoft partners with world-class media technology companies, international standards alliances, and universities to build a better broadcast media environment together.",
+    "GEMISO partners with world-class media technology companies, international standards alliances, and universities to build a better broadcast media environment together.",
   path: "/partners/",
 });
 
@@ -35,7 +35,7 @@ export default function PartnersPage() {
             </div>
             <h1 className="hist-hero__title">Building the Media Ecosystem Together</h1>
             <p className="hist-hero__desc">
-              Geminisoft partners with world-class media technology companies,
+              GEMISO partners with world-class media technology companies,
               international standards alliances, and universities to build a
               better broadcast media environment together.
             </p>

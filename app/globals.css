@@ -1,6 +1,6 @@
 /* =========================================================================
    Gemiso 디자인 시스템 — 공통 토큰 & 레이아웃
-   Carbon 계열(IBM Plex Mono + Pretendard, accent #0f62fe)의 미니멀 그리드.
+   Carbon 계열(IBM Plex Mono + Pretendard, accent #6a35e8)의 미니멀 그리드.
    페이지별 콘텐츠는 이 위에서 조합한다.
    ========================================================================= */
 
@@ -15,8 +15,8 @@
   --gem-border: #e0e0e0; /* 1px 구획선 */
   --gem-border-strong: #161616;
 
-  --gem-accent: #0f62fe;
-  --gem-accent-strong: #0043ce;
+  --gem-accent: #6a35e8;
+  --gem-accent-strong: #5526c4;
   --gem-on-accent: #ffffff;
 
   /* 인터랙션 모션 — 대칭형 ease-in-out (천천히 → 빨라짐 → 다시 감속) */
@@ -393,7 +393,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   gap: 10px;
 }
 .gem-logo img {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
 }
@@ -623,10 +623,9 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   max-width: 340px;
 }
 .gem-footer__brand img {
-  height: 28px;
+  height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 .gem-footer__tagline {
   margin-top: 16px;
@@ -810,8 +809,8 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
     ),
     radial-gradient(
       80% 120% at 88% 0%,
-      rgba(15, 98, 254, 0.1),
-      rgba(15, 98, 254, 0) 55%
+      rgba(106, 53, 232, 0.1),
+      rgba(106, 53, 232, 0) 55%
     );
   pointer-events: none;
 }
@@ -1762,7 +1761,7 @@ button.gem-copy__text:focus-visible,
 /* 강조 탭 — 비활성 상태에서도 도드라지는 AI 솔루션(MAIA 등) */
 .sol-tab--featured {
   background:
-    linear-gradient(rgba(15, 98, 254, 0.05), rgba(15, 98, 254, 0.05)), #fff;
+    linear-gradient(rgba(106, 53, 232, 0.05), rgba(106, 53, 232, 0.05)), #fff;
 }
 .sol-tab--featured .sol-tab__code {
   color: var(--gem-accent);
@@ -1796,8 +1795,8 @@ button.gem-copy__text:focus-visible,
   inset: 0;
   background: radial-gradient(
     80% 120% at 90% 0%,
-    rgba(15, 98, 254, 0.09),
-    rgba(15, 98, 254, 0) 56%
+    rgba(106, 53, 232, 0.09),
+    rgba(106, 53, 232, 0) 56%
   );
   pointer-events: none;
 }
@@ -2039,7 +2038,7 @@ button.gem-copy__text:focus-visible,
 /* AI 관련 기능 강조 — accent 틴트 배경 + 좌측 accent 바 + AI 뱃지 */
 .sol-feature--ai {
   background:
-    linear-gradient(rgba(15, 98, 254, 0.05), rgba(15, 98, 254, 0.05)), #fff;
+    linear-gradient(rgba(106, 53, 232, 0.05), rgba(106, 53, 232, 0.05)), #fff;
   box-shadow: inset 3px 0 0 var(--gem-accent);
 }
 .sol-feature__badge {
@@ -2954,8 +2953,8 @@ button.gem-copy__text:focus-visible,
   inset: 0;
   background: radial-gradient(
     72% 120% at 92% 0%,
-    rgba(15, 98, 254, 0.08),
-    rgba(15, 98, 254, 0) 58%
+    rgba(106, 53, 232, 0.08),
+    rgba(106, 53, 232, 0) 58%
   );
   pointer-events: none;
 }
@@ -4215,7 +4214,7 @@ a.sup-contact__cell:hover {
 .inq-chip.is-on {
   border-color: var(--gem-accent);
   color: var(--gem-accent);
-  background: #f2f6ff;
+  background: #f3efff;
 }
 .inq-chip__input {
   position: absolute;
@@ -4417,13 +4416,13 @@ a.sup-contact__cell:hover {
   fill: var(--gem-accent);
 }
 .mission-net__dot--mid {
-  fill: #4d8bff;
+  fill: #8f6bf0;
 }
 .mission-net__dot--far {
-  fill: #9bc0ff;
+  fill: #c0b0f7;
 }
 .mission-net__dot--ring {
-  fill: #7ea8ff;
+  fill: #a894f4;
 }
 .mission-net__glow {
   transform-box: fill-box;
@@ -4908,7 +4907,7 @@ a.sup-contact__cell:hover {
 .tech-toc__link:hover {
   color: var(--gem-accent);
   border-color: var(--gem-accent);
-  background: rgba(15, 98, 254, 0.05);
+  background: rgba(106, 53, 232, 0.05);
 }
 
 /* 기술 섹션 목록: 스트로크 대신 연한 회색↔화이트 배경 교차로 구분 */

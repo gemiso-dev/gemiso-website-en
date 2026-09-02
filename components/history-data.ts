@@ -40,7 +40,7 @@ export type HistoryEra = {
 
 /** 히어로 상단 요약 지표. */
 export const HISTORY_STATS: { v: string; k: string }[] = [
-  { v: "2002", k: "Geminisoft founded" },
+  { v: "2002", k: "GEMISO founded" },
   { v: "20+ yrs", k: "Media engineering" },
   { v: "Grade 1 ×3", k: "GS certifications" },
   { v: "8+ countries", k: "Overseas deployments" },
@@ -58,7 +58,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
         year: "2002.10",
         tag: "FOUNDED",
         major: true,
-        title: "Founded Geminisoft Co., Ltd.",
+        title: "Founded GEMISO Co., Ltd.",
         desc: "We began developing digital media software for broadcasting.",
       },
       {
@@ -148,7 +148,7 @@ export const HISTORY_ERAS: HistoryEra[] = [
   {
     range: "2014 — 2018",
     title: "Localization and Recognition",
-    desc: "Partnering with global standards and earning official recognition for our technology, we expanded adoption across major Korean broadcasters and overseas.",
+    desc: "Partnering with global standards and earning official recognition for our technology, we expanded adoption across major broadcast networks and into overseas markets.",
     items: [
       {
         year: "2014.01",
