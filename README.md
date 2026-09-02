@@ -108,3 +108,4 @@ next.config.mjs           정적 export + base path 분기
 - `public/` 의 이미지를 직접 참조할 때 base path가 필요하면
   `process.env.NEXT_PUBLIC_BASE_PATH` 를 접두어로 붙이세요.
   (`next/link`, `next/image` 는 base path가 자동 적용됩니다.)
+   
