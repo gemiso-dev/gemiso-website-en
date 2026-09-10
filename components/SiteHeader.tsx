@@ -28,6 +28,7 @@ function isNavActive(item: NavItem, pathname: string): boolean {
  */
 export default function SiteHeader() {
   const pathname = usePathname();
+  const isHome = stripSlash(pathname || "/") === "/";
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
@@ -84,7 +85,9 @@ export default function SiteHeader() {
     <>
       {/* sticky 헤더 */}
       <header
-        className={`gem-header${scrolled ? " is-scrolled" : ""}`}
+        className={`gem-header${scrolled ? " is-scrolled" : ""}${
+          isHome ? " gem-header--home" : ""
+        }`}
         id="top"
       >
         <div className="gem-container gem-header__inner">
@@ -95,7 +98,11 @@ export default function SiteHeader() {
             onClick={closeMenu}
           >
             <Image
-              src={asset("/assets/gemiso-logo.svg")}
+              src={asset(
+                isHome
+                  ? "/assets/gemiso-logo-invert.svg"
+                  : "/assets/gemiso-logo.svg",
+              )}
               alt="GEMISO"
               width={154}
               height={36}

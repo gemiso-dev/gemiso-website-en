@@ -160,7 +160,7 @@ const TECH_ITEMS = [
 
 export default function Home() {
   return (
-    <>
+    <div className="gem-home">
       {/* 히어로 */}
       <section
         className="gem-hero gem-hero--center"
@@ -389,6 +389,6 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }

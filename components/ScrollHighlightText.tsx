@@ -31,7 +31,7 @@ export default function ScrollHighlightText({ lines, className }: Props) {
         const wEl = els[i];
         if (!wEl) continue;
         const fill = Math.max(0, Math.min(1, (active - i) / SOFT));
-        wEl.style.color = `rgba(22, 22, 22, ${(DIM + (1 - DIM) * fill).toFixed(3)})`;
+        wEl.style.color = `rgba(245, 245, 247, ${(DIM + (1 - DIM) * fill).toFixed(3)})`;
       }
     };
 

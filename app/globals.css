@@ -5002,3 +5002,143 @@ a.sup-contact__cell:hover {
 .sol-hero__code {
   font-family: var(--gem-font-display);
 }
+
+/* =========================================================================
+   홈 — 다크 테마 (랜딩 페이지 전용)
+   .gem-home으로 감싼 홈 콘텐츠 안에서만 디자인 토큰을 다시 정의해,
+   다른 페이지(같은 클래스 재사용 포함)는 기존 라이트 테마를 그대로 유지한다.
+   ========================================================================= */
+.gem-home {
+  --gem-bg: #0a0a0d;
+  --gem-surface: #141418;
+  --gem-elevated: #1c1c23;
+  --gem-fg: #f5f5f7;
+  --gem-muted: #a8a8b0;
+  --gem-subtle: #82828c;
+  --gem-faint: #6e6e77;
+  --gem-border: rgba(255, 255, 255, 0.14);
+  --gem-border-strong: #f5f5f7;
+  --gem-accent: #8b5cf6;
+  --gem-accent-strong: #a78bfa;
+  --gem-on-accent: #ffffff;
+  background: var(--gem-bg);
+  color: var(--gem-fg);
+}
+
+.gem-home #solutions {
+  background: var(--gem-bg);
+}
+.gem-home .gem-section--alt {
+  background: var(--gem-surface);
+}
+.gem-home .gem-card {
+  background: var(--gem-elevated);
+}
+.gem-home .gem-card:hover {
+  background: #242430;
+}
+.gem-home .gem-grid-lines {
+  background: transparent;
+}
+.gem-home .gem-tech {
+  background: var(--gem-elevated);
+}
+
+/* 히어로 — 이미지·흰 그라데이션 대신 다크 배경 + accent 글로우("eye candy") */
+.gem-home .gem-hero::before {
+  background: radial-gradient(
+    80% 120% at 88% 0%,
+    rgba(139, 92, 246, 0.22),
+    rgba(139, 92, 246, 0) 55%
+  );
+}
+.gem-home .gem-hero--center {
+  background-image: radial-gradient(
+      60% 55% at 12% 10%,
+      rgba(139, 92, 246, 0.35),
+      transparent 60%
+    ),
+    radial-gradient(55% 45% at 92% 5%, rgba(34, 211, 238, 0.16), transparent 60%),
+    linear-gradient(to bottom, transparent 70%, var(--gem-bg) 100%);
+  background-size: 100% 100%;
+}
+@media (max-width: 860px) {
+  .gem-home .gem-hero--center {
+    background-image: radial-gradient(
+        70% 45% at 20% 8%,
+        rgba(139, 92, 246, 0.32),
+        transparent 60%
+      ),
+      radial-gradient(60% 40% at 100% 0%, rgba(34, 211, 238, 0.14), transparent 60%),
+      linear-gradient(to bottom, transparent 75%, var(--gem-bg) 100%);
+    background-size: 100% 100%;
+  }
+}
+/* 카피 뒤 흰 후광(원래는 배경 일러스트 위 가독성용) — 다크 배경에서는 불필요 */
+.gem-home .gem-hero__grid--center > .gem-reveal::before {
+  background: none;
+}
+
+/* 홈 헤더 — 다크 히어로 위에서도 보이도록 로고·내비를 라이트 톤으로 (로고 이미지 교체는
+   SiteHeader.tsx에서 처리, 여기서는 텍스트·아이콘 색상만) */
+.gem-header--home .gem-nav__link,
+.gem-header--home .gem-menu-btn span {
+  color: #f5f5f7;
+}
+.gem-header--home .gem-nav__link:hover {
+  color: #b8b8c2;
+}
+.gem-header--home.is-scrolled {
+  background: rgba(10, 10, 13, 0.75);
+}
+.gem-header--home .gem-mobile-menu {
+  background: #0a0a0d;
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+.gem-header--home .gem-mobile-menu a {
+  color: #f5f5f7;
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+.gem-header--home .gem-mobile-menu__sub {
+  color: #a8a8b0;
+}
+
+/* 히어로 배지("Broadcast AI Transformation Partner") — 톤다운된 회색 텍스트 대신
+   accent 틴트 필 배지로, 어두운 배경에서도 시선을 끌도록 */
+.gem-home .gem-eyebrow--badge > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 20px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.14);
+  border: 1px solid rgba(139, 92, 246, 0.45);
+  color: #c9b6ff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.gem-home .gem-eyebrow--badge > span::before {
+  content: "";
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #8b5cf6;
+  box-shadow: 0 0 10px 2px rgba(139, 92, 246, 0.7);
+}
+@media (max-width: 860px) {
+  .gem-home .gem-eyebrow--badge > span {
+    padding: 8px 16px;
+    font-size: 13.5px;
+  }
+}
+
+/* 고객사 마키 — 어두운 배경에서 로고가 묻히지 않도록 밝은 카드로 분리 */
+.gem-home .gem-logo-cell {
+  margin-right: 20px;
+  background: #f2f2f4;
+  border-radius: 12px;
+}
+.gem-home .gem-logo-cell__name {
+  color: #3d3d44;
+}
