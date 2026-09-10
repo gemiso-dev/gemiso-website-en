@@ -2,13 +2,13 @@
 
 /**
  * 히어로 하단 스크롤 화살표.
- * 클릭 시 스테이트먼트 섹션의 최상단이 sticky 헤더 바로 아래(화면 최상단)에
+ * 클릭 시 다음 섹션(솔루션)의 최상단이 sticky 헤더 바로 아래(화면 최상단)에
  * 정확히 맞도록 스크롤한다.
  */
 export default function HeroScrollButton() {
   const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const sec = document.getElementById("statement");
+    const sec = document.getElementById("solutions");
     if (!sec) return;
     const headerH =
       parseInt(
@@ -23,7 +23,7 @@ export default function HeroScrollButton() {
 
   return (
     <a
-      href="#statement"
+      href="#solutions"
       className="gem-hero__scroll"
       aria-label="Scroll down"
       onClick={onClick}

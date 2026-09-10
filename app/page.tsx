@@ -1,7 +1,5 @@
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import ScrollHighlightText from "@/components/ScrollHighlightText";
 import HeroScrollButton from "@/components/HeroScrollButton";
 import CustomerMarquee from "@/components/CustomerMarquee";
 import CopyField from "@/components/CopyField";
@@ -25,57 +23,57 @@ const SOLUTIONS: {
   /** true면 목록에서 숨긴다(코드는 유지, 플래그만 제거하면 복구). */
   hidden?: boolean;
 }[] = [
-  {
-    num: "01",
-    tag: "PROXIMA",
-    title: "Media Asset Management",
-    desc: "Manage media assets from ingest to distribution with software codecs and NLE integration.",
-  },
-  {
-    num: "02",
-    tag: "ZODIAC",
-    title: "Newsroom (NRCS)",
-    desc: "Connect newsroom workflows across desktop and mobile, from planning and script writing to rundown creation and playout.",
-  },
-  {
-    num: "03",
-    tag: "TALOS",
-    title: "Automated Playout (APC)",
-    desc: "Automate program schedules and video server control in one APC system for stable on-air operations.",
-  },
-  {
-    num: "04",
-    tag: "EMOTION",
-    title: "Radio",
-    desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
-    // 현재 미취급 솔루션 — 숨김. 복구하려면 이 줄을 지운다.
-    hidden: true,
-  },
-  {
-    num: "05",
-    tag: "WINNER-S",
-    title: "Audio File System",
-    desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
-  },
-  {
-    num: "06",
-    tag: "MAIA",
-    title: "AI Technology",
-    desc: "Generate metadata and subtitles with broadcast-trained AI, making media libraries fully searchable.",
-  },
-  {
-    num: "07",
-    tag: "MYMY",
-    title: "Content Archive",
-    desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
-  },
-  {
-    num: "08",
-    tag: "G-SAM",
-    title: "Content Distribution",
-    desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
-  },
-];
+    {
+      num: "01",
+      tag: "PROXIMA",
+      title: "Media Asset Management",
+      desc: "Manage media assets from ingest to distribution with software codecs and NLE integration.",
+    },
+    {
+      num: "02",
+      tag: "ZODIAC",
+      title: "Newsroom (NRCS)",
+      desc: "Connect newsroom workflows across desktop and mobile, from planning and script writing to rundown creation and playout.",
+    },
+    {
+      num: "03",
+      tag: "TALOS",
+      title: "Automated Playout (APC)",
+      desc: "Automate program schedules and video server control in one APC system for stable on-air operations.",
+    },
+    {
+      num: "04",
+      tag: "EMOTION",
+      title: "Radio",
+      desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
+      // 현재 미취급 솔루션 — 숨김. 복구하려면 이 줄을 지운다.
+      hidden: true,
+    },
+    {
+      num: "05",
+      tag: "WINNER-S",
+      title: "Audio File System",
+      desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
+    },
+    {
+      num: "06",
+      tag: "MAIA",
+      title: "AI Technology",
+      desc: "Generate metadata and subtitles with broadcast-trained AI, making media libraries fully searchable.",
+    },
+    {
+      num: "07",
+      tag: "MYMY",
+      title: "Content Archive",
+      desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
+    },
+    {
+      num: "08",
+      tag: "G-SAM",
+      title: "Content Distribution",
+      desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
+    },
+  ];
 
 const REASONS = [
   {
@@ -161,18 +159,9 @@ const TECH_ITEMS = [
 export default function Home() {
   return (
     <div className="gem-home">
-      {/* 히어로 */}
-      <section
-        className="gem-hero gem-hero--center"
-        style={
-          {
-            // 데스크탑/모바일 배경을 CSS 변수로 넘겨 globals.css에서 미디어쿼리로 갈아끼운다.
-            "--hero-bg": `url(${asset("/assets/hero/hero-bg5.webp")})`,
-            "--hero-bg-sm": `url(${asset("/assets/hero/hero-bg5-mobile.webp")})`,
-          } as CSSProperties
-        }
-      >
-        <div className="gem-container gem-hero__grid gem-hero__grid--center">
+      {/* 히어로 (+ 브랜드 스테이트먼트 통합) */}
+      <section className="gem-hero gem-hero--split">
+        <div className="gem-container gem-hero__grid">
           <Reveal>
             <div className="gem-eyebrow gem-eyebrow--badge">
               <span>Broadcast AI Transformation Partner</span>
@@ -180,26 +169,16 @@ export default function Home() {
             <h1 className="gem-hero__title">
               Your AI Broadcast Transformation Partner
               <br />
-              A Quarter Century Of Creative Innovation
+              <span className="gem-hero__hl">
+                A Quarter Century Of Creative Innovation
+              </span>
             </h1>
-          </Reveal>
-        </div>
-        <HeroScrollButton />
-      </section>
-
-      {/* 브랜드 스테이트먼트 (토스 스타일 대형 문장) */}
-      <section id="statement" className="gem-statement">
-        <div className="gem-container">
-          <Reveal>
-            <ScrollHighlightText
-              className="gem-statement__text"
-              lines={[
-                "Built on technology trusted by leading broadcasters,",
-                "we're shaping what's next in broadcasting workflows with AI.",
-              ]}
-            />
-            <div className="gem-statement__actions">
-              <a href="#solutions" className="gem-btn gem-btn--link">
+            <p className="gem-hero__desc">
+              Built on technology trusted by leading broadcasters, we&apos;re
+              shaping what&apos;s next in broadcasting workflows with AI.
+            </p>
+            <div className="gem-hero__actions">
+              <a href="#solutions" className="gem-btn gem-btn--outline">
                 Explore Solutions
                 <span className="gem-arrow-slide" aria-hidden="true">
                   <span>→</span>
@@ -207,12 +186,21 @@ export default function Home() {
                 </span>
               </a>
             </div>
-            {/* 고객사 롤링 배너 — Explore Solutions 버튼 아래 */}
-            <div className="gem-marquee gem-marquee--inline" aria-label="Customers">
-              <CustomerMarquee />
-            </div>
+          </Reveal>
+
+          <Reveal className="gem-hero__media">
+            <video
+              className="gem-hero__video"
+              src={asset("/assets/hero/landing-video.mp4")}
+              autoPlay
+              muted
+              loop
+              playsInline
+              aria-hidden="true"
+            />
           </Reveal>
         </div>
+        <HeroScrollButton />
       </section>
 
       {/* 솔루션 */}
@@ -270,8 +258,10 @@ export default function Home() {
           <Reveal as="div" className="gem-reasons">
             {REASONS.map((r, i) => (
               <div key={i} className="gem-reason">
-                <span className="gem-reason__icon">{r.icon}</span>
-                <h3>{r.title}</h3>
+                <div className="gem-reason__head">
+                  <span className="gem-reason__icon">{r.icon}</span>
+                  <h3>{r.title}</h3>
+                </div>
                 <p>{r.desc}</p>
               </div>
             ))}
@@ -286,7 +276,13 @@ export default function Home() {
             ))}
           </Reveal>
         </div>
+        {/* 고객사 롤링 배너 */}
+        <div className="gem-marquee" aria-label="Customers">
+          <CustomerMarquee />
+        </div>
       </section>
+
+
 
       {/* 기술 */}
       <section className="gem-section gem-section--alt">
