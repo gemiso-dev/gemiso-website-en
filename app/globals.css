@@ -1580,26 +1580,34 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   flex-wrap: wrap;
 }
 .gem-contact__info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .gem-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   background: var(--gem-accent);
-  padding: 22px;
+  padding: 16px 20px;
   min-width: 0;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.22);
   transition: border-color 0.2s var(--gem-ease), transform 0.2s var(--gem-ease);
 }
 .gem-info-cell:hover {
-  transform: translateY(-3px);
+  transform: translateX(3px);
+}
+/* Sales·Technical Support — 즉시 연락 가능한 행동이므로 테두리만 살짝 강조 (크기는 동일 유지) */
+.gem-info-cell--primary {
+  border-color: rgba(255, 255, 255, 0.3);
 }
 .gem-info-cell__head {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 12px;
+  flex: none;
+  width: 190px;
 }
 .gem-info-cell__icon {
   display: inline-flex;
@@ -1621,6 +1629,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   font-weight: 700;
   letter-spacing: 0;
   color: #fff;
+  white-space: nowrap;
 }
 .gem-info-cell__value {
   margin-top: 8px;
@@ -5130,16 +5139,21 @@ a.sup-contact__cell:hover {
   background: radial-gradient(ellipse 90% 100% at 50% 0%, #3d2278 0%, #1e1448 45%, #0f0a26 100%);
 }
 .gem-home .gem-info-cell {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-color: rgba(255, 255, 255, 0.22);
   box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 .gem-home .gem-info-cell:hover {
-  border-color: rgba(255, 255, 255, 0.38);
-  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.13);
   box-shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+.gem-home .gem-info-cell--primary {
+  background: rgba(255, 255, 255, 0.1);
 }
 .gem-home .gem-info-cell__icon {
   background: rgba(255, 255, 255, 0.1);

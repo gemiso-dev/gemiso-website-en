@@ -449,7 +449,7 @@ export default function Home() {
           </div>
 
           <div className="gem-contact__info">
-            <div className="gem-info-cell">
+            <div className="gem-info-cell gem-info-cell--primary">
               <div className="gem-info-cell__head">
                 <span className="gem-info-cell__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -467,7 +467,7 @@ export default function Home() {
                 {COMPANY.email}
               </CopyField>
             </div>
-            <div className="gem-info-cell">
+            <div className="gem-info-cell gem-info-cell--primary">
               <div className="gem-info-cell__head">
                 <span className="gem-info-cell__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
