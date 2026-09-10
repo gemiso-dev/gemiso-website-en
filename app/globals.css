@@ -947,7 +947,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   transform: translateY(-24px);
 }
 .gem-hero__grid--center > .gem-reveal {
-  max-width: 820px;
+  max-width: 1180px;
   position: relative;
 }
 /* 카피 뒤 흰 후광 — 배경 3D 위에서도 텍스트 가독성 확보 */

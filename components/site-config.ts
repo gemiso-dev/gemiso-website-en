@@ -37,6 +37,10 @@ export const PRIMARY_NAV: NavItem[] = [
       { label: "Partners", href: "/partners/" },
     ],
   },
+  {
+    label: "Discuss AX Strategy",
+    href: "/support/#inquiry",
+  },
 ];
 
 /** 운영(Cloudflare) 절대 URL 기준. canonical·sitemap·OG 절대경로에 사용한다.

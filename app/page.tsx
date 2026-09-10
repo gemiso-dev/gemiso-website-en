@@ -178,26 +178,10 @@ export default function Home() {
               <span>Broadcast AI Transformation Partner</span>
             </div>
             <h1 className="gem-hero__title">
-              Beyond Legacy —
+              Your AI Broadcast Transformation Partner
               <br />
-              Broadcasting,{" "}
-              <br className="br-sm" />
-              Rebuilt with <span className="gem-hero__hl">AX</span>
+              A Quarter Century Of Creative Innovation
             </h1>
-            <div className="gem-hero__actions">
-              <Link href="/support/#inquiry" className="gem-btn gem-btn--primary">
-                Discuss AX Strategy
-                <span className="gem-arrow-slide" aria-hidden="true">
-                  <span>→</span>
-                  <span>→</span>
-                </span>
-              </Link>
-            </div>
-            {/* 신뢰 문구 임시 숨김
-            <p className="gem-hero__note">
-              Trusted by MBC, YTN, SBS, EBS, KTV, TBS, and Arirang TV.
-            </p>
-            */}
           </Reveal>
         </div>
         <HeroScrollButton />
@@ -210,9 +194,8 @@ export default function Home() {
             <ScrollHighlightText
               className="gem-statement__text"
               lines={[
-                "Everyone talks about AX, but GEMISO proves it in the field.",
                 "Built on technology trusted by leading broadcasters,",
-                "we're shaping what's next in broadcasting with AI.",
+                "we're shaping what's next in broadcasting workflows with AI.",
               ]}
             />
             <div className="gem-statement__actions">
