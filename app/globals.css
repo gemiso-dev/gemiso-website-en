@@ -136,7 +136,7 @@ img {
 }
 
 .gem-eyebrow > span {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--gem-accent);
@@ -204,6 +204,7 @@ img {
   z-index: 0;
   background: var(--gem-accent);
   color: var(--gem-on-accent);
+  border-radius: 999px;
 }
 
 /* 텍스트 링크형 버튼 */
@@ -224,6 +225,7 @@ img {
   z-index: 0;
   background: #fff;
   color: var(--gem-accent);
+  border-radius: 999px;
 }
 .gem-btn--invert:hover {
   color: #fff; /* 어두운 필이 차오르므로 글자는 흰색으로 */
@@ -254,6 +256,7 @@ img {
   position: absolute;
   inset: 0;
   z-index: -1;
+  border-radius: inherit;
   background: var(--gem-accent-strong);
   transform: scaleX(0);
   transform-origin: right center;
@@ -525,6 +528,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   color: #fff;
   font-size: 14px;
   padding: 9px 16px;
+  border-radius: 999px;
 }
 /* 화살표 없는 버튼도 동일한 필 스윕 — 오른쪽 → 왼쪽으로 차오른다 */
 .gem-header__cta::before {
@@ -1311,19 +1315,46 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   margin-top: 64px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  /* 각 셀의 right/bottom을 box-shadow로 그려 항상 크리스프한 1px 구분선을 만들고,
-     overflow:hidden으로 맨 바깥(우/하) 라인만 잘라낸다. 상단선은 border-top.
-     → 열 수/줄바꿈과 무관하게 '상단 + 안쪽 구분선'만, 바깥 좌·우·하 테두리는 없음. */
-  border-top: 1px solid var(--gem-border);
-  overflow: hidden;
+  gap: 16px;
 }
 .gem-stat {
+  position: relative;
   padding: 28px 24px;
-  box-shadow: 1px 0 0 0 var(--gem-border), 0 1px 0 0 var(--gem-border);
+  border: 1px solid var(--gem-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 0.2s var(--gem-ease), transform 0.2s var(--gem-ease);
+}
+.gem-stat:hover {
+  transform: translateY(-3px);
+}
+/* 좌상단·우하단 코너에 각각 배치되는 은은한 보라색 글로우 */
+.gem-stat::before,
+.gem-stat::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0) 0%, rgba(139, 92, 246, 0) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+.gem-stat::before {
+  top: -40px;
+  left: -40px;
+}
+.gem-stat::after {
+  bottom: -40px;
+  right: -40px;
+}
+.gem-stat > * {
+  position: relative;
+  z-index: 1;
 }
 .gem-stat__num {
   font-size: clamp(34px, 4vw, 52px);
-  font-weight: 300;
+  font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--gem-fg);
 }
@@ -1340,9 +1371,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 .gem-grid-lines {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  background: #fff;
-  border-top: 1px solid var(--gem-border);
-  border-left: 1px solid var(--gem-border);
+  gap: 24px;
 }
 @media (max-width: 880px) {
   .gem-grid-lines {
@@ -1351,18 +1380,38 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 }
 .gem-tech {
   background: #fff;
-  padding: 28px 24px;
+  padding: 28px 26px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   min-height: 158px;
-  border-right: 1px solid var(--gem-border);
-  border-bottom: 1px solid var(--gem-border);
+  border: 1px solid var(--gem-border);
+  border-radius: 16px;
+  transition: background 0.25s var(--gem-ease), transform 0.25s var(--gem-ease),
+    box-shadow 0.25s var(--gem-ease), border-color 0.25s var(--gem-ease);
 }
-.gem-tech__num {
-  font-family: var(--gem-font-display);
-  font-size: 12px;
-  color: var(--gem-accent);
+.gem-tech:hover {
+  transform: translateY(-4px);
+}
+.gem-tech__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.gem-tech__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--gem-bg);
+  color: var(--gem-fg);
+}
+.gem-tech__icon svg {
+  width: 26px;
+  height: 26px;
 }
 .gem-tech h3 {
   font-size: 18px;
@@ -1498,7 +1547,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   display: grid;
   grid-template-columns: 1.15fr 1fr;
   gap: clamp(36px, 5vw, 72px);
-  align-items: start;
+  align-items: center;
   padding-block: clamp(56px, 7vw, 96px);
 }
 @media (max-width: 860px) {
@@ -1533,19 +1582,45 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 .gem-contact__info {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(255, 255, 255, 0.22);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+  gap: 16px;
 }
 .gem-info-cell {
   background: var(--gem-accent);
   padding: 22px;
   min-width: 0;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  transition: border-color 0.2s var(--gem-ease), transform 0.2s var(--gem-ease);
+}
+.gem-info-cell:hover {
+  transform: translateY(-3px);
+}
+.gem-info-cell__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.gem-info-cell__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+}
+.gem-info-cell__icon svg {
+  width: 18px;
+  height: 18px;
 }
 .gem-info-cell__label {
-  font-size: 11px;
-  letter-spacing: 0.32px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #fff;
 }
 .gem-info-cell__value {
   margin-top: 8px;
@@ -4997,7 +5072,7 @@ a.sup-contact__cell:hover {
   background: var(--gem-bg);
 }
 .gem-home .gem-section--alt {
-  background: var(--gem-surface);
+  background: var(--gem-bg);
 }
 .gem-home .gem-card {
   background: var(--gem-elevated);
@@ -5007,6 +5082,24 @@ a.sup-contact__cell:hover {
   background: #242645;
   border-color: rgba(139, 92, 246, 0.5);
   box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+}
+.gem-home .gem-stat {
+  background: var(--gem-elevated);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.gem-home .gem-stat:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+}
+.gem-home .gem-stat__num {
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 60%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.gem-home .gem-stat::before,
+.gem-home .gem-stat::after {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(139, 92, 246, 0) 70%);
 }
 .gem-home .gem-reason {
   border-color: rgba(255, 255, 255, 0.08);
@@ -5019,11 +5112,48 @@ a.sup-contact__cell:hover {
   background: rgba(139, 92, 246, 0.14);
   color: var(--gem-accent);
 }
-.gem-home .gem-grid-lines {
-  background: transparent;
-}
 .gem-home .gem-tech {
   background: var(--gem-elevated);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.gem-home .gem-tech:hover {
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+}
+.gem-home .gem-tech__icon {
+  background: rgba(139, 92, 246, 0.14);
+  color: var(--gem-accent);
+}
+
+/* 홈 — Contact CTA 섹션을 어두운 톤으로 (중앙 상단에서 은은하게 번지는 보라 glow) */
+.gem-home .gem-contact {
+  background: radial-gradient(ellipse 90% 100% at 50% 0%, #3d2278 0%, #1e1448 45%, #0f0a26 100%);
+}
+.gem-home .gem-info-cell {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+.gem-home .gem-info-cell:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+.gem-home .gem-info-cell__icon {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--gem-accent-strong);
+}
+.gem-home .gem-btn--invert {
+  background: #fff;
+  color: var(--gem-accent);
+}
+.gem-home .gem-btn--invert:hover {
+  color: #fff;
+}
+.gem-home .gem-btn--invert::before {
+  background: var(--gem-accent);
 }
 
 /* 홈 헤더 — 다크 히어로 위에서도 보이도록 로고·내비를 라이트 톤으로 (로고 이미지 교체는

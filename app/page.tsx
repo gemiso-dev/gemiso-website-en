@@ -143,15 +143,121 @@ const STATS = [
 ];
 
 const TECH_ITEMS = [
-  { n: "01", t: "Ingest & Video Encoding", d: "Software-based codec encoding for the formats broadcasters use every day" },
-  { n: "02", t: "NLE Integration", d: "Native integration with editing systems and file-based workflows" },
-  { n: "03", t: "Media Processing", d: "Transcoding, conversion, and normalization of media at scale" },
-  { n: "04", t: "Cut Editing", d: "Fast, frame-accurate trimming and clip assembly" },
-  { n: "05", t: "Archive System", d: "Reliable, searchable long-term storage for ever-growing libraries" },
-  { n: "06", t: "Cataloging", d: "Rich metadata and indexing that make every asset findable" },
-  { n: "07", t: "Media Transfer", d: "MOV–MXF and LXF–MXF transfer management via Transfer Manager" },
-  { n: "08", t: "Workflow Management", d: "End-to-end orchestration of tasks and approvals" },
-  { n: "09", t: "News Workflow", d: "Planning, reporting, desk, and rundowns in one newsroom" },
+  {
+    n: "01",
+    t: "Ingest & Video Encoding",
+    d: "Software-based codec encoding for the formats broadcasters use every day",
+    icon: (
+      // 인제스트 & 인코딩 — 비디오 필름 프레임
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="7" width="24" height="18" rx="2" />
+        <path d="M11 7 V25 M21 7 V25" />
+        <path d="M4 13 H11 M21 13 H28 M4 19 H11 M21 19 H28" />
+      </svg>
+    ),
+  },
+  {
+    n: "02",
+    t: "NLE Integration",
+    d: "Native integration with editing systems and file-based workflows",
+    icon: (
+      // NLE 통합 — 타임라인 편집
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="9" width="24" height="6" rx="1.5" />
+        <rect x="8" y="18" width="16" height="6" rx="1.5" />
+        <path d="M10 15 V18 M22 15 V18" />
+      </svg>
+    ),
+  },
+  {
+    n: "03",
+    t: "Media Processing",
+    d: "Transcoding, conversion, and normalization of media at scale",
+    icon: (
+      // 트랜스코딩 — 순환 화살표
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M8 12 a8 8 0 0 1 15-3.5 M9 8.5 V12 H5.5" />
+        <path d="M24 20 a8 8 0 0 1-15 3.5 M23 23.5 V20 H26.5" />
+      </svg>
+    ),
+  },
+  {
+    n: "04",
+    t: "Cut Editing",
+    d: "Fast, frame-accurate trimming and clip assembly",
+    icon: (
+      // 컷 편집 — 가위
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="9" cy="9" r="3" />
+        <circle cx="9" cy="23" r="3" />
+        <path d="M11.5 11 L26 23 M11.5 21 L26 9" />
+      </svg>
+    ),
+  },
+  {
+    n: "05",
+    t: "Archive System",
+    d: "Reliable, searchable long-term storage for ever-growing libraries",
+    icon: (
+      // 아카이브 — 박스
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M5 10 L16 5 L27 10 L16 15 Z" />
+        <path d="M5 10 V22 L16 27 V15 M27 10 V22 L16 27" />
+      </svg>
+    ),
+  },
+  {
+    n: "06",
+    t: "Cataloging",
+    d: "Rich metadata and indexing that make every asset findable",
+    icon: (
+      // 카탈로깅 — 검색 돋보기
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="14" cy="14" r="8" />
+        <path d="M20 20 L27 27" />
+      </svg>
+    ),
+  },
+  {
+    n: "07",
+    t: "Media Transfer",
+    d: "MOV–MXF and LXF–MXF transfer management via Transfer Manager",
+    icon: (
+      // 미디어 트랜스퍼 — 양방향 화살표
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M6 12 H24 M19 7 L24 12 L19 17" />
+        <path d="M26 20 H8 M13 15 L8 20 L13 25" />
+      </svg>
+    ),
+  },
+  {
+    n: "08",
+    t: "Workflow Management",
+    d: "End-to-end orchestration of tasks and approvals",
+    icon: (
+      // 워크플로우 — 체크리스트
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M7 9 L9 11 L13 7" />
+        <path d="M17 9 H25" />
+        <path d="M7 16 L9 18 L13 14" />
+        <path d="M17 16 H25" />
+        <path d="M7 23 L9 25 L13 21" />
+        <path d="M17 23 H25" />
+      </svg>
+    ),
+  },
+  {
+    n: "09",
+    t: "News Workflow",
+    d: "Planning, reporting, desk, and rundowns in one newsroom",
+    icon: (
+      // 뉴스 워크플로우 — 런다운/기사 목록
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="5" y="5" width="22" height="22" rx="2" />
+        <path d="M10 12 H22 M10 17 H22 M10 22 H17" />
+      </svg>
+    ),
+  },
 ];
 
 /* ------------------------------------------------------------------ 페이지 */
@@ -302,8 +408,10 @@ export default function Home() {
           <Reveal as="div" className="gem-grid-lines">
             {TECH_ITEMS.map((t) => (
               <div key={t.n} className="gem-tech">
-                <span className="gem-tech__num">{t.n}</span>
-                <h3>{t.t}</h3>
+                <div className="gem-tech__head">
+                  <span className="gem-tech__icon">{t.icon}</span>
+                  <h3>{t.t}</h3>
+                </div>
                 <p>{t.d}</p>
               </div>
             ))}
@@ -342,7 +450,15 @@ export default function Home() {
 
           <div className="gem-contact__info">
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Sales</div>
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7 L12 13 L21 7" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Sales</div>
+              </div>
               <CopyField
                 text={COMPANY.email}
                 label="Sales email"
@@ -352,7 +468,15 @@ export default function Home() {
               </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Technical Support</div>
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7 L12 13 L21 7" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Technical Support</div>
+              </div>
               <CopyField
                 text={COMPANY.techEmail}
                 label="Support email"
@@ -362,7 +486,15 @@ export default function Home() {
               </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Hours</div>
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7 V12 L15.5 14" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Hours</div>
+              </div>
               <div className="gem-info-cell__value gem-info-cell__value--sm">
                 9 AM – 6 PM Pacific Time
                 <br />
@@ -371,8 +503,21 @@ export default function Home() {
             </div>
             {/* Takes the toll-free number as soon as COMPANY.tel is filled in. */}
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">
-                {COMPANY.tel ? "Phone" : "Response"}
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  {COMPANY.tel ? (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M6 3 C6 3 9 3 10 7 C10.5 9 8.5 9.5 9 11 C9.5 13 11 14.5 13 15 C14.5 15.5 15 13.5 17 14 C21 15 21 18 21 18 C21 20 19 21 17 21 C10 21 3 14 3 7 C3 5 4 3 6 3 Z" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M4 12 a8 8 0 1 1 3 6.2 L4 19 L5 15.5 A8 8 0 0 1 4 12 Z" />
+                    </svg>
+                  )}
+                </span>
+                <div className="gem-info-cell__label">
+                  {COMPANY.tel ? "Phone" : "Response"}
+                </div>
               </div>
               <div className="gem-info-cell__value gem-info-cell__value--sm">
                 {COMPANY.tel ? (

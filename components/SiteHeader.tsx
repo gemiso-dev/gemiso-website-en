@@ -106,6 +106,7 @@ export default function SiteHeader() {
               alt="GEMISO"
               width={154}
               height={36}
+              style={{ height: 36, width: "auto" }}
               priority
             />
           </Link>
