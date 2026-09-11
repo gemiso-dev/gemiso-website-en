@@ -1,8 +1,7 @@
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import ScrollHighlightText from "@/components/ScrollHighlightText";
 import HeroScrollButton from "@/components/HeroScrollButton";
+import HeroVideo from "@/components/HeroVideo";
 import CustomerMarquee from "@/components/CustomerMarquee";
 import CopyField from "@/components/CopyField";
 import { COMPANY, asset } from "@/components/site-config";
@@ -25,57 +24,57 @@ const SOLUTIONS: {
   /** true면 목록에서 숨긴다(코드는 유지, 플래그만 제거하면 복구). */
   hidden?: boolean;
 }[] = [
-  {
-    num: "01",
-    tag: "PROXIMA",
-    title: "Media Asset Management",
-    desc: "Manage media assets from ingest to distribution with software codecs and NLE integration.",
-  },
-  {
-    num: "02",
-    tag: "ZODIAC",
-    title: "Newsroom (NRCS)",
-    desc: "Connect newsroom workflows across desktop and mobile, from planning and script writing to rundown creation and playout.",
-  },
-  {
-    num: "03",
-    tag: "TALOS",
-    title: "Automated Playout (APC)",
-    desc: "Automate program schedules and video server control in one APC system for stable on-air operations.",
-  },
-  {
-    num: "04",
-    tag: "EMOTION",
-    title: "Radio",
-    desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
-    // 현재 미취급 솔루션 — 숨김. 복구하려면 이 줄을 지운다.
-    hidden: true,
-  },
-  {
-    num: "05",
-    tag: "WINNER-S",
-    title: "Audio File System",
-    desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
-  },
-  {
-    num: "06",
-    tag: "MAIA",
-    title: "AI Technology",
-    desc: "Generate metadata and subtitles with broadcast-trained AI, making media libraries fully searchable.",
-  },
-  {
-    num: "07",
-    tag: "MYMY",
-    title: "Content Archive",
-    desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
-  },
-  {
-    num: "08",
-    tag: "G-SAM",
-    title: "Content Distribution",
-    desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
-  },
-];
+    {
+      num: "01",
+      tag: "PROXIMA",
+      title: "Media Asset Management",
+      desc: "Manage media assets from ingest to distribution with software codecs and NLE integration.",
+    },
+    {
+      num: "02",
+      tag: "ZODIAC",
+      title: "Newsroom (NRCS)",
+      desc: "Connect newsroom workflows across desktop and mobile, from planning and script writing to rundown creation and playout.",
+    },
+    {
+      num: "03",
+      tag: "TALOS",
+      title: "Automated Playout (APC)",
+      desc: "Automate program schedules and video server control in one APC system for stable on-air operations.",
+    },
+    {
+      num: "04",
+      tag: "EMOTION",
+      title: "Radio",
+      desc: "Hardware-independent radio production and playout — with multitrack editing and rundown support.",
+      // 현재 미취급 솔루션 — 숨김. 복구하려면 이 줄을 지운다.
+      hidden: true,
+    },
+    {
+      num: "05",
+      tag: "WINNER-S",
+      title: "Audio File System",
+      desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
+    },
+    {
+      num: "06",
+      tag: "MAIA",
+      title: "AI Technology",
+      desc: "Generate metadata and subtitles with broadcast-trained AI, making media libraries fully searchable.",
+    },
+    {
+      num: "07",
+      tag: "MYMY",
+      title: "Content Archive",
+      desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
+    },
+    {
+      num: "08",
+      tag: "G-SAM",
+      title: "Content Distribution",
+      desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
+    },
+  ];
 
 const REASONS = [
   {
@@ -145,61 +144,145 @@ const STATS = [
 ];
 
 const TECH_ITEMS = [
-  { n: "01", t: "Ingest & Video Encoding", d: "Software-based codec encoding for the formats broadcasters use every day" },
-  { n: "02", t: "NLE Integration", d: "Native integration with editing systems and file-based workflows" },
-  { n: "03", t: "Media Processing", d: "Transcoding, conversion, and normalization of media at scale" },
-  { n: "04", t: "Cut Editing", d: "Fast, frame-accurate trimming and clip assembly" },
-  { n: "05", t: "Archive System", d: "Reliable, searchable long-term storage for ever-growing libraries" },
-  { n: "06", t: "Cataloging", d: "Rich metadata and indexing that make every asset findable" },
-  { n: "07", t: "Media Transfer", d: "MOV–MXF and LXF–MXF transfer management via Transfer Manager" },
-  { n: "08", t: "Workflow Management", d: "End-to-end orchestration of tasks and approvals" },
-  { n: "09", t: "News Workflow", d: "Planning, reporting, desk, and rundowns in one newsroom" },
+  {
+    n: "01",
+    t: "Ingest & Video Encoding",
+    d: "Software-based codec encoding for the formats broadcasters use every day",
+    icon: (
+      // 인제스트 & 인코딩 — 비디오 필름 프레임
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="7" width="24" height="18" rx="2" />
+        <path d="M11 7 V25 M21 7 V25" />
+        <path d="M4 13 H11 M21 13 H28 M4 19 H11 M21 19 H28" />
+      </svg>
+    ),
+  },
+  {
+    n: "02",
+    t: "NLE Integration",
+    d: "Native integration with editing systems and file-based workflows",
+    icon: (
+      // NLE 통합 — 타임라인 편집
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="4" y="9" width="24" height="6" rx="1.5" />
+        <rect x="8" y="18" width="16" height="6" rx="1.5" />
+        <path d="M10 15 V18 M22 15 V18" />
+      </svg>
+    ),
+  },
+  {
+    n: "03",
+    t: "Media Processing",
+    d: "Transcoding, conversion, and normalization of media at scale",
+    icon: (
+      // 트랜스코딩 — 순환 화살표
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M8 12 a8 8 0 0 1 15-3.5 M9 8.5 V12 H5.5" />
+        <path d="M24 20 a8 8 0 0 1-15 3.5 M23 23.5 V20 H26.5" />
+      </svg>
+    ),
+  },
+  {
+    n: "04",
+    t: "Cut Editing",
+    d: "Fast, frame-accurate trimming and clip assembly",
+    icon: (
+      // 컷 편집 — 가위
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="9" cy="9" r="3" />
+        <circle cx="9" cy="23" r="3" />
+        <path d="M11.5 11 L26 23 M11.5 21 L26 9" />
+      </svg>
+    ),
+  },
+  {
+    n: "05",
+    t: "Archive System",
+    d: "Reliable, searchable long-term storage for ever-growing libraries",
+    icon: (
+      // 아카이브 — 박스
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M5 10 L16 5 L27 10 L16 15 Z" />
+        <path d="M5 10 V22 L16 27 V15 M27 10 V22 L16 27" />
+      </svg>
+    ),
+  },
+  {
+    n: "06",
+    t: "Cataloging",
+    d: "Rich metadata and indexing that make every asset findable",
+    icon: (
+      // 카탈로깅 — 검색 돋보기
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="14" cy="14" r="8" />
+        <path d="M20 20 L27 27" />
+      </svg>
+    ),
+  },
+  {
+    n: "07",
+    t: "Media Transfer",
+    d: "MOV–MXF and LXF–MXF transfer management via Transfer Manager",
+    icon: (
+      // 미디어 트랜스퍼 — 양방향 화살표
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M6 12 H24 M19 7 L24 12 L19 17" />
+        <path d="M26 20 H8 M13 15 L8 20 L13 25" />
+      </svg>
+    ),
+  },
+  {
+    n: "08",
+    t: "Workflow Management",
+    d: "End-to-end orchestration of tasks and approvals",
+    icon: (
+      // 워크플로우 — 체크리스트
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M7 9 L9 11 L13 7" />
+        <path d="M17 9 H25" />
+        <path d="M7 16 L9 18 L13 14" />
+        <path d="M17 16 H25" />
+        <path d="M7 23 L9 25 L13 21" />
+        <path d="M17 23 H25" />
+      </svg>
+    ),
+  },
+  {
+    n: "09",
+    t: "News Workflow",
+    d: "Planning, reporting, desk, and rundowns in one newsroom",
+    icon: (
+      // 뉴스 워크플로우 — 런다운/기사 목록
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="5" y="5" width="22" height="22" rx="2" />
+        <path d="M10 12 H22 M10 17 H22 M10 22 H17" />
+      </svg>
+    ),
+  },
 ];
 
 /* ------------------------------------------------------------------ 페이지 */
 
 export default function Home() {
   return (
-    <>
-      {/* 히어로 */}
-      <section
-        className="gem-hero gem-hero--center"
-        style={
-          {
-            // 데스크탑/모바일 배경을 CSS 변수로 넘겨 globals.css에서 미디어쿼리로 갈아끼운다.
-            "--hero-bg": `url(${asset("/assets/hero/hero-bg5.webp")})`,
-            "--hero-bg-sm": `url(${asset("/assets/hero/hero-bg5-mobile.webp")})`,
-          } as CSSProperties
-        }
-      >
-        <div className="gem-container gem-hero__grid gem-hero__grid--center">
+    <div className="gem-home">
+      {/* 히어로 (+ 브랜드 스테이트먼트 통합) */}
+      <section className="gem-hero gem-hero--split">
+        <div className="gem-container gem-hero__grid">
           <Reveal>
-            <div className="gem-eyebrow gem-eyebrow--badge">
-              <span>Broadcast AI Transformation Partner</span>
-            </div>
             <h1 className="gem-hero__title">
               Your AI Broadcast Transformation Partner
               <br />
-              A Quarter Century Of Creative Innovation
+              <span className="gem-hero__hl">
+                A Quarter Century Of Creative Innovation
+              </span>
             </h1>
-          </Reveal>
-        </div>
-        <HeroScrollButton />
-      </section>
-
-      {/* 브랜드 스테이트먼트 (토스 스타일 대형 문장) */}
-      <section id="statement" className="gem-statement">
-        <div className="gem-container">
-          <Reveal>
-            <ScrollHighlightText
-              className="gem-statement__text"
-              lines={[
-                "Built on technology trusted by leading broadcasters,",
-                "we're shaping what's next in broadcasting workflows with AI.",
-              ]}
-            />
-            <div className="gem-statement__actions">
-              <a href="#solutions" className="gem-btn gem-btn--link">
+            <p className="gem-hero__desc">
+              Built on technology trusted by leading broadcasters, we&apos;re
+              shaping what&apos;s next in broadcasting workflows with AI.
+            </p>
+            <div className="gem-hero__actions">
+              <a href="#solutions" className="gem-btn gem-btn--outline">
                 Explore Solutions
                 <span className="gem-arrow-slide" aria-hidden="true">
                   <span>→</span>
@@ -207,12 +290,16 @@ export default function Home() {
                 </span>
               </a>
             </div>
-            {/* 고객사 롤링 배너 — Explore Solutions 버튼 아래 */}
-            <div className="gem-marquee gem-marquee--inline" aria-label="Customers">
-              <CustomerMarquee />
-            </div>
+          </Reveal>
+
+          <Reveal className="gem-hero__media">
+            <HeroVideo
+              className="gem-hero__video"
+              src={asset("/assets/hero/landing-video.mp4")}
+            />
           </Reveal>
         </div>
+        <HeroScrollButton />
       </section>
 
       {/* 솔루션 */}
@@ -270,8 +357,10 @@ export default function Home() {
           <Reveal as="div" className="gem-reasons">
             {REASONS.map((r, i) => (
               <div key={i} className="gem-reason">
-                <span className="gem-reason__icon">{r.icon}</span>
-                <h3>{r.title}</h3>
+                <div className="gem-reason__head">
+                  <span className="gem-reason__icon">{r.icon}</span>
+                  <h3>{r.title}</h3>
+                </div>
                 <p>{r.desc}</p>
               </div>
             ))}
@@ -286,7 +375,13 @@ export default function Home() {
             ))}
           </Reveal>
         </div>
+        {/* 고객사 롤링 배너 */}
+        <div className="gem-marquee" aria-label="Customers">
+          <CustomerMarquee />
+        </div>
       </section>
+
+
 
       {/* 기술 */}
       <section className="gem-section gem-section--alt">
@@ -306,8 +401,10 @@ export default function Home() {
           <Reveal as="div" className="gem-grid-lines">
             {TECH_ITEMS.map((t) => (
               <div key={t.n} className="gem-tech">
-                <span className="gem-tech__num">{t.n}</span>
-                <h3>{t.t}</h3>
+                <div className="gem-tech__head">
+                  <span className="gem-tech__icon">{t.icon}</span>
+                  <h3>{t.t}</h3>
+                </div>
                 <p>{t.d}</p>
               </div>
             ))}
@@ -345,8 +442,16 @@ export default function Home() {
           </div>
 
           <div className="gem-contact__info">
-            <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Sales</div>
+            <div className="gem-info-cell gem-info-cell--primary">
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7 L12 13 L21 7" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Sales</div>
+              </div>
               <CopyField
                 text={COMPANY.email}
                 label="Sales email"
@@ -355,8 +460,16 @@ export default function Home() {
                 {COMPANY.email}
               </CopyField>
             </div>
-            <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Technical Support</div>
+            <div className="gem-info-cell gem-info-cell--primary">
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7 L12 13 L21 7" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Technical Support</div>
+              </div>
               <CopyField
                 text={COMPANY.techEmail}
                 label="Support email"
@@ -366,7 +479,15 @@ export default function Home() {
               </CopyField>
             </div>
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">Hours</div>
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7 V12 L15.5 14" />
+                  </svg>
+                </span>
+                <div className="gem-info-cell__label">Hours</div>
+              </div>
               <div className="gem-info-cell__value gem-info-cell__value--sm">
                 9 AM – 6 PM Pacific Time
                 <br />
@@ -375,8 +496,21 @@ export default function Home() {
             </div>
             {/* Takes the toll-free number as soon as COMPANY.tel is filled in. */}
             <div className="gem-info-cell">
-              <div className="gem-info-cell__label">
-                {COMPANY.tel ? "Phone" : "Response"}
+              <div className="gem-info-cell__head">
+                <span className="gem-info-cell__icon">
+                  {COMPANY.tel ? (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M6 3 C6 3 9 3 10 7 C10.5 9 8.5 9.5 9 11 C9.5 13 11 14.5 13 15 C14.5 15.5 15 13.5 17 14 C21 15 21 18 21 18 C21 20 19 21 17 21 C10 21 3 14 3 7 C3 5 4 3 6 3 Z" />
+                    </svg>
+                  ) : (
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M4 12 a8 8 0 1 1 3 6.2 L4 19 L5 15.5 A8 8 0 0 1 4 12 Z" />
+                    </svg>
+                  )}
+                </span>
+                <div className="gem-info-cell__label">
+                  {COMPANY.tel ? "Phone" : "Response"}
+                </div>
               </div>
               <div className="gem-info-cell__value gem-info-cell__value--sm">
                 {COMPANY.tel ? (
@@ -389,6 +523,6 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }

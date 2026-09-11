@@ -49,14 +49,14 @@ export default async function SolutionPage({
     notLast: i < arr.length - 1,
   }));
   return (
-    <>
+    <div className="gem-dark gem-solutions">
       {/* 브레드크럼 */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <Link href="/#solutions">Solutions</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <span className="sol-breadcrumb__current">{active.ko}</span>
         </div>
       </nav>
@@ -324,21 +324,21 @@ export default async function SolutionPage({
               Tell us about your broadcast workflow and our team will design
               how {active.ko} fits into it, together with you.
             </p>
-          </div>
-          <div className="sol-cta__actions">
-            <Link
-              href="/support/#inquiry"
-              className="gem-btn gem-btn--invert"
-            >
-              Contact Us
-              <span className="gem-arrow-slide" aria-hidden="true">
-                <span>→</span>
-                <span>→</span>
-              </span>
-            </Link>
+            <div className="sol-cta__actions">
+              <Link
+                href="/support/#inquiry"
+                className="gem-btn gem-btn--invert"
+              >
+                Contact Us
+                <span className="gem-arrow-slide" aria-hidden="true">
+                  <span>→</span>
+                  <span>→</span>
+                </span>
+              </Link>
+            </div>
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }

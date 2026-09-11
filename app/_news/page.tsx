@@ -21,7 +21,7 @@ export default function NewsListPage() {
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <span className="sol-breadcrumb__current">News</span>
         </div>
       </nav>

@@ -10,6 +10,23 @@ import { PRIMARY_NAV, asset, type NavItem } from "@/components/site-config";
 const stripSlash = (s: string) => (s !== "/" && s.endsWith("/") ? s.slice(0, -1) : s);
 
 /**
+ * 다크 테마로 전환된 페이지 경로(prefix). 홈은 항상 포함.
+ * 다른 섹션(Solutions/Technology/Support 등)을 다크 테마로 옮길 때마다
+ * 여기에 prefix를 추가한다 — 전체가 전환되면 이 배열째로 걷어내고
+ * 헤더를 항상 다크로 고정해도 된다.
+ */
+const DARK_PATH_PREFIXES = [
+  "/mission",
+  "/history",
+  "/certification",
+  "/customers",
+  "/solutions",
+  "/technology",
+  "/support",
+  "/partners",
+];
+
+/**
  * 현재 경로가 해당 탭(또는 그 하위 페이지)에 속하면 true.
  * 탭 자신의 href와 children href들을 후보로 모아 prefix 매칭한다.
  */
@@ -28,6 +45,10 @@ function isNavActive(item: NavItem, pathname: string): boolean {
  */
 export default function SiteHeader() {
   const pathname = usePathname();
+  const path = stripSlash(pathname || "/");
+  const isHome = path === "/";
+  const isDarkPage =
+    isHome || DARK_PATH_PREFIXES.some((p) => path === p || path.startsWith(p + "/"));
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
@@ -84,7 +105,13 @@ export default function SiteHeader() {
     <>
       {/* sticky 헤더 */}
       <header
-        className={`gem-header${scrolled ? " is-scrolled" : ""}`}
+        className={`gem-header${scrolled ? " is-scrolled" : ""}${
+          isDarkPage ? " gem-header--dark" : ""
+        }${
+          /* 홈은 히어로 위에 겹치도록 스크롤 전엔 투명 유지, 그 외 다크 페이지는
+             겹칠 히어로 비주얼이 없으니 처음부터 배경을 채운다. */
+          isDarkPage && !isHome ? " gem-header--dark-solid" : ""
+        }`}
         id="top"
       >
         <div className="gem-container gem-header__inner">
@@ -95,10 +122,15 @@ export default function SiteHeader() {
             onClick={closeMenu}
           >
             <Image
-              src={asset("/assets/gemiso-logo.svg")}
+              src={asset(
+                isDarkPage
+                  ? "/assets/gemiso-logo-invert.svg"
+                  : "/assets/gemiso-logo.svg",
+              )}
               alt="GEMISO"
               width={154}
               height={36}
+              style={{ height: 36, width: "auto" }}
               priority
             />
           </Link>
