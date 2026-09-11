@@ -809,31 +809,6 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
     padding-top: calc(88px + var(--gem-header-h));
   }
 }
-/* 히어로 라벨 강조 배지 — 옅은 파란 알약 위 진한 파란 볼드 텍스트 */
-.gem-eyebrow--badge {
-  display: inline-flex;
-  gap: 0;
-  margin-bottom: 36px;
-}
-.gem-eyebrow--badge::before {
-  display: none;
-}
-.gem-eyebrow--badge > span {
-  font-family: "Plus Jakarta Sans", var(--gem-font-sans);
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.01em;
-  color: var(--gem-subtle);
-}
-@media (max-width: 860px) {
-  .gem-eyebrow--badge {
-    margin-bottom: 44px;
-  }
-  .gem-eyebrow--badge > span {
-    font-size: 16px;
-  }
-}
-
 .gem-hero__title {
   font-size: clamp(40px, 6vw, 56px);
   font-weight: 600;
@@ -5236,9 +5211,14 @@ a.sup-contact__cell:hover {
 
 /* 홈 헤더 — 다크 히어로 위에서도 보이도록 로고·내비를 라이트 톤으로 (로고 이미지 교체는
    SiteHeader.tsx에서 처리, 여기서는 텍스트·아이콘 색상만) */
-.gem-header--dark .gem-nav__link,
-.gem-header--dark .gem-menu-btn span {
+.gem-header--dark .gem-nav__link {
   color: #f5f5f7;
+}
+/* 햄버거 아이콘은 텍스트가 아니라 background로 그려지는 막대라 color가 아니라
+   background를 바꿔야 실제로 반영된다 (이전엔 color만 지정돼 어두운 배경에서
+   막대가 계속 어두운 색으로 묻혀 보이던 버그). */
+.gem-header--dark .gem-menu-btn span {
+  background: #f5f5f7;
 }
 .gem-header--dark .gem-nav__link:hover {
   color: #b8b8c2;
@@ -5291,36 +5271,6 @@ a.sup-contact__cell:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
   box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.5);
-}
-
-/* 히어로 배지("Broadcast AI Transformation Partner") — 톤다운된 회색 텍스트 대신
-   은은한 글라스 필 배지 + accent 글로우 닷으로, 어두운 배경에서도 시선을 끌도록 */
-.gem-home .gem-eyebrow--badge > span {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 9px 20px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  color: #e4e4ec;
-  font-size: 15px;
-  font-weight: 600;
-}
-.gem-home .gem-eyebrow--badge > span::before {
-  content: "";
-  flex: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #8b5cf6;
-  box-shadow: 0 0 10px 2px rgba(139, 92, 246, 0.7);
-}
-@media (max-width: 860px) {
-  .gem-home .gem-eyebrow--badge > span {
-    padding: 8px 16px;
-    font-size: 13.5px;
-  }
 }
 
 /* 히어로 CTA(아웃라인 버튼) — 은은한 accent 글로우로 강조 */

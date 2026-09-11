@@ -270,9 +270,6 @@ export default function Home() {
       <section className="gem-hero gem-hero--split">
         <div className="gem-container gem-hero__grid">
           <Reveal>
-            <div className="gem-eyebrow gem-eyebrow--badge">
-              <span>Broadcast AI Transformation Partner</span>
-            </div>
             <h1 className="gem-hero__title">
               Your AI Broadcast Transformation Partner
               <br />
