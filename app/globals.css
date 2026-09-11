@@ -465,6 +465,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   padding: 8px 0;
   background: var(--gem-bg);
   border: 1px solid var(--gem-border);
+  border-radius: 14px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
   opacity: 0;
   visibility: hidden;
@@ -503,6 +504,13 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 .gem-nav__drop-link:hover {
   background: var(--gem-bg-alt, rgba(0, 0, 0, 0.04));
   color: var(--gem-fg);
+}
+/* 부모 패널의 둥근 모서리와 호버 하이라이트가 어긋나지 않도록 */
+.gem-nav__drop-link:first-child {
+  border-radius: 8px 8px 0 0;
+}
+.gem-nav__drop-link:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 .gem-header__actions {
@@ -5210,6 +5218,34 @@ a.sup-contact__cell:hover {
 }
 .gem-header--home .gem-mobile-menu__sub {
   color: #a8a8b0;
+}
+.gem-header--home .gem-nav__link[aria-haspopup="true"]::after {
+  background-color: #f5f5f7;
+}
+.gem-header--home .gem-nav__dropdown {
+  background: rgba(18, 20, 45, 0.72);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.gem-header--home .gem-nav__drop-link {
+  margin: 2px 6px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #f5f5f7;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+.gem-header--home .gem-nav__drop-link:first-child {
+  margin-top: 6px;
+}
+.gem-header--home .gem-nav__drop-link:last-child {
+  margin-bottom: 6px;
+}
+.gem-header--home .gem-nav__drop-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.5);
 }
 
 /* 히어로 배지("Broadcast AI Transformation Partner") — 톤다운된 회색 텍스트 대신
