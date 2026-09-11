@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import HeroScrollButton from "@/components/HeroScrollButton";
+import HeroVideo from "@/components/HeroVideo";
 import CustomerMarquee from "@/components/CustomerMarquee";
 import CopyField from "@/components/CopyField";
 import { COMPANY, asset } from "@/components/site-config";
@@ -295,14 +296,9 @@ export default function Home() {
           </Reveal>
 
           <Reveal className="gem-hero__media">
-            <video
+            <HeroVideo
               className="gem-hero__video"
               src={asset("/assets/hero/landing-video.mp4")}
-              autoPlay
-              muted
-              loop
-              playsInline
-              aria-hidden="true"
             />
           </Reveal>
         </div>

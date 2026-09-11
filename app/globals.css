@@ -520,8 +520,6 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 
 .gem-header__cta {
   position: relative;
-  overflow: hidden;
-  z-index: 0;
   display: inline-flex;
   align-items: center;
   background: var(--gem-accent);
@@ -529,20 +527,12 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   font-size: 14px;
   padding: 9px 16px;
   border-radius: 999px;
+  transition: transform var(--gem-btn-dur) var(--gem-ease),
+    box-shadow var(--gem-btn-dur) var(--gem-ease);
 }
-/* 화살표 없는 버튼도 동일한 필 스윕 — 오른쪽 → 왼쪽으로 차오른다 */
-.gem-header__cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: var(--gem-accent-strong);
-  transform: scaleX(0);
-  transform-origin: right center;
-  transition: transform var(--gem-btn-dur) var(--gem-ease);
-}
-.gem-header__cta:hover::before {
-  transform: scaleX(1);
+.gem-header__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(139, 92, 246, 0.55);
 }
 
 /* 햄버거 버튼 */
@@ -793,7 +783,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 .gem-hero__grid {
   position: relative;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 5fr 4fr;
   gap: clamp(36px, 5vw, 64px);
   align-items: center;
   /* 헤더 겹침 보정: 헤더 높이 + 여백 */
@@ -869,7 +859,8 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   margin-top: 32px;
   font-size: clamp(18px, 1.9vw, 21px);
   line-height: 1.7;
-  color: var(--gem-muted);
+  /* 순백 대신 톤을 맞춘 은은한 라벤더 화이트 */
+  color: #e9e5f8;
   max-width: 44ch;
 }
 .gem-hero__actions {
@@ -928,8 +919,14 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   border-radius: 20px;
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  /* 좌측·하단으로 살짝 치우친 검은 그림자 */
-  box-shadow: -40px 40px 20px rgba(8, 1, 34, 0.275);
+  /* 위로 살짝 끌어올림 */
+  transform: translateY(-28px);
+  /* 좌측·하단으로 살짝 치우친 검은 그림자 + 배경과 자연스럽게 섞이도록 은은한 외곽 글로우 */
+  box-shadow: -40px 40px 20px rgba(8, 1, 34, 0.275),
+    0 0 90px 30px var(--gem-bg);
+  /* 가장자리를 페이드시켜 배경 속으로 자연스럽게 가라앉도록 */
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 80%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 80%, transparent 100%);
 }
 .gem-hero__video {
   display: block;
