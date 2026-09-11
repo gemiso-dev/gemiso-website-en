@@ -535,14 +535,16 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   background: var(--gem-accent);
   color: #fff;
   font-size: 14px;
-  padding: 9px 16px;
+  padding: 9px 18px;
   border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.35);
   transition: transform var(--gem-btn-dur) var(--gem-ease),
     box-shadow var(--gem-btn-dur) var(--gem-ease);
 }
 .gem-header__cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -8px rgba(139, 92, 246, 0.55);
+  box-shadow: 0 0 22px rgba(167, 139, 250, 0.85), 0 0 35px rgba(139, 92, 246, 0.55);
 }
 
 /* 햄버거 버튼 */
