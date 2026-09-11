@@ -13,14 +13,14 @@ export const metadata = pageMetadata({
 
 export default function PartnersPage() {
   return (
-    <>
+    <div className="gem-dark gem-partners">
       {/* 브레드크럼 */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <Link href="/support/">Support</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <span className="sol-breadcrumb__current">Partners</span>
         </div>
       </nav>
@@ -141,6 +141,6 @@ export default function PartnersPage() {
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }

@@ -22,6 +22,8 @@ const DARK_PATH_PREFIXES = [
   "/customers",
   "/solutions",
   "/technology",
+  "/support",
+  "/partners",
 ];
 
 /**
