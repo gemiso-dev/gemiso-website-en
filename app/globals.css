@@ -21,7 +21,7 @@
 
   /* 인터랙션 모션 — 대칭형 ease-in-out (천천히 → 빨라짐 → 다시 감속) */
   --gem-ease: cubic-bezier(0.65, 0, 0.35, 1);
-  --gem-btn-dur: 0.42s;
+  --gem-btn-dur: 0.22s;
 
   --gem-ink: #161616; /* 다크 영역 배경(푸터) */
 
@@ -2506,11 +2506,10 @@ button.gem-copy__text:focus-visible,
   color: #fff;
 }
 .sol-cta__grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: clamp(36px, 5vw, 48px);
-  /* 버튼을 제목(헤더 텍스트)과 나란히 — 설명까지 포함한 블록이 아닌 제목 기준 정렬 */
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
   padding-block: clamp(52px, 7vw, 92px);
 }
 .sol-cta__title {
@@ -2528,16 +2527,13 @@ button.gem-copy__text:focus-visible,
   max-width: 42ch;
 }
 .sol-cta__actions {
+  margin-top: 28px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
 
-@media (max-width: 860px) {
-  .sol-cta__grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* =========================================================================
    뉴스룸 — 목록 (/news)
@@ -5215,11 +5211,19 @@ a.sup-contact__cell:hover {
   color: var(--gem-accent-strong);
 }
 .gem-home .gem-btn--invert {
-  background: #fff;
+  background: #ffffff;
   color: var(--gem-accent);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4), 0 4px 16px rgba(139, 92, 246, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
 }
 .gem-home .gem-btn--invert:hover {
-  color: #fff;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 35px rgba(167, 139, 250, 0.8);
+}
+.gem-home .gem-btn--invert:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 28px rgba(167, 139, 250, 0.7);
 }
 .gem-home .gem-btn--invert::before {
   background: var(--gem-accent);
@@ -5365,7 +5369,6 @@ a.sup-contact__cell:hover {
 .gem-dark .mission-pillar__text {
   color: #e9e5f8;
 }
-/* 여러 페이지가 그대로 재사용하는 클래스 — 흰 배경 하드코딩을 한 번에 보정 */
 .gem-dark .sol-breadcrumb,
 .gem-dark .hist-hero,
 .gem-dark .hist-timeline,
@@ -5382,7 +5385,10 @@ a.sup-contact__cell:hover {
 .gem-dark .sol-shot,
 .gem-dark .sol-feature,
 .gem-dark .sol-step,
-.gem-dark .sol-other {
+.gem-dark .sol-other,
+.gem-dark .gem-section--alt,
+.gem-dark .sup-offices,
+.gem-dark .news-featured-sec {
   background: var(--gem-surface);
 }
 .gem-dark .cust-cases__grid,
@@ -5477,14 +5483,22 @@ a.sup-contact__cell:hover {
   stroke: var(--gem-border);
 }
 .gem-dark .gem-btn--invert {
-  background: #fff;
+  background: #ffffff;
   color: var(--gem-accent);
-}
-.gem-dark .gem-btn--invert:hover {
-  color: #fff;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.4), 0 4px 16px rgba(139, 92, 246, 0.3);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
 }
 .gem-dark .gem-btn--invert::before {
   background: var(--gem-accent);
+}
+.gem-dark .gem-btn--invert:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 35px rgba(167, 139, 250, 0.8);
+}
+.gem-dark .gem-btn--invert:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 28px rgba(167, 139, 250, 0.7);
 }
 .gem-dark .gem-marquee {
   background: var(--gem-bg);
@@ -5580,3 +5594,235 @@ a.sup-contact__cell:hover {
 /* ---- Company: Certifications (사용 안 함 — 공용 .gem-dark 블록으로 충분) ---- */
 
 /* ---- Company: Customers (사용 안 함 — 공용 .gem-dark 블록으로 충분) ---- */
+
+.gem-solutions .sol-tab--featured {
+  position: relative;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(106, 53, 232, 0.12));
+  border-radius: 8px;
+  margin: 6px 4px;
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.25);
+  transition: all 0.25s ease;
+}
+.gem-solutions .sol-tab--featured .sol-tab__code {
+  color: #c4b5fd;
+  font-weight: 600;
+}
+.gem-solutions .sol-tab--featured .sol-tab__name {
+  color: #ffffff;
+  font-weight: 600;
+}
+.gem-solutions .sol-tab--featured:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.32), rgba(106, 53, 232, 0.22));
+  border-color: rgba(196, 181, 253, 0.6);
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.45);
+  transform: translateY(-1px);
+}
+.gem-solutions .sol-tab--featured.is-active {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.45), rgba(106, 53, 232, 0.35));
+  border-color: #a78bfa;
+  box-shadow: 0 0 22px rgba(167, 139, 250, 0.65);
+}
+.gem-dark .sol-tab__badge {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  border-radius: 4px;
+  padding: 1px 7px;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(167, 139, 250, 0.7);
+}
+.gem-solutions .sol-feature--ai {
+  background: radial-gradient(circle at 100% 0, rgba(139, 92, 246, 0.15), transparent 60%), var(--gem-surface);
+}
+.gem-solutions .sol-feature--mark {
+  background: radial-gradient(circle at 0 100%, rgba(56, 189, 248, 0.1), transparent 60%), var(--gem-surface);
+}
+.gem-solutions .gem-logo-cell__logo {
+  background: #f2f2f4;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.gem-dark .sol-detail {
+  background: var(--gem-surface);
+  border-radius: 16px;
+  border: 1px solid var(--gem-border);
+  overflow: hidden;
+}
+
+.gem-dark .gem-btn--primary {
+  background: var(--gem-accent);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.gem-dark .gem-btn--primary::before {
+  background: var(--gem-accent-strong);
+}
+
+.gem-dark .gem-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(167, 139, 250, 0.9), 0 0 40px rgba(139, 92, 246, 0.6);
+}
+
+/* Lưới tính năng chính (Feature Grid): Chuyển từ khung lưới dính nhau thô thành các thẻ tách biệt bo góc mượt mà */
+.gem-dark .sol-features {
+  border: none;
+  gap: 16px;
+}
+
+.gem-dark .sol-feature {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gem-elevated);
+  box-shadow: none;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.gem-dark .sol-feature:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 16px 36px -12px rgba(139, 92, 246, 0.25);
+}
+
+.gem-dark .sol-feature--ai {
+  background: radial-gradient(circle at 90% 10%, rgba(167, 139, 250, 0.28) 0%, rgba(139, 92, 246, 0.16) 40%, var(--gem-elevated) 85%);
+  border: 1px solid rgba(167, 139, 250, 0.55);
+  box-shadow: 0 8px 24px -6px rgba(139, 92, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.gem-dark .sol-feature--ai:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196, 181, 253, 0.8);
+  box-shadow: 0 20px 40px -10px rgba(139, 92, 246, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.gem-dark .sol-feature--mark {
+  background: radial-gradient(circle at 0% 100%, rgba(56, 189, 248, 0.15) 0%, var(--gem-elevated) 70%);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.gem-dark .sol-feature__badge {
+  border-radius: 6px;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.6);
+  padding: 3px 10px;
+}
+
+/* How It Works (.sol-steps): Chuyển từ lưới dính thô thành các thẻ bước tách biệt bo góc 14px */
+.gem-dark .sol-steps {
+  border: none;
+  gap: 14px;
+}
+
+.gem-dark .sol-step {
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gem-elevated);
+  box-shadow: none;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gem-dark .sol-step:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 12px 28px -8px rgba(139, 92, 246, 0.25);
+}
+
+.gem-dark .sol-step:hover .sol-step__arrow {
+  color: var(--gem-accent-strong);
+  transform: translateX(3px);
+}
+
+.gem-dark .sol-step__arrow {
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Explore Other Solutions (.sol-others): Chuyển từ lưới dính thô thành các thẻ bo góc 16px */
+.gem-dark .sol-others {
+  border: none;
+  gap: 16px;
+}
+
+.gem-dark .sol-other {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gem-elevated);
+  box-shadow: none;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.gem-dark .sol-other:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 16px 36px -12px rgba(139, 92, 246, 0.25);
+}
+
+/* Proven Technology / Performance & Specs (.sol-perf): Nâng cấp bớt thô */
+.gem-dark .sol-stats {
+  border-top: none;
+  gap: 16px;
+}
+
+.gem-dark .sol-stat {
+  position: relative;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gem-elevated);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.gem-dark .sol-stat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.45);
+  box-shadow: 0 16px 36px -12px rgba(139, 92, 246, 0.25);
+}
+
+.gem-dark .sol-stat__num {
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 60%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}
+
+.gem-dark .sol-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gem-dark .sol-spec {
+  border-top: none;
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.gem-dark .sol-spec:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: rgba(139, 92, 246, 0.25);
+}
+
+.gem-dark .sol-spec__k {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.gem-dark .sol-spec__v {
+  color: #e9e5f8;
+}
+
+
+
+
+
+
+
+

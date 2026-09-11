@@ -20,6 +20,7 @@ const DARK_PATH_PREFIXES = [
   "/history",
   "/certification",
   "/customers",
+  "/solutions",
 ];
 
 /**
