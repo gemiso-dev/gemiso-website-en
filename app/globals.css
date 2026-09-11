@@ -355,6 +355,8 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 
 .gem-sep {
   color: #c6c6c6;
+  font-size: 12px;
+  opacity: 0.7;
 }
 
 .gem-lang {
@@ -1760,8 +1762,24 @@ button.gem-copy__text:focus-visible,
 
 /* --------------------------------------------------------------- 브레드크럼 */
 .sol-breadcrumb {
+  position: relative;
   background: #fff;
-  border-bottom: 1px solid var(--gem-border);
+}
+/* 양 끝으로 갈수록 옅어지는 경계선 — 딱딱한 통짜 줄 대신 은은하게 */
+.sol-breadcrumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gem-border) 20%,
+    var(--gem-border) 80%,
+    transparent
+  );
 }
 .sol-breadcrumb__inner {
   display: flex;
@@ -3149,10 +3167,16 @@ button.gem-copy__text:focus-visible,
   text-align: left;
   white-space: nowrap;
   cursor: pointer;
+  outline: none;
   transition: background 0.2s ease;
 }
 .hist-tab:hover {
   background: var(--gem-surface);
+}
+/* 브라우저 기본 파란 포커스 링 대신, 키보드 탐색 시에만 테마 색 링을 보인다 */
+.hist-tab:focus-visible {
+  outline: 2px solid var(--gem-accent);
+  outline-offset: -2px;
 }
 .hist-tab__range {
   font-family: var(--gem-font-display);
@@ -3274,11 +3298,13 @@ button.gem-copy__text:focus-visible,
 .tl-dot--major {
   width: 11px;
   height: 11px;
+  border-radius: 50%;
   background: var(--gem-accent);
 }
 .tl-dot--minor {
   width: 9px;
   height: 9px;
+  border-radius: 50%;
   background: #fff;
   border: 1.5px solid #c6c6c6;
 }
@@ -3313,6 +3339,7 @@ button.gem-copy__text:focus-visible,
   color: var(--gem-subtle);
   background: var(--gem-surface);
   border: 1px solid var(--gem-border);
+  border-radius: 6px;
   padding: 2px 7px;
 }
 .tl-desc {
@@ -3700,8 +3727,6 @@ button.gem-copy__text:focus-visible,
 
 /* ----------------------------------------------------------- 분야 필터 탭 */
 .cust-tabbar {
-  position: sticky;
-  top: var(--gem-header-h);
   z-index: 40;
   margin-top: clamp(28px, 3.5vw, 40px);
   background: #fff;
@@ -4569,6 +4594,7 @@ a.sup-contact__cell:hover {
   background: #fcfcfc;
 }
 .mission-pillar {
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
   border-top: 2px solid var(--gem-border-strong);
@@ -4655,6 +4681,9 @@ a.sup-contact__cell:hover {
   background-size: 18px 18px;
   aspect-ratio: 16 / 10;
   overflow: hidden;
+  /* 네 모서리로 갈수록 옅어져 테두리가 또렷하게 도드라지지 않고 배경에 스며들게 */
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, #000 78%, transparent 100%);
 }
 .mission-diagram__svg {
   position: absolute;
@@ -5198,51 +5227,58 @@ a.sup-contact__cell:hover {
 
 /* 홈 헤더 — 다크 히어로 위에서도 보이도록 로고·내비를 라이트 톤으로 (로고 이미지 교체는
    SiteHeader.tsx에서 처리, 여기서는 텍스트·아이콘 색상만) */
-.gem-header--home .gem-nav__link,
-.gem-header--home .gem-menu-btn span {
+.gem-header--dark .gem-nav__link,
+.gem-header--dark .gem-menu-btn span {
   color: #f5f5f7;
 }
-.gem-header--home .gem-nav__link:hover {
+.gem-header--dark .gem-nav__link:hover {
   color: #b8b8c2;
 }
-.gem-header--home.is-scrolled {
+.gem-header--dark.is-scrolled {
   background: rgba(9, 11, 35, 0.75);
 }
-.gem-header--home .gem-mobile-menu {
+/* 히어로가 없는 다크 내부 페이지 — 처음부터 배경을 완전 불투명하게 채워,
+   반투명+블러로 인해 body의 흰 배경이 살짝 비쳐 보이는 현상을 원천 차단한다.
+   바로 아래 이어지는 .sol-breadcrumb(--gem-surface, #12142d)와 같은 톤으로
+   맞춰 두 바가 이어붙은 듯 하나로 보이게 한다. */
+.gem-header--dark-solid {
+  background: #12142d;
+}
+.gem-header--dark .gem-mobile-menu {
   background: #090b23;
   border-top-color: rgba(255, 255, 255, 0.14);
 }
-.gem-header--home .gem-mobile-menu a {
+.gem-header--dark .gem-mobile-menu a {
   color: #f5f5f7;
   border-bottom-color: rgba(255, 255, 255, 0.14);
 }
-.gem-header--home .gem-mobile-menu__sub {
+.gem-header--dark .gem-mobile-menu__sub {
   color: #a8a8b0;
 }
-.gem-header--home .gem-nav__link[aria-haspopup="true"]::after {
+.gem-header--dark .gem-nav__link[aria-haspopup="true"]::after {
   background-color: #f5f5f7;
 }
-.gem-header--home .gem-nav__dropdown {
+.gem-header--dark .gem-nav__dropdown {
   background: rgba(18, 20, 45, 0.72);
   border-color: rgba(255, 255, 255, 0.14);
   box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
-.gem-header--home .gem-nav__drop-link {
+.gem-header--dark .gem-nav__drop-link {
   margin: 2px 6px;
   padding: 9px 12px;
   border-radius: 8px;
   color: #f5f5f7;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
-.gem-header--home .gem-nav__drop-link:first-child {
+.gem-header--dark .gem-nav__drop-link:first-child {
   margin-top: 6px;
 }
-.gem-header--home .gem-nav__drop-link:last-child {
+.gem-header--dark .gem-nav__drop-link:last-child {
   margin-bottom: 6px;
 }
-.gem-header--home .gem-nav__drop-link:hover {
+.gem-header--dark .gem-nav__drop-link:hover {
   background: rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
   box-shadow: 0 10px 18px -8px rgba(0, 0, 0, 0.5);
@@ -5301,3 +5337,246 @@ a.sup-contact__cell:hover {
 .gem-home .gem-logo-cell__name {
   color: #3d3d44;
 }
+
+/* =========================================================================
+   전 페이지 다크 테마 — 홈(.gem-home)과 동일한 팔레트를 내부 페이지에도 적용.
+   페이지 루트에 `.gem-dark .gem-<page>` 두 클래스를 함께 준다.
+   `.gem-dark`는 토큰 재정의 + 여러 페이지에서 공통으로 재사용되는 클래스의
+   하드코딩 색상 보정을 맡고, `.gem-<page>`는 그 페이지만의 예외를 처리한다.
+   ========================================================================= */
+.gem-dark {
+  --gem-bg: #090b23;
+  --gem-surface: #12142d;
+  --gem-elevated: #1b1d3d;
+  --gem-fg: #f5f5f7;
+  --gem-muted: #a8a8b0;
+  --gem-subtle: #82828c;
+  --gem-faint: #6e6e77;
+  --gem-border: rgba(255, 255, 255, 0.14);
+  --gem-border-strong: #f5f5f7;
+  --gem-accent: #8b5cf6;
+  --gem-accent-strong: #a78bfa;
+  --gem-on-accent: #ffffff;
+  background: var(--gem-bg);
+  color: var(--gem-fg);
+}
+/* 홈 히어로 설명문과 같은 톤 — 회색으로 죽이지 않고 은은한 라벤더 화이트로 */
+.gem-dark .hist-hero__desc,
+.gem-dark .mission-pillar__text {
+  color: #e9e5f8;
+}
+/* 여러 페이지가 그대로 재사용하는 클래스 — 흰 배경 하드코딩을 한 번에 보정 */
+.gem-dark .sol-breadcrumb,
+.gem-dark .hist-hero,
+.gem-dark .hist-timeline,
+.gem-dark .sol-detail,
+.gem-dark .tech-toc__link,
+.gem-dark .cust-cases,
+.gem-dark .cust-grid-section,
+.gem-dark .cert-section,
+.gem-dark .sup-contact-section,
+.gem-dark .sup-contact__cell,
+.gem-dark .part-card,
+.gem-dark .sol-hero,
+.gem-dark .sol-mock,
+.gem-dark .sol-shot,
+.gem-dark .sol-feature,
+.gem-dark .sol-step,
+.gem-dark .sol-other {
+  background: var(--gem-surface);
+}
+.gem-dark .cust-cases__grid,
+.gem-dark .cust-grid {
+  border: none;
+  gap: 16px;
+}
+.gem-dark .cust-tabbar,
+.gem-dark .sol-tabbar {
+  background: rgba(18, 20, 45, 0.72);
+  border-top: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.gem-dark .case-card,
+.gem-dark .cust-cell {
+  background: var(--gem-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.gem-dark .case-card:hover,
+.gem-dark .cust-cell:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+  background: var(--gem-elevated);
+}
+.gem-dark .cust-cell__name {
+  color: var(--gem-muted);
+}
+/* 밝은 카드로 분리 — .gem-home .gem-logo-cell과 같은 패턴 */
+.gem-dark .cust-cell__logo {
+  background: #f2f2f4;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+.gem-dark .cert-card,
+.gem-dark .pat-card {
+  background: var(--gem-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.gem-dark .cert-card:hover,
+.gem-dark .pat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+}
+.gem-dark .cert-card__top,
+.gem-dark .cert-card__shot,
+.gem-dark .pat-shot,
+.gem-dark .pat-status {
+  border-color: rgba(255, 255, 255, 0.05);
+}
+.gem-dark .cert-card__shot,
+.gem-dark .pat-shot {
+  background: var(--gem-surface);
+}
+.gem-dark .cert-card__shot img,
+.gem-dark .pat-shot img {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+.gem-dark .sol-detail__media,
+.gem-dark .sol-detail__media--narrow img,
+.gem-dark .sol-shot {
+  box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.55);
+}
+.gem-dark .hist-era__idx,
+.gem-dark .cust-tab__count,
+.gem-dark .mission-diagram__dot,
+.gem-dark .sol-step__arrow,
+.gem-dark .part-group__count,
+.gem-dark .gem-sep {
+  color: var(--gem-faint);
+}
+.gem-dark .tl-dot--minor {
+  background: var(--gem-bg);
+  border-color: var(--gem-faint);
+}
+.gem-dark .sol-stats,
+.gem-dark .sol-spec {
+  border-top-color: var(--gem-border);
+}
+.gem-dark .mission-orb__edge,
+.gem-dark .mission-people__edge,
+.gem-dark .mission-diagram__link line {
+  stroke: var(--gem-border);
+}
+.gem-dark .gem-btn--invert {
+  background: #fff;
+  color: var(--gem-accent);
+}
+.gem-dark .gem-btn--invert:hover {
+  color: #fff;
+}
+.gem-dark .gem-btn--invert::before {
+  background: var(--gem-accent);
+}
+.gem-dark .gem-marquee {
+  background: var(--gem-bg);
+}
+/* 하단 CTA — 홈 Contact 섹션과 같은 진한 보라 글로우로, 밋밋한 단색 대신 */
+.gem-dark .sol-cta {
+  background: radial-gradient(ellipse 90% 100% at 50% 0%, #3d2278 0%, #1e1448 45%, #0f0a26 100%);
+}
+/* 히어로 통계 — 줄 그리드 대신 홈 .gem-stat과 같은 개별 카드 + 코너 글로우 + 그라데이션 숫자 */
+.gem-dark .hist-stats {
+  gap: 16px;
+  border-top: none;
+  overflow: visible;
+}
+.gem-dark .hist-stat {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  background: var(--gem-elevated);
+  box-shadow: none;
+  overflow: hidden;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gem-dark .hist-stat:hover {
+  transform: translateY(-3px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 45px -18px rgba(139, 92, 246, 0.35);
+}
+.gem-dark .hist-stat::before,
+.gem-dark .hist-stat::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(139, 92, 246, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.gem-dark .hist-stat::before {
+  top: -40px;
+  left: -40px;
+}
+.gem-dark .hist-stat::after {
+  bottom: -40px;
+  right: -40px;
+}
+.gem-dark .hist-stat > * {
+  position: relative;
+  z-index: 1;
+}
+.gem-dark .hist-stat__num {
+  font-weight: 700;
+  background: linear-gradient(135deg, #ffffff 0%, #c4b5fd 60%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ---- Company: Mission ---- */
+.gem-mission .mission-pillar-sec--surface {
+  background: var(--gem-surface);
+}
+.gem-mission .mission-diagram {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+.gem-mission .mission-diagram__tick {
+  stroke: rgba(255, 255, 255, 0.25) !important;
+}
+.gem-mission .mission-diagram__caption {
+  background: rgba(9, 11, 35, 0.75);
+}
+/* 기둥 상단 구분선 — 두꺼운 흰 실선 대신 얇고 양 끝이 옅어지는 선으로 */
+.gem-mission .mission-pillar {
+  border-top: none;
+}
+.gem-mission .mission-pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gem-border) 15%,
+    var(--gem-border) 85%,
+    transparent
+  );
+}
+
+/* ---- Company: Certifications (사용 안 함 — 공용 .gem-dark 블록으로 충분) ---- */
+
+/* ---- Company: Customers (사용 안 함 — 공용 .gem-dark 블록으로 충분) ---- */

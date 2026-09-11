@@ -13,14 +13,14 @@ export const metadata = pageMetadata({
 
 export default function CertificationPage() {
   return (
-    <>
+    <div className="gem-dark gem-certification">
       {/* 브레드크럼 */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <Link href="/#solutions">About</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <span className="sol-breadcrumb__current">Certifications</span>
         </div>
       </nav>
@@ -174,6 +174,6 @@ export default function CertificationPage() {
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }

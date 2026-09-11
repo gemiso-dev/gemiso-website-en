@@ -159,6 +159,8 @@ export default function MissionPeopleFlow() {
           y={n.y - NODE_S / 2}
           width={NODE_S}
           height={NODE_S}
+          rx={2.5}
+          ry={2.5}
           className={`mission-people__node${active.includes(i) ? " is-on" : ""}`}
         />
       ))}

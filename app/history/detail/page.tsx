@@ -25,16 +25,16 @@ export default function HistoryDetailPage() {
   const total = HISTORY_DETAIL.reduce((n, y) => n + y.items.length, 0);
 
   return (
-    <>
+    <div className="gem-dark gem-history-detail">
       {/* 브레드크럼 */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
           <Link href="/">Home</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <Link href="/#solutions">About</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <Link href="/history">History</Link>
-          <span className="gem-sep">|</span>
+          <span className="gem-sep">›</span>
           <span className="sol-breadcrumb__current">Detailed History</span>
         </div>
       </nav>
@@ -142,6 +142,6 @@ export default function HistoryDetailPage() {
           </div>
         </Reveal>
       </section>
-    </>
+    </div>
   );
 }
