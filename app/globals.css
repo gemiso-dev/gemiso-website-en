@@ -802,7 +802,9 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 }
 @media (min-width: 861px) {
   .gem-hero__grid {
-    padding-top: calc(32px + var(--gem-header-h));
+    /* flex-start 유지 + 상단 여백만 늘려 살짝 아래로 — 완전 중앙 정렬은 너무
+       내려가 보여서 제외 */
+    padding-top: calc(88px + var(--gem-header-h));
   }
 }
 /* 히어로 라벨 강조 배지 — 옅은 파란 알약 위 진한 파란 볼드 텍스트 */
@@ -1203,11 +1205,9 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 .sol-clients__track {
   animation-duration: 55s;
 }
-@media (prefers-reduced-motion: reduce) {
-  .gem-marquee__track {
-    animation: none;
-  }
-}
+/* 고객사 로고 마키는 움직임이 매우 느리고(240s/1주) 장식적 요소라
+   prefers-reduced-motion 설정과 무관하게 항상 흐르게 둔다. 다른 스크롤/전환
+   애니메이션은 여전히 그 설정을 존중한다. */
 .gem-logo-cell {
   width: 208px;
   height: 84px;
@@ -1554,9 +1554,19 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   .gem-contact__grid {
     grid-template-columns: 1fr;
   }
-  /* 좁은 화면에서 전화번호·이메일이 안 쪼개져 2열이 넘치므로 1열로 쌓는다 */
-  .gem-contact__info {
-    grid-template-columns: 1fr;
+  /* 좁은 화면에서는 라벨(190px 고정폭)과 값이 한 줄에 못 들어가 가로 스크롤이
+     생기므로, 라벨 줄과 값 줄을 위아래로 쌓는다. */
+  .gem-info-cell {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .gem-info-cell__head {
+    width: auto;
+  }
+  .gem-info-cell__value {
+    width: 100%;
+    margin-top: 0;
   }
 }
 .gem-contact__title {
@@ -1632,6 +1642,8 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   white-space: nowrap;
 }
 .gem-info-cell__value {
+  flex: 1;
+  min-width: 0;
   margin-top: 8px;
   font-size: 16px;
   color: #fff;
@@ -1650,6 +1662,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
 }
 .gem-copy__text {
   min-width: 0;
+  overflow-wrap: anywhere;
   color: inherit;
 }
 /* 이메일 등 mailto 링크 */
@@ -5079,6 +5092,14 @@ a.sup-contact__cell:hover {
 
 .gem-home #solutions {
   background: var(--gem-bg);
+  /* 히어로 바로 아래라 상단 여백만 줄여 히어로와 더 가깝게 느껴지도록
+     (하단은 Why GEMISO와의 기준 간격을 유지하기 위해 그대로 둔다) */
+  padding-top: 48px;
+}
+@media (max-width: 860px) {
+  .gem-home #solutions {
+    padding-top: 40px;
+  }
 }
 .gem-home .gem-section--alt {
   background: var(--gem-bg);
@@ -5229,9 +5250,14 @@ a.sup-contact__cell:hover {
   box-shadow: 0 0 28px -6px rgba(139, 92, 246, 0.55);
 }
 
-/* 고객사 마키 — Why GEMISO 아래, 자체 섹션으로 분리(흰 배경 대신 투명) */
+/* 고객사 마키 — Why GEMISO 섹션의 마지막 자식이라 아래쪽은 섹션 자체의
+   padding-bottom(96px)이 그대로 적용돼 Technology와의 간격이 기준과 맞는다.
+   위쪽만 통계 카드와 붙어 보이지 않도록 여백을 살짝 준다. */
 .gem-home .gem-marquee {
   background: transparent;
+  padding-block: 0;
+  /* reason → stat 간격(64px)과 동일하게 */
+  margin-top: 64px;
 }
 /* 어두운 배경에서 로고가 묻히지 않도록 밝은 카드로 분리 */
 .gem-home .gem-logo-cell {
