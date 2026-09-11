@@ -5819,6 +5819,46 @@ a.sup-contact__cell:hover {
   color: #e9e5f8;
 }
 
+/* ---- Technology Page (.gem-technology) Dark Theme Overrides ---- */
+.gem-technology .tech-item:nth-child(odd) {
+  background: var(--gem-surface);
+}
+
+.gem-technology .tech-item:nth-child(even) {
+  background: var(--gem-bg);
+}
+
+.gem-dark .tech-toc__link {
+  background: var(--gem-surface);
+  border: 1px solid var(--gem-border);
+  border-radius: 999px;
+  color: var(--gem-fg);
+  transition: all 0.2s ease;
+}
+
+.gem-dark .tech-toc__link:hover {
+  background: var(--gem-accent);
+  color: #ffffff;
+  border-color: var(--gem-accent);
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.4);
+}
+
+/* Các hình sơ đồ flat (Media Processing / AI Compensation) trên trang Technology:
+   Giữ nền trắng sạch sẽ bo góc + viền mượt mờ để hình không bị tối chìm vào nền dark */
+.gem-dark .tech-item__details--flat .sol-detail__media {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.gem-dark .tech-item__details--flat .sol-detail__media img {
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.06));
+}
+
+
+
 
 
 
