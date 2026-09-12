@@ -2386,10 +2386,14 @@ button.gem-copy__text:focus-visible,
   padding: 26px 24px 8px 0;
 }
 .sol-stat__num {
-  font-size: clamp(34px, 4vw, 52px);
+  display: block;
+  font-size: clamp(24px, 2.6vw + 12px, 48px);
+  line-height: 1.15;
   font-weight: 400;
   letter-spacing: -0.02em;
   color: var(--gem-fg);
+  overflow-wrap: normal;
+  word-break: normal;
 }
 .sol-stat__label {
   margin-top: 8px;
