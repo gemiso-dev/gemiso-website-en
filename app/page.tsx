@@ -8,7 +8,7 @@ import { COMPANY, asset } from "@/components/site-config";
 import { pageMetadata } from "@/components/seo";
 
 export const metadata = pageMetadata({
-  title: "Broadcasting, Rebuilt with AX — AI Media Platform for Broadcasters",
+  title: "Creating Next Generation Pro AV Solutions",
   description:
     "GEMISO delivers AX technology for AI-driven, platform-aware broadcasting. We build new media business models that put broadcasters shoulder to shoulder with global OTT services.",
   path: "/",
