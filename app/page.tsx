@@ -279,7 +279,7 @@ export default function Home() {
             </h1>
             <p className="gem-hero__desc">
               Built on technology trusted by leading broadcasters, we&apos;re
-              shaping what&apos;s next in broadcasting workflows with AI.
+              shaping what&apos;s next in Pro A/V workflows.
             </p>
             <div className="gem-hero__actions">
               <a href="#solutions" className="gem-btn gem-btn--outline">
