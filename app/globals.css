@@ -836,10 +836,7 @@ a:hover .gem-arrow-slide > span:nth-child(2) {
   margin-top: 10px;
   font-size: 0.68em;
   font-weight: 500;
-  background: linear-gradient(90deg, #3d39ae, #a78bfa);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #a78bfa;
 }
 
 .gem-hero__desc {
