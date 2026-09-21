@@ -8,7 +8,7 @@
 
 /** 히어로 상단 요약 지표. */
 export const PARTNER_STATS: { v: string; k: string }[] = [
-  { v: "14", k: "Partner Companies" },
+  { v: "15", k: "Partner Companies" },
   { v: "7+ Countries", k: "Global Collaboration" },
   { v: "SRT", k: "International Standards Alliance" },
   { v: "Academia", k: "University Partnerships" },
@@ -114,6 +114,13 @@ export const PARTNER_GROUPS: PartnerGroup[] = [
         desc: "Shared storage and media workflow platforms for production teams",
         disp: "scalelogicinc.com",
         logo: "/assets/partners/scale-logic.png",
+      },
+      {
+        name: "Youngtech Sistemas Ltda.",
+        kind: "Broadcast Automation",
+        desc: "Specialist Radio and TV automation partner",
+        disp: "youngtech.com.br",
+        logo: "/assets/partners/youngtech_sistemas.png",
       },
     ],
   },
