@@ -278,7 +278,7 @@ export const HISTORY_DETAIL: DetailYear[] = [
     year: "2025",
     items: [
       { month: "01", text: "Supplied newsroom and MAM software to JTV (Jeonju Broadcasting)" },
-      { month: "06", text: "Deployed MYMY content management solution at KTV" },
+      { month: "06", text: "Deployed Stratos content management solution at KTV" },
       { month: "07", text: "MAM upgrade project at KBN (KT's in-house broadcasting)" },
       { month: "08", text: "Upgraded broadcast system software at Radio Korea" },
       { month: "10", text: "Deployed 2025 CATV local channel DR playout system for SK Broadband" },

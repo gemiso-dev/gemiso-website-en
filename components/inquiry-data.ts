@@ -49,10 +49,10 @@ export const INQUIRY_SOLUTIONS: InquiryOption[] = [
   { label: "Automated Playout — Talos", value: "Automated Playout — Talos" },
   // 현재 미취급 솔루션 — 숨김. 복구하려면 주석을 해제한다.
   // { label: "Radio — Emotion", value: "Radio — Emotion" },
-  { label: "Audio File System — Winner S", value: "Audio File System — Winner S" },
+  { label: "Audio File System — Gemiso Radio Live", value: "Audio File System — Gemiso Radio Live" },
   { label: "AI Technology — MAIA", value: "AI Technology — MAIA" },
-  { label: "Content Archive — MYMY", value: "Content Archive — MYMY" },
-  { label: "Content Distribution — G-SAM", value: "Content Distribution — G-SAM" },
+  { label: "Content Archive — Stratos", value: "Content Archive — Stratos" },
+  { label: "Content Distribution — Nexus", value: "Content Distribution — Nexus" },
 ];
 
 /** 솔루션 도입 희망 시기 (단일 선택). */

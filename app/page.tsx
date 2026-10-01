@@ -52,7 +52,7 @@ const SOLUTIONS: {
     },
     {
       num: "05",
-      tag: "WINNER-S",
+      tag: "GEMISO RADIO LIVE",
       title: "Audio File System",
       desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
     },
@@ -64,13 +64,13 @@ const SOLUTIONS: {
     },
     {
       num: "07",
-      tag: "MYMY",
+      tag: "STRATOS",
       title: "Content Archive",
       desc: "Archive digital and video content long-term, with fast search across growing media libraries.",
     },
     {
       num: "08",
-      tag: "G-SAM",
+      tag: "NEXUS",
       title: "Content Distribution",
       desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
     },

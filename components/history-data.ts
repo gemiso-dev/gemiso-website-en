@@ -283,8 +283,8 @@ export const HISTORY_ERAS: HistoryEra[] = [
       {
         year: "2025",
         tag: "PRODUCT",
-        title: "Expanded MYMY content management solution · Developed SBS next-generation PDS",
-        desc: "We extended MYMY to KTV, the Korea Student Aid Foundation, the Korea Deposit Insurance Corporation, and more.",
+        title: "Expanded Stratos content management solution · Developed SBS next-generation PDS",
+        desc: "We extended Stratos to KTV, the Korea Student Aid Foundation, the Korea Deposit Insurance Corporation, and more.",
       },
       {
         year: "2026.01",
