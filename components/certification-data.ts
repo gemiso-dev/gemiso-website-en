@@ -34,7 +34,7 @@ export const GS_CERTS: GsCert[] = [
     img: "/assets/certification/gs-proxima-v6.jpg",
   },
   {
-    name: "MYMY v3.0",
+    name: "Stratos v3.0",
     cat: "Content Archive",
     tag: "ARCHIVE",
     img: "/assets/certification/gs-mymy-v3.jpg",
