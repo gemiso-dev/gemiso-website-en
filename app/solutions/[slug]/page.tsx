@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "@/components/Reveal";
 import SolutionClientsMarquee from "@/components/SolutionClientsMarquee";
+import SolutionFlow from "@/components/SolutionFlow";
 import SolutionMock from "@/components/SolutionMock";
 import SolutionTabs from "@/components/SolutionTabs";
 import ZoomableImage from "@/components/ZoomableImage";
@@ -153,14 +154,18 @@ export default async function SolutionPage({
                 <Reveal as="div" key={d.code} className="sol-detail">
                   <div
                     className={`sol-detail__media${
-                      d.image
+                      d.flow
+                        ? " sol-detail__media--flow"
+                        : d.image
                         ? d.imageNarrow
                           ? " sol-detail__media--narrow"
                           : ""
                         : " sol-detail__media--mock"
                     }`}
                   >
-                    {d.image ? (
+                    {d.flow ? (
+                      <SolutionFlow flow={d.flow} />
+                    ) : d.image ? (
                       <ZoomableImage src={asset(d.image)} alt={`${d.code} ${d.title} screenshot`} />
                     ) : (
                       <SolutionMock
