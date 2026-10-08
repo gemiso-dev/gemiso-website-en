@@ -67,6 +67,8 @@ export type Solution = {
       targets: { label: string; image: string; color: string }[];
     };
   }[];
+  /** true면 릴리스 노트 · 버전별 다운로드 섹션(#download)과 히어로 다운로드 버튼을 표시. */
+  downloads?: boolean;
   /** true면 사이트 전반(홈·솔루션 탭·내비·사이트맵)에서 숨긴다.
       코드·상세 데이터는 유지하며, 이 플래그만 제거하면 복구된다. */
   hidden?: boolean;
@@ -863,6 +865,7 @@ export const SOLUTIONS: Solution[] = [
     cat: "All-in-One Live Production Studio",
     short: "Live Production",
     mock: "schedule",
+    downloads: true,
     image: "/assets/solutions/live-studio/switching.png",
     tagline: "One PC becomes your all-in-one live production studio",
     desc: "Gemiso Live Studio replaces a rack of broadcast hardware with one application — purpose-built for real-time video switching, clean recording, and multi-platform streaming. Combine cameras, mics, video, and CG graphics into broadcast-grade live production on a single Windows PC.",
