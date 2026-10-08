@@ -53,6 +53,7 @@ export const INQUIRY_SOLUTIONS: InquiryOption[] = [
   { label: "AI Technology — MAIA", value: "AI Technology — MAIA" },
   { label: "Content Archive — Stratos", value: "Content Archive — Stratos" },
   { label: "Content Distribution — Nexus", value: "Content Distribution — Nexus" },
+  { label: "Live Production — Gemiso Live Studio", value: "Live Production — Gemiso Live Studio" },
 ];
 
 /** 솔루션 도입 희망 시기 (단일 선택). */

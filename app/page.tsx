@@ -19,6 +19,8 @@ export const metadata = pageMetadata({
 const SOLUTIONS: {
   num: string;
   tag: string;
+  /** 솔루션 상세 페이지 슬러그(없으면 tag를 소문자로 쓴다). */
+  slug?: string;
   title: string;
   desc: string;
   /** true면 목록에서 숨긴다(코드는 유지, 플래그만 제거하면 복구). */
@@ -53,6 +55,7 @@ const SOLUTIONS: {
     {
       num: "05",
       tag: "GEMISO RADIO LIVE",
+      slug: "gemiso-radio-live",
       title: "Audio File System",
       desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
     },
@@ -73,6 +76,13 @@ const SOLUTIONS: {
       tag: "NEXUS",
       title: "Content Distribution",
       desc: "Distribute content and track performance across YouTube, Instagram, X, and more.",
+    },
+    {
+      num: "09",
+      tag: "GEMISO LIVE STUDIO",
+      slug: "gemiso-live-studio",
+      title: "Live Production",
+      desc: "Turn one PC into an all-in-one live production studio - real-time video switching, clean recording, and multi-platform streaming.",
     },
   ];
 
@@ -322,7 +332,7 @@ export default function Home() {
             {SOLUTIONS.filter((s) => !s.hidden).map((s, i) => (
               <Link
                 key={s.tag}
-                href={`/solutions/${s.tag.toLowerCase()}/`}
+                href={`/solutions/${s.slug ?? s.tag.toLowerCase()}/`}
                 className="gem-card"
               >
                 <div className="gem-card__meta">

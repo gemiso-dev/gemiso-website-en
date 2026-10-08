@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import LiveStudioDownloads from "@/components/LiveStudioDownloads";
 import Reveal from "@/components/Reveal";
 import SolutionClientsMarquee from "@/components/SolutionClientsMarquee";
+import SolutionFlow from "@/components/SolutionFlow";
 import SolutionMock from "@/components/SolutionMock";
 import SolutionTabs from "@/components/SolutionTabs";
 import ZoomableImage from "@/components/ZoomableImage";
@@ -83,6 +85,11 @@ export default async function SolutionPage({
                   <span>→</span>
                 </span>
               </Link>
+              {active.downloads && (
+                <a href="#download" className="gem-btn gem-btn--outline">
+                  Download
+                </a>
+              )}
               <p className="sol-hero__trust">{active.trust}</p>
             </div>
           </Reveal>
@@ -153,14 +160,18 @@ export default async function SolutionPage({
                 <Reveal as="div" key={d.code} className="sol-detail">
                   <div
                     className={`sol-detail__media${
-                      d.image
+                      d.flow
+                        ? " sol-detail__media--flow"
+                        : d.image
                         ? d.imageNarrow
                           ? " sol-detail__media--narrow"
                           : ""
                         : " sol-detail__media--mock"
                     }`}
                   >
-                    {d.image ? (
+                    {d.flow ? (
+                      <SolutionFlow flow={d.flow} />
+                    ) : d.image ? (
                       <ZoomableImage src={asset(d.image)} alt={`${d.code} ${d.title} screenshot`} />
                     ) : (
                       <SolutionMock
@@ -266,6 +277,21 @@ export default async function SolutionPage({
         </div>
       </section>
 
+      {/* 릴리스 노트 · 버전별 다운로드 (있는 경우만) */}
+      {active.downloads && (
+        <section id="download" className="gem-section">
+          <div className="gem-container">
+            <Reveal className="sol-section__head">
+              <div className="gem-eyebrow gem-eyebrow--mono">
+                <span>Download</span>
+              </div>
+              <h2 className="gem-title">Download {active.name}</h2>
+            </Reveal>
+            <LiveStudioDownloads />
+          </div>
+        </section>
+      )}
+
       {/* 도입 고객 마키 */}
       {active.clients && active.clients.length > 0 && (
         <section className="gem-marquee" aria-label={`${active.name} customers`}>
@@ -281,8 +307,8 @@ export default async function SolutionPage({
         </section>
       )}
 
-      {/* 다른 솔루션 */}
-      <section className="gem-section">
+      {/* 다른 솔루션 — 다운로드 섹션이 끼면 배경 교차(기본 ↔ alt)가 어긋나지 않도록 alt로 */}
+      <section className={`gem-section${active.downloads ? " gem-section--alt" : ""}`}>
         <div className="gem-container">
           <Reveal className="sol-others__head">
             <div>

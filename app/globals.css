@@ -2329,6 +2329,447 @@ button.gem-copy__text:focus-visible,
   }
 }
 
+/* ----------------------------------------------------------------- 기능 상세 · 송출 흐름도 */
+/* 흐름도는 카드마다 자체 프레임을 가지므로 래퍼 장식·호버를 제거 */
+.sol-detail__media--flow,
+.sol-detail__media--flow:hover {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  overflow: visible;
+  line-height: normal;
+}
+.sol-detail__media--flow:hover img {
+  transform: none;
+}
+.sol-flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(36px, 0.28fr) minmax(0, 1fr);
+  align-items: center;
+  padding-bottom: 12px; /* 마지막 캡션이 걸치는 여백 */
+}
+.sol-flow__node {
+  position: relative;
+  margin: 0;
+}
+.sol-flow__shot {
+  width: 100%;
+  border: 1px solid var(--flow-color, var(--gem-border));
+  border-radius: 10px;
+  background: var(--gem-surface);
+  box-shadow: 0 10px 24px rgba(22, 22, 22, 0.1);
+  overflow: hidden;
+  line-height: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.sol-flow__node--source .sol-flow__shot {
+  border-color: var(--gem-accent);
+  box-shadow: 0 14px 40px -8px color-mix(in srgb, var(--gem-accent) 45%, transparent);
+}
+.sol-flow__shot:hover {
+  transform: translateY(-3px);
+}
+.sol-detail__media--flow .sol-flow__shot img {
+  max-height: none;
+}
+.sol-flow__label {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  line-height: 1.2;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gem-fg);
+}
+.sol-flow__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--flow-color);
+}
+/* 행마다 같은 위아래 여백 → 화면 중심이 정확히 25% / 75% 지점(화살촉 위치)에 온다 */
+.sol-flow__row {
+  padding-block: 18px;
+}
+.sol-flow__links {
+  position: relative;
+  align-self: stretch;
+}
+.sol-flow__links svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.sol-flow__links path {
+  fill: none;
+  stroke: var(--gem-accent);
+  stroke-width: 1.6;
+  stroke-dasharray: 5 5;
+  animation: sol-flow-dash 1.2s linear infinite;
+}
+.sol-flow__origin {
+  position: absolute;
+  left: -5px;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--gem-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--gem-accent) 25%, transparent);
+}
+.sol-flow__head {
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 12px;
+  margin-top: -6px;
+  background: var(--gem-accent);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+@keyframes sol-flow-dash {
+  to {
+    stroke-dashoffset: -10;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sol-flow__links path {
+    animation: none;
+  }
+  .sol-flow__shot,
+  .sol-flow__shot:hover {
+    transition: none;
+    transform: none;
+  }
+}
+.gem-dark .sol-detail__media.sol-detail__media--flow {
+  box-shadow: none;
+}
+.gem-dark .sol-flow__shot {
+  box-shadow: 0 16px 36px -16px rgba(0, 0, 0, 0.6);
+}
+.gem-dark .sol-flow__node--source .sol-flow__shot {
+  box-shadow: 0 16px 44px -10px color-mix(in srgb, var(--gem-accent) 50%, transparent);
+}
+
+/* ----------------------------------------------------------------- 릴리스 노트 · 버전별 다운로드 */
+.lsd {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.lsd-status {
+  margin: 0;
+  color: var(--gem-muted);
+}
+.lsd-status a,
+.lsd-note a {
+  color: var(--gem-accent);
+}
+.lsd-meta {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-family: var(--gem-font-mono);
+  font-size: 12.5px;
+  color: var(--gem-subtle);
+}
+.lsd-meta span + span::before {
+  content: "·";
+  margin-right: 14px;
+  color: var(--gem-faint);
+}
+.lsd-btn {
+  min-height: 46px;
+  font-size: 15px;
+}
+
+/* 최신 버전 카드 */
+.lsd-latest {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 32px;
+  padding: 36px 40px;
+  background: var(--gem-surface);
+  border: 1px solid color-mix(in srgb, var(--gem-accent) 45%, var(--gem-border));
+  border-radius: 16px;
+  box-shadow: 0 18px 48px -24px color-mix(in srgb, var(--gem-accent) 55%, transparent);
+}
+.lsd-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gem-accent) 16%, transparent);
+  color: var(--gem-accent-strong);
+  font-family: var(--gem-font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.lsd-latest__title {
+  margin: 14px 0 8px;
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  color: var(--gem-fg);
+}
+.lsd-latest__highlights {
+  margin: 18px 0 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--gem-muted);
+}
+.lsd-latest__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  min-width: 230px;
+}
+.lsd-latest__req {
+  text-align: center;
+  font-size: 12.5px;
+  color: var(--gem-subtle);
+}
+
+/* 이전 버전 목록 */
+.lsd-list {
+  border: 1px solid var(--gem-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.lsd-list__title {
+  margin: 0;
+  padding: 18px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gem-fg);
+  background: var(--gem-surface);
+}
+.lsd-row {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 28px;
+  border-top: 1px solid var(--gem-border);
+  transition: background 0.2s ease;
+}
+.lsd-row:hover {
+  background: color-mix(in srgb, var(--gem-accent) 6%, transparent);
+}
+.lsd-row__version {
+  font-family: var(--gem-font-mono);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gem-fg);
+}
+.lsd-row__actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.lsd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 14px;
+  color: var(--gem-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.lsd-link:hover {
+  color: var(--gem-fg);
+}
+.lsd-link--download {
+  color: var(--gem-accent);
+}
+.lsd-link--download:hover {
+  color: var(--gem-accent-strong);
+}
+.lsd-note {
+  margin: 0;
+  font-size: 14px;
+  color: var(--gem-muted);
+}
+.lsd-latest__lead {
+  margin: 0;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--gem-muted);
+}
+/* 회수된 버전의 사유(disabledReasonEn) */
+.lsd-reason {
+  margin: 8px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--gem-subtle);
+}
+.lsd-row__meta .lsd-reason {
+  margin-top: 4px;
+}
+/* 비활성 버튼 — Coming soon · 회수 · 다운로드 닫힘 */
+.lsd-btn:disabled,
+.lsd-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.gem-btn--primary.lsd-btn:disabled::before {
+  display: none;
+}
+.lsd-link:disabled:hover {
+  color: var(--gem-accent);
+}
+
+/* 릴리스 노트 팝업 */
+.lsd-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  animation: gemLightboxIn 0.18s ease;
+}
+.lsd-dialog .lsd-dialog__panel {
+  width: min(620px, 100%);
+  max-height: min(720px, 100%);
+  display: flex;
+  flex-direction: column;
+  background: var(--gem-surface);
+  color: var(--gem-fg);
+  border: 1px solid var(--gem-border);
+  border-radius: 16px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+.lsd-dialog__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 28px 20px;
+  border-bottom: 1px solid var(--gem-border);
+}
+.lsd-dialog__eyebrow {
+  font-family: var(--gem-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gem-accent-strong);
+}
+.lsd-dialog__title {
+  margin: 6px 0 8px;
+  font-size: 22px;
+  font-weight: 600;
+}
+.lsd-dialog__close {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--gem-muted);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.lsd-dialog__close:hover {
+  background: color-mix(in srgb, var(--gem-fg) 8%, transparent);
+  color: var(--gem-fg);
+}
+.lsd-notes {
+  margin: 0;
+  padding: 20px 28px;
+  list-style: none;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.lsd-notes__item {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--gem-muted);
+}
+.lsd-notes__item::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  margin-top: 9px;
+  align-self: flex-start;
+  border-radius: 50%;
+  background: var(--gem-accent);
+}
+.lsd-notes__tag {
+  flex: none;
+  padding: 1px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--gem-border);
+  font-family: var(--gem-font-mono);
+  font-size: 11.5px;
+  color: var(--gem-fg);
+}
+.lsd-dialog__foot {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 28px 22px;
+  border-top: 1px solid var(--gem-border);
+}
+
+@media (max-width: 860px) {
+  .lsd-latest {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px 22px;
+  }
+  .lsd-latest__actions {
+    min-width: 0;
+  }
+  .lsd-list__title {
+    padding: 16px 20px;
+  }
+  .lsd-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 16px 20px;
+  }
+  .lsd-dialog__head,
+  .lsd-notes,
+  .lsd-dialog__foot {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 /* ----------------------------------------------------------------- 작동 방식 */
 .sol-steps {
   display: grid;

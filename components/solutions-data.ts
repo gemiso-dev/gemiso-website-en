@@ -60,7 +60,15 @@ export type Solution = {
     mock?: SolutionMockType;
     /** 헤더 → 번호 기능 리스트 사이 간격을 넓게(항목별 예외). */
     wideGap?: boolean;
+    /** 송출 흐름도(원본 화면 → 대상 플랫폼들). 있으면 image 대신 흐름도를 표시. */
+    flow?: {
+      source: { label: string; image: string };
+      /** color — 플랫폼 식별색(테두리·점). */
+      targets: { label: string; image: string; color: string }[];
+    };
   }[];
+  /** true면 릴리스 노트 · 버전별 다운로드 섹션(#download)과 히어로 다운로드 버튼을 표시. */
+  downloads?: boolean;
   /** true면 사이트 전반(홈·솔루션 탭·내비·사이트맵)에서 숨긴다.
       코드·상세 데이터는 유지하며, 이 플래그만 제거하면 복구된다. */
   hidden?: boolean;
@@ -846,6 +854,119 @@ export const SOLUTIONS: Solution[] = [
         ],
         image: "/assets/solutions/g-sam/archive.png",
         wideGap: true,
+      },
+    ],
+  },
+  {
+    id: "gemiso-live-studio",
+    code: "GEMISO LIVE STUDIO",
+    name: "Gemiso Live Studio",
+    ko: "Live Production",
+    cat: "All-in-One Live Production Studio",
+    short: "Live Production",
+    mock: "schedule",
+    downloads: true,
+    image: "/assets/solutions/live-studio/switching.png",
+    tagline: "One PC becomes your all-in-one live production studio",
+    desc: "Gemiso Live Studio replaces a rack of broadcast hardware with one application — purpose-built for real-time video switching, clean recording, and multi-platform streaming. Combine cameras, mics, video, and CG graphics into broadcast-grade live production on a single Windows PC.",
+    trust: "Switcher · audio mixer · CG · encoder — unified on a single screen",
+    stats: [
+      { v: "10 slots", k: "CG overlays running at once" },
+      { v: "Unlimited", k: "Media sources" },
+    ],
+    features: [
+      { t: "Real-Time Video Switching", d: "A separated PGM/PST workflow with cut · fade · custom transitions, and FTB." },
+      { t: "Diverse Input Sources", d: "Camera · mic · network (SRT/RTMP/NDI) · file · playlist." },
+      { t: "Multi-Platform Streaming", d: "Simultaneous multi-channel streaming over RTMP · SDI · NDI, with concurrent recording." },
+      { t: "Smart Audio Mixing", d: "A 7-channel mixer with real-time VU meters and level-detecting auto-mix." },
+      { t: "CG / Graphic Overlays", d: "Run 10 overlay slots at once, combining static CG and dynamic HTML CG." },
+      { t: "Professional Recording", d: "H.264/AAC up to 1080p, with multi-profile simultaneous recording and markers." },
+      { t: "PTZ Camera Control", d: "Pan · tilt · zoom, with preset save and recall." },
+      { t: "External System Integration", d: "Remote control and monitoring via REST API · WebSocket · web preview." },
+    ],
+    workflow: ["Input Sources", "Video Switching", "Audio Mixing", "CG Overlay", "Multi-Platform Streaming", "Recording"],
+    specs: [
+      { k: "PLATFORM", v: "Windows 10/11 (64-bit) desktop" },
+      { k: "VIDEO CODEC", v: "H.264 · H.265 · MPEG-2 · MPEG-4 · MJPEG · rawvideo (H.265 encoding planned)" },
+      { k: "AUDIO CODEC", v: "AAC · MP3 · PCM · FLAC · MP2 · Vorbis" },
+      { k: "ACCELERATION", v: "NVIDIA NVENC · Intel QuickSync · AMD AMF (H.264 encoding)" },
+      { k: "OUTPUT", v: "RTMP · SDI · NDI (SRT coming soon)" },
+      { k: "INPUT", v: "SDI · NDI · SRT (RTMP · UDP coming soon)" },
+      { k: "PTZ", v: "UVC · VISCA (ONVIF coming soon)" },
+      { k: "LICENSE", v: "Up to 2 PCs per license" },
+      { k: "LANGUAGE", v: "Korean · English" },
+    ],
+    detailsHeading: "Five capabilities, one Gemiso Live Studio",
+    details: [
+      {
+        code: "GEMISO LIVE STUDIO Switching",
+        title: "PGM / PST Separated Workflow",
+        sub: "Real-Time Video Switching",
+        desc: "A professional workflow that separates the on-air program (PGM) from the preview (PST). Build your next scene in advance and cut at exactly the right moment.",
+        points: [
+          "Transition effects — Cut · fade · custom transition effects, with freely adjustable transition times.",
+          "Preview staging — Stage the next scene in PST and take it live at the right moment.",
+          "FTB (Fade to Black) — Cut picture and audio to black in a single click.",
+        ],
+        image: "/assets/solutions/live-studio/switching.png",
+      },
+      {
+        code: "GEMISO LIVE STUDIO Sources",
+        title: "Bring Any Source onto One Screen",
+        sub: "Diverse Input Sources",
+        desc: "From cameras and mics to network protocols and media files — with playlists that auto-cycle video, audio, image, and text CG.",
+        points: [
+          "Live — Camera · mic · set camera · screen capture.",
+          "Network sources — SDI · NDI · SRT input.",
+          "Files — Video · audio · image files.",
+          "Playlist — Auto-cycle video · audio · CG playback.",
+        ],
+        image: "/assets/solutions/live-studio/sources.png",
+      },
+      {
+        code: "GEMISO LIVE STUDIO Stream",
+        title: "Stream to Multiple Channels at Once",
+        sub: "Multi-Platform Streaming",
+        desc: "Reach major platforms like YouTube · Chzzk through a custom RTMP server, with SDI · NDI output. Set codec, bitrate, and resolution per channel, and record while you stream.",
+        points: [
+          "RTMP · SDI · NDI — With custom server, stream key, latency and encryption settings.",
+          "Simultaneous multi-channel streaming — Per-channel codec, bitrate, and resolution.",
+          "Stream & record — Record while you stream.",
+        ],
+        image: "/assets/solutions/live-studio/streaming.png",
+        flow: {
+          source: { label: "Gemiso Live Studio", image: "/assets/solutions/live-studio/streaming.png" },
+          targets: [
+            { label: "YouTube", image: "/assets/solutions/live-studio/youtube.png", color: "#ff0033" },
+            { label: "Chzzk", image: "/assets/solutions/live-studio/chzzk.png", color: "#00d564" },
+          ],
+        },
+      },
+      {
+        code: "GEMISO LIVE STUDIO CG",
+        title: "Limitless Design Freedom, 10 Overlay Slots",
+        sub: "CG / Graphic Overlays",
+        desc: "From text-editable static CG — lower-thirds, titles, clocks, and tickers — to dynamic, web-based HTML CG. Control position, size, and border on every layer.",
+        points: [
+          "10 overlay slots — Run 10 overlay slots at once, in a 3×3 grid plus fullscreen (position · size · border).",
+          "Static CG — Text-editable graphics such as lower-thirds, titles, clocks, and tickers.",
+          "HTML CG — Dynamic, web-based graphics with limitless design freedom.",
+        ],
+        image: "/assets/solutions/live-studio/overlay.png",
+      },
+      {
+        code: "GEMISO LIVE STUDIO Record",
+        title: "Record in High Quality While You Broadcast",
+        sub: "Professional Recording & Output",
+        desc: "Record up to 1080p at 5M–50M bitrate with H.264/AAC codecs. Alongside multi-profile and per-source recording, clean PGM recording strips out CG, playlists, and overlays to leave a pristine master ready to re-edit and reuse.",
+        points: [
+          "Broadcast-grade quality — H.264/AAC codecs · up to 1080p · 5M–50M bitrate.",
+          "Multi-profile simultaneous recording — Capture multiple qualities while you stream.",
+          "Per-source recording — Capture each input source separately.",
+          "Clean PGM recording — A pristine master free of CG, playlists, and overlays.",
+          "Faster post-production — Automatic file-naming rules and recording markers.",
+        ],
+        image: "/assets/solutions/live-studio/recording.png",
       },
     ],
   },
