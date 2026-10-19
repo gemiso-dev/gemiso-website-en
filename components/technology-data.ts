@@ -61,7 +61,7 @@ export const TECHNOLOGIES: Technology[] = [
           "Flexible integration — Delivers ingest results to GEMISO MAM via RESTful + MXF, and to third-party MAM via XML + MXF.",
           "Standalone ingest — The ingest management function can be deployed on its own, running on top of your existing MAM and storage.",
         ],
-        image: "/assets/technology/ingest/ariel-ingest-manager.jpg",
+        image: "/assets/technology/ingest/ariel-ingest-manager.png",
       },
       {
         code: "Proxima Open Encoder",
