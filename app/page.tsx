@@ -57,7 +57,7 @@ const SOLUTIONS: {
       tag: "GEMISO RADIO LIVE",
       slug: "gemiso-radio-live",
       title: "Audio File System",
-      desc: "Run radio operations and manage audio assets across nine connected terminals in a networked, database-backed system.",
+      desc: "Run radio operations and manage audio assets across eight connected terminals in a networked, database-backed system.",
     },
     {
       num: "06",
