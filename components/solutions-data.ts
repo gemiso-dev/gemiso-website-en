@@ -913,7 +913,7 @@ export const SOLUTIONS: Solution[] = [
         code: "GEMISO LIVE STUDIO Stream",
         title: "Stream to Multiple Channels at Once",
         sub: "Multi-Platform Streaming",
-        desc: "Reach major platforms like YouTube · Chzzk through a custom RTMP server, with SDI · NDI output. Set codec, bitrate, and resolution per channel, and record while you stream.",
+        desc: "Reach major platforms like YouTube · Facebook through a custom RTMP server, with SDI · NDI output. Set codec, bitrate, and resolution per channel, and record while you stream.",
         points: [
           "RTMP · SDI · NDI — With custom server, stream key, latency and encryption settings.",
           "Simultaneous multi-channel streaming — Per-channel codec, bitrate, and resolution.",
@@ -924,7 +924,7 @@ export const SOLUTIONS: Solution[] = [
           source: { label: "Gemiso Live Studio", image: "/assets/solutions/live-studio/streaming.png" },
           targets: [
             { label: "YouTube", image: "/assets/solutions/live-studio/youtube.png", color: "#ff0033" },
-            { label: "Chzzk", image: "/assets/solutions/live-studio/chzzk.png", color: "#00d564" },
+            { label: "Facebook", image: "/assets/solutions/live-studio/facebook.png", color: "#1877f2" },
           ],
         },
       },
