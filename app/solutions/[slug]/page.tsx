@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/JsonLd";
 import LiveStudioDownloads from "@/components/LiveStudioDownloads";
 import Reveal from "@/components/Reveal";
 import SolutionClientsMarquee from "@/components/SolutionClientsMarquee";
@@ -11,6 +12,7 @@ import ZoomableImage from "@/components/ZoomableImage";
 import { asset } from "@/components/site-config";
 import { VISIBLE_SOLUTIONS, getSolution } from "@/components/solutions-data";
 import { pageMetadata } from "@/components/seo";
+import { solutionJsonLd } from "@/components/structured-data";
 
 type Params = { slug: string };
 
@@ -52,6 +54,7 @@ export default async function SolutionPage({
   }));
   return (
     <div className="gem-dark gem-solutions">
+      <JsonLd data={solutionJsonLd(active)} />
       {/* 브레드크럼 */}
       <nav className="sol-breadcrumb" aria-label="Breadcrumb">
         <div className="gem-container sol-breadcrumb__inner">
@@ -99,7 +102,7 @@ export default async function SolutionPage({
               <div className="sol-shot">
                 <ZoomableImage
                   src={asset(active.image)}
-                  alt={`${active.name} ${active.ko} screenshot`}
+                  alt={`${active.name} ${active.cat} screenshot — ${active.tagline}`}
                 />
               </div>
             ) : (
@@ -172,7 +175,7 @@ export default async function SolutionPage({
                     {d.flow ? (
                       <SolutionFlow flow={d.flow} />
                     ) : d.image ? (
-                      <ZoomableImage src={asset(d.image)} alt={`${d.code} ${d.title} screenshot`} />
+                      <ZoomableImage src={asset(d.image)} alt={`${d.code} screenshot — ${d.title}${d.sub && d.sub !== d.title ? ` (${d.sub})` : ""}`} />
                     ) : (
                       <SolutionMock
                         type={d.mock ?? active.mock}

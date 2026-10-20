@@ -18,3 +18,13 @@
 /news       /   301
 /news/      /   301
 /news/*     /   301
+
+# Product renames for the U.S. market: old solution slugs -> new slugs.
+#   Winner S -> Gemiso Radio Live, MYMY -> Stratos, G-SAM -> Nexus
+# The site uses trailing slashes, so both forms of each old URL are listed.
+/solutions/winner-s    /solutions/gemiso-radio-live/  301
+/solutions/winner-s/   /solutions/gemiso-radio-live/  301
+/solutions/mymy        /solutions/stratos/            301
+/solutions/mymy/       /solutions/stratos/            301
+/solutions/g-sam       /solutions/nexus/              301
+/solutions/g-sam/      /solutions/nexus/              301

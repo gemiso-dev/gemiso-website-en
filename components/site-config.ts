@@ -47,6 +47,10 @@ export const PRIMARY_NAV: NavItem[] = [
  *  basePath와 무관하게 항상 운영 도메인을 가리킨다(미리보기에서도 canonical은 운영을 향함). */
 export const SITE_URL = "https://www.gemiso.com";
 
+/** One-line company description shared by <meta>, JSON-LD and llms.txt. */
+export const SITE_DESCRIPTION =
+  "GEMISO builds and owns its own media solutions for broadcasting — from ingest and archive to newsroom and automated playout.";
+
 export const COMPANY = {
   name: "GEMISO",
   /** Sales, quotes, partnerships. */

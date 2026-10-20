@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
-import { SITE_URL } from "@/components/site-config";
+import JsonLd from "@/components/JsonLd";
+import { SITE_DESCRIPTION, SITE_URL } from "@/components/site-config";
+import { siteJsonLd } from "@/components/structured-data";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -10,8 +12,7 @@ export const metadata: Metadata = {
     default: "GEMISO — Digital Media Management Platform for Broadcasting",
     template: "%s | GEMISO",
   },
-  description:
-    "GEMISO builds and owns its own media solutions for broadcasting — from ingest and archive to newsroom and automated playout.",
+  description: SITE_DESCRIPTION,
   openGraph: {
     type: "website",
     siteName: "GEMISO",
@@ -42,6 +43,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <JsonLd data={siteJsonLd()} />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
