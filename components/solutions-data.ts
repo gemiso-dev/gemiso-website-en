@@ -635,14 +635,14 @@ export const SOLUTIONS: Solution[] = [
       { t: "MAIA Character — Text Recognition (OCR)", d: "Detects on-screen text — captions, lower thirds, CG — and indexes it in searchable form.", ai: true },
       { t: "MAIA Object — Object Recognition", d: "Detects 133 object classes and generates structured metadata for video at the scene level.", ai: true },
       { t: "MAIA Prompter — AI Prompter", d: "AI matches the presenter's voice to the script in real time and scrolls automatically. No dedicated operator required.", ai: true },
-      { t: "Natural-Language Unified Search", d: "Unifies face, object, STT, and scene data so you can search the archive in everyday language.", ai: true },
+      { t: "Conversational Search", d: "Unifies face, object, STT, and scene data so you can search the archive in everyday language.", ai: true },
     ],
-    workflow: ["Ingest", "AI Analysis (Video · Speech · Face · Text)", "Metadata & Indexing", "Natural-Language Search", "Use & Reuse"],
+    workflow: ["Ingest", "AI Analysis (Video · Speech · Face · Text)", "Metadata & Indexing", "Conversational Search", "Use & Reuse"],
     specs: [
       { k: "MODULES", v: "Video · Speech · Face · Character · Prompter" },
       { k: "STT", v: "Google · Amazon · Naver Clova · Whisper · Daglo" },
       { k: "VISION", v: "Scene segmentation · 116+ object classes · OCR · Face recognition" },
-      { k: "SEARCH", v: "Unified natural-language search across faces, objects, STT, and scenes" },
+      { k: "SEARCH", v: "Unified conversational search across faces, objects, STT, and scenes" },
       { k: "DEPLOY", v: "On-premises · Cloud SaaS · Hybrid" },
     ],
     details: [
@@ -654,7 +654,7 @@ export const SOLUTIONS: Solution[] = [
         points: [
           "Object detection — classifies and auto-tags more than 116 classes — people, vehicles, animals, backgrounds — using panoptic segmentation.",
           "Video summaries & scene descriptions — generative AI writes a human-readable description for every scene.",
-          "Natural-language search — unifies face, object, STT, and scene data so you can search the archive in everyday language.",
+          "Conversational search — unifies face, object, STT, and scene data so you can search the archive in everyday language.",
         ],
         image: "/assets/solutions/maia/video.png",
       },
