@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import JsonLd from "@/components/JsonLd";
 import LiveStudioDownloads from "@/components/LiveStudioDownloads";
+import LiveStudioGuide from "@/components/LiveStudioGuide";
+import { GUIDE } from "@/components/live-studio-guide-data";
 import Reveal from "@/components/Reveal";
 import SolutionClientsMarquee from "@/components/SolutionClientsMarquee";
 import SolutionFlow from "@/components/SolutionFlow";
@@ -295,6 +297,22 @@ export default async function SolutionPage({
         </section>
       )}
 
+      {/* 하드웨어 가속 가이드 (Live Studio 하단) */}
+      {active.downloads && (
+        <section id="guide" className="gem-section gem-section--alt">
+          <div className="gem-container">
+            <Reveal className="sol-section__head">
+              <div className="gem-eyebrow gem-eyebrow--mono">
+                <span>{GUIDE.badge}</span>
+              </div>
+              <h2 className="gem-title">{GUIDE.title}</h2>
+              <p className="gem-lead">{GUIDE.desc}</p>
+            </Reveal>
+            <LiveStudioGuide />
+          </div>
+        </section>
+      )}
+
       {/* 도입 고객 마키 */}
       {active.clients && active.clients.length > 0 && (
         <section className="gem-marquee" aria-label={`${active.name} customers`}>
@@ -311,7 +329,7 @@ export default async function SolutionPage({
       )}
 
       {/* 다른 솔루션 — 다운로드 섹션이 끼면 배경 교차(기본 ↔ alt)가 어긋나지 않도록 alt로 */}
-      <section className={`gem-section${active.downloads ? " gem-section--alt" : ""}`}>
+      <section className="gem-section">
         <div className="gem-container">
           <Reveal className="sol-others__head">
             <div>
