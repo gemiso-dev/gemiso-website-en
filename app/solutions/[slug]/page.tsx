@@ -170,6 +170,10 @@ export default async function SolutionPage({
                         : d.image
                         ? d.imageNarrow
                           ? " sol-detail__media--narrow"
+                          : d.extraImage
+                          ? " sol-detail__media--full sol-detail__media--stack"
+                          : d.imageFull
+                          ? " sol-detail__media--full"
                           : ""
                         : " sol-detail__media--mock"
                     }`}
@@ -177,7 +181,12 @@ export default async function SolutionPage({
                     {d.flow ? (
                       <SolutionFlow flow={d.flow} />
                     ) : d.image ? (
-                      <ZoomableImage src={asset(d.image)} alt={`${d.code} screenshot — ${d.title}${d.sub && d.sub !== d.title ? ` (${d.sub})` : ""}`} />
+                      <>
+                        <ZoomableImage src={asset(d.image)} alt={`${d.code} screenshot — ${d.title}${d.sub && d.sub !== d.title ? ` (${d.sub})` : ""}`} />
+                        {d.extraImage && (
+                          <ZoomableImage src={asset(d.extraImage)} alt={d.extraImageAlt ?? `${d.code} screenshot`} />
+                        )}
+                      </>
                     ) : (
                       <SolutionMock
                         type={d.mock ?? active.mock}

@@ -2184,6 +2184,50 @@ button.gem-copy__text:focus-visible,
   object-fit: cover;
   transition: transform 0.45s ease;
 }
+/* 높이 상한 없이 전체를 보여주는 변형(세로형 대화상자, 이미지 2장 스택) */
+.sol-detail__media--full img {
+  max-height: none;
+  object-fit: contain;
+}
+/* 이미지 2장 스택 — 전체 폭의 68%로 줄이고, 위는 좌측·아래는 우측 정렬 */
+.sol-detail__media--stack,
+.sol-detail__media--stack:hover {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  transform: none;
+  overflow: visible;
+  line-height: normal;
+}
+.sol-detail__media--stack img {
+  width: 68%;
+  border: 1px solid var(--gem-border);
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(22, 22, 22, 0.1);
+}
+.sol-detail__media--stack img:nth-of-type(1) {
+  align-self: flex-start;
+}
+.sol-detail__media--stack img:nth-of-type(2) {
+  align-self: flex-end;
+}
+.sol-detail__media--stack:hover img {
+  transform: none;
+}
+.sol-detail__media--stack img:hover {
+  transform: scale(1.03);
+}
+.gem-dark .sol-detail__media--stack img {
+  box-shadow: 0 16px 36px -16px rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 860px) {
+  .sol-detail__media--stack img {
+    width: 88%;
+  }
+}
 /* 호버: 카드 살짝 떠오르고 이미지 은은하게 줌인 */
 .sol-detail__media:hover {
   transform: translateY(-4px);

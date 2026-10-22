@@ -56,6 +56,11 @@ export type Solution = {
     image?: string;
     /** 세로형(모바일 등) 스크린샷 — 폭을 좁게 제한하고 가운데 정렬한다. */
     imageNarrow?: boolean;
+    /** 높이 상한(300px) 없이 이미지 전체를 보여준다 — 세로가 긴 대화상자 스크린샷용. */
+    imageFull?: boolean;
+    /** 같은 블록에 두 번째 스크린샷을 아래에 이어 붙인다(image 다음). */
+    extraImage?: string;
+    extraImageAlt?: string;
     /** 스크린샷이 없을 때 표시할 목업 종류(없으면 솔루션 기본 mock 사용). */
     mock?: SolutionMockType;
     /** 헤더 → 번호 기능 리스트 사이 간격을 넓게(항목별 예외). */
@@ -908,12 +913,13 @@ export const SOLUTIONS: Solution[] = [
           "Playlist — Auto-cycle video · audio · CG playback.",
         ],
         image: "/assets/solutions/live-studio/sources.png",
+        imageFull: true,
       },
       {
         code: "GEMISO LIVE STUDIO Stream",
         title: "Stream to Multiple Channels at Once",
         sub: "Multi-Platform Streaming",
-        desc: "Reach major platforms like YouTube · Facebook through a custom RTMP server, with SDI · NDI output. Set codec, bitrate, and resolution per channel, and record while you stream.",
+        desc: "Reach major platforms like YouTube · Twitch through a custom RTMP server, with SDI · NDI output. Set codec, bitrate, and resolution per channel, and record while you stream.",
         points: [
           "RTMP · SDI · NDI — With custom server, stream key, latency and encryption settings.",
           "Simultaneous multi-channel streaming — Per-channel codec, bitrate, and resolution.",
@@ -924,7 +930,7 @@ export const SOLUTIONS: Solution[] = [
           source: { label: "Gemiso Live Studio", image: "/assets/solutions/live-studio/streaming.png" },
           targets: [
             { label: "YouTube", image: "/assets/solutions/live-studio/youtube.png", color: "#ff0033" },
-            { label: "Facebook", image: "/assets/solutions/live-studio/facebook.png", color: "#1877f2" },
+            { label: "Twitch", image: "/assets/solutions/live-studio/twitch.png", color: "#9146ff" },
           ],
         },
       },
@@ -939,6 +945,8 @@ export const SOLUTIONS: Solution[] = [
           "HTML CG — Dynamic, web-based graphics with limitless design freedom.",
         ],
         image: "/assets/solutions/live-studio/overlay.png",
+        extraImage: "/assets/solutions/live-studio/overlay-cg-edit.png",
+        extraImageAlt: "GEMISO LIVE STUDIO CG editor screenshot — editing text fields of a static lower-third",
       },
       {
         code: "GEMISO LIVE STUDIO Record",
@@ -953,6 +961,7 @@ export const SOLUTIONS: Solution[] = [
           "Faster post-production — Automatic file-naming rules and recording markers.",
         ],
         image: "/assets/solutions/live-studio/recording.png",
+        imageFull: true,
       },
     ],
   },
