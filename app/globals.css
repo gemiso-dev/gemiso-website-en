@@ -6933,16 +6933,36 @@ a.gem-dark .sup-contact__cell:hover,
 
 /* =========================================================================
    홈 — 기간 한정 행사 배너 (HomeEventBanner)
-   히어로 아래, 좌: 행사 포스터(클릭 시 행사 페이지) / 우: 일정·장소·CTA.
+   홈 최상단(히어로 위), 좌: 행사 포스터(클릭 시 행사 페이지) / 우: 일정·장소·CTA.
    보라 글로우 테두리로 다크 랜딩 위에서 돋보이게 한다.
    ========================================================================= */
+/* 히어로 대신 배너가 sticky 헤더 아래로 겹쳐 올라가 첫 화면을 차지한다 */
 .gem-event {
-  padding-top: clamp(48px, 6vw, 72px);
+  margin-top: calc(-1 * var(--gem-header-h));
+  /* 첫 화면 한 장을 통째로 차지하고, 카드는 헤더 아래 남은 공간의 세로 가운데에 */
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: calc(var(--gem-header-h) + clamp(20px, 3vw, 36px));
+  padding-bottom: clamp(20px, 3vw, 36px);
+  /* 히어로와 같은 좌상단·우하단 대칭 글로우 */
+  background-image: radial-gradient(60% 55% at 8% 15%, rgba(139, 92, 246, 0.35), transparent 60%),
+    radial-gradient(60% 55% at 92% 100%, rgba(139, 92, 246, 0.35), transparent 60%);
+}
+/* 배너가 있으면 히어로는 헤더 아래로 끌어올리지 않고, 헤더 몫 상단 여백도 뺀다 */
+.gem-event + .gem-hero {
+  margin-top: 0;
+}
+.gem-event + .gem-hero .gem-hero__grid {
+  padding-top: clamp(48px, 6vw, 88px);
 }
 .gem-event__card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  /* 포스터는 첫 화면 안에 카드가 다 들어오도록 폭을 제한 */
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
   gap: clamp(28px, 4vw, 56px);
   align-items: center;
   padding: clamp(20px, 3vw, 36px);
