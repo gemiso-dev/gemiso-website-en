@@ -3,6 +3,7 @@ import Reveal from "@/components/Reveal";
 import HeroScrollButton from "@/components/HeroScrollButton";
 import HeroVideo from "@/components/HeroVideo";
 import CustomerMarquee from "@/components/CustomerMarquee";
+import HomeEventBanner from "@/components/HomeEventBanner";
 import CopyField from "@/components/CopyField";
 import { COMPANY, asset } from "@/components/site-config";
 import { pageMetadata } from "@/components/seo";
@@ -311,6 +312,9 @@ export default function Home() {
         </div>
         <HeroScrollButton />
       </section>
+
+      {/* 기간 한정 행사 공지 (HOME_EVENT.endsAt 이후 자동 숨김) */}
+      <HomeEventBanner />
 
       {/* 솔루션 */}
       <section id="solutions" className="gem-section">
