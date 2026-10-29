@@ -6930,3 +6930,182 @@ a.gem-dark .sup-contact__cell:hover,
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================================
+   홈 — 기간 한정 행사 배너 (HomeEventBanner)
+   히어로 아래, 좌: 행사 포스터(클릭 시 행사 페이지) / 우: 일정·장소·CTA.
+   보라 글로우 테두리로 다크 랜딩 위에서 돋보이게 한다.
+   ========================================================================= */
+.gem-event {
+  padding-top: clamp(48px, 6vw, 72px);
+}
+.gem-event__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  padding: clamp(20px, 3vw, 36px);
+  border-radius: 24px;
+  /* 그라데이션 테두리: 안쪽 카드 배경 + 바깥 보라 그라데이션 */
+  border: 1px solid transparent;
+  background: linear-gradient(var(--gem-elevated, #1b1d3d), var(--gem-elevated, #1b1d3d)) padding-box,
+    linear-gradient(135deg, rgba(167, 139, 250, 0.85), rgba(139, 92, 246, 0.15) 45%, rgba(96, 165, 250, 0.6)) border-box;
+  box-shadow: 0 30px 70px -30px rgba(139, 92, 246, 0.55);
+  overflow: hidden;
+}
+/* 카드 우상단 은은한 글로우 */
+.gem-event__card::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 60%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.28) 0%, transparent 65%);
+  pointer-events: none;
+}
+.gem-event__media {
+  position: relative;
+  display: block;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 18px 40px -16px rgba(0, 0, 0, 0.7);
+  transition: transform 0.35s var(--gem-ease), box-shadow 0.35s var(--gem-ease);
+}
+.gem-event__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--gem-ease);
+}
+.gem-event__media:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px -18px rgba(139, 92, 246, 0.6);
+}
+.gem-event__media:hover img {
+  transform: scale(1.03);
+}
+.gem-event__body {
+  position: relative;
+}
+.gem-event__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.16);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  font-family: var(--gem-font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gem-accent-strong);
+}
+/* LIVE 느낌의 깜빡이는 점 */
+.gem-event__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f472b6;
+  box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7);
+  animation: gemEventPulse 1.8s ease-out infinite;
+}
+@keyframes gemEventPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.7);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 10px rgba(244, 114, 182, 0);
+  }
+}
+.gem-event__title {
+  margin-top: 20px;
+  font-size: clamp(28px, 3.4vw, 42px);
+  font-weight: 600;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: var(--gem-fg);
+}
+.gem-event__desc {
+  margin-top: 16px;
+  max-width: 48ch;
+  font-size: clamp(16px, 1.5vw, 18px);
+  line-height: 1.7;
+  color: var(--gem-muted);
+}
+.gem-event__meta {
+  margin: 28px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--gem-border);
+  border-bottom: 1px solid var(--gem-border);
+}
+.gem-event__meta-row {
+  padding: 16px 16px 16px 0;
+}
+.gem-event__meta-row + .gem-event__meta-row {
+  padding-left: 16px;
+  border-left: 1px solid var(--gem-border);
+}
+.gem-event__meta dt {
+  font-family: var(--gem-font-display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gem-subtle);
+}
+.gem-event__meta dd {
+  margin: 6px 0 0;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--gem-fg);
+}
+.gem-event__cta {
+  margin-top: 32px;
+  min-height: 56px;
+  padding: 0 30px;
+  font-size: 17px;
+  box-shadow: 0 10px 28px -10px rgba(139, 92, 246, 0.8);
+}
+@media (max-width: 860px) {
+  .gem-event__card {
+    grid-template-columns: 1fr;
+  }
+  .gem-event__meta {
+    grid-template-columns: 1fr;
+  }
+  .gem-event__meta-row,
+  .gem-event__meta-row + .gem-event__meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-left: 0;
+  }
+  .gem-event__meta-row + .gem-event__meta-row {
+    border-top: 1px solid var(--gem-border);
+  }
+  .gem-event__meta dd {
+    margin: 0;
+    text-align: right;
+  }
+  .gem-event__cta {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gem-event__dot {
+    animation: none;
+  }
+  .gem-event__media,
+  .gem-event__media img {
+    transition: none;
+  }
+}
