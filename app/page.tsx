@@ -277,6 +277,9 @@ const TECH_ITEMS = [
 export default function Home() {
   return (
     <div className="gem-home">
+      {/* 기간 한정 행사 공지 — 첫 화면 최상단 (HOME_EVENT.endsAt 이후 자동 숨김) */}
+      <HomeEventBanner />
+
       {/* 히어로 (+ 브랜드 스테이트먼트 통합) */}
       <section className="gem-hero gem-hero--split">
         <div className="gem-container gem-hero__grid">
@@ -312,9 +315,6 @@ export default function Home() {
         </div>
         <HeroScrollButton />
       </section>
-
-      {/* 기간 한정 행사 공지 (HOME_EVENT.endsAt 이후 자동 숨김) */}
-      <HomeEventBanner />
 
       {/* 솔루션 */}
       <section id="solutions" className="gem-section">
