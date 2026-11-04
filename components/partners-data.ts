@@ -8,7 +8,7 @@
 
 /** 히어로 상단 요약 지표. */
 export const PARTNER_STATS: { v: string; k: string }[] = [
-  { v: "15", k: "Partner Companies" },
+  { v: "16", k: "Partner Companies" },
   { v: "7+ Countries", k: "Global Collaboration" },
   { v: "SRT", k: "International Standards Alliance" },
   { v: "Academia", k: "University Partnerships" },
@@ -121,6 +121,13 @@ export const PARTNER_GROUPS: PartnerGroup[] = [
         desc: "Specialist Radio and TV automation partner",
         disp: "youngtech.com.br",
         logo: "/assets/partners/youngtech_sistemas.png",
+      },
+      {
+        name: "Chyron",
+        kind: "Graphics · Live Production",
+        desc: "Real-time broadcast graphics and live production solutions",
+        disp: "chyron.com",
+        logo: "/assets/partners/chyron.png",
       },
     ],
   },
