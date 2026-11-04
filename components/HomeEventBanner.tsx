@@ -1,23 +1,12 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Reveal from "@/components/Reveal";
 import { HOME_EVENT as ev } from "@/components/home-event-data";
 import { asset } from "@/components/site-config";
 
 /**
- * 홈 히어로 아래 기간 한정 행사 배너.
- * 정적 export라 빌드 시점이 아닌 방문 시점에 종료 여부를 판단해 숨긴다.
+ * 홈 최상단 기간 한정 행사 배너.
+ * 자동 종료 없음 — 내릴 때는 app/page.tsx에서 <HomeEventBanner />를 지운다.
  */
 export default function HomeEventBanner() {
-  const [expired, setExpired] = useState(false);
-
-  useEffect(() => {
-    setExpired(Date.now() >= new Date(ev.endsAt).getTime());
-  }, []);
-
-  if (expired) return null;
-
   return (
     <section className="gem-event" aria-label="Upcoming event">
       <div className="gem-container">
