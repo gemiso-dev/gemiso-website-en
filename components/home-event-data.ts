@@ -1,7 +1,6 @@
 /**
  * 홈 랜딩 — 기간 한정 행사 공지 데이터.
- * `endsAt`이 지나면 배너가 자동으로 숨는다. 행사가 끝나면 이 파일과
- * HomeEventBanner 사용처를 지워도 된다.
+ * 자동으로 숨지 않는다. 행사가 끝나면 이 파일과 HomeEventBanner 사용처를 지운다.
  */
 
 export type HomeEvent = {
@@ -14,8 +13,6 @@ export type HomeEvent = {
   cta: string;
   image: string;
   imageAlt: string;
-  /** 이 시각 이후로는 배너를 숨긴다(ISO 8601, 현지 시간대 포함). */
-  endsAt: string;
 };
 
 export const HOME_EVENT: HomeEvent = {
@@ -32,6 +29,4 @@ export const HOME_EVENT: HomeEvent = {
   image: "/assets/events/vmi-showcase-2026.jpg",
   imageAlt:
     "Come see the US debut of GEMISO at VMI’s Annual Showcase — Nov. 4th, Knott’s Berry Farm Hotel",
-  // 행사 당일(태평양 시간) 자정까지 노출
-  endsAt: "2026-11-05T00:00:00-08:00",
 };

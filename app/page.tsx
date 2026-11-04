@@ -277,7 +277,7 @@ const TECH_ITEMS = [
 export default function Home() {
   return (
     <div className="gem-home">
-      {/* 기간 한정 행사 공지 — 첫 화면 최상단 (HOME_EVENT.endsAt 이후 자동 숨김) */}
+      {/* 기간 한정 행사 공지 — 첫 화면 최상단 (내릴 때 이 줄을 지운다) */}
       <HomeEventBanner />
 
       {/* 히어로 (+ 브랜드 스테이트먼트 통합) */}
