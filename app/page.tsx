@@ -3,7 +3,6 @@ import Reveal from "@/components/Reveal";
 import HeroScrollButton from "@/components/HeroScrollButton";
 import HeroVideo from "@/components/HeroVideo";
 import CustomerMarquee from "@/components/CustomerMarquee";
-import HomeEventBanner from "@/components/HomeEventBanner";
 import CopyField from "@/components/CopyField";
 import { COMPANY, asset } from "@/components/site-config";
 import { pageMetadata } from "@/components/seo";
@@ -277,9 +276,6 @@ const TECH_ITEMS = [
 export default function Home() {
   return (
     <div className="gem-home">
-      {/* 기간 한정 행사 공지 — 첫 화면 최상단 (내릴 때 이 줄을 지운다) */}
-      <HomeEventBanner />
-
       {/* 히어로 (+ 브랜드 스테이트먼트 통합) */}
       <section className="gem-hero gem-hero--split">
         <div className="gem-container gem-hero__grid">
