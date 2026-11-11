@@ -189,7 +189,7 @@ export const GUIDE = {
       ["Recording bitrate", "5M–50M (default 15M)"],
       ["Audio", "48kHz · 32-bit float · 2ch, fixed / bitrate 128, 192, 256, 320K"],
       ["Recording container", "MP4 (default) · MOV · MKV · MXF · TS · WebM and more"],
-      ["Streaming platforms", "YouTube · Facebook · Twitch · custom RTMP"],
+      ["Streaming platforms", "YouTube · Facebook · custom RTMP"],
       ["Stream keyframe interval", "1, 2 or 4 seconds (2 seconds recommended)"],
     ] as string[][],
     caution: [{ b: "Caution" }, " — changing the master format, GPU or audio output device requires a ", { b: "restart" }, " and is not possible while broadcasting or recording. Change them while idle, then run a short test. The audio engine is fixed at ", { b: "48kHz · 32-bit float · 2ch" }, ", so sample rate and channel count are not selectable."] as Seg[],
