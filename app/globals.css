@@ -7223,18 +7223,62 @@ a.gem-dark .sup-contact__cell:hover,
   justify-content: space-between;
   gap: clamp(20px, 3vw, 40px);
 }
-.gem-event__bar .gem-event__title {
-  margin-top: 14px;
-  font-size: clamp(22px, 2.4vw, 32px);
+/* 배지와 CTA를 같은 높이·글자 크기로 맞춘다 */
+.gem-event__bar .gem-event__badge,
+.gem-event__bar .gem-event__cta {
+  box-sizing: border-box;
+  height: 44px;
+  min-height: 0;
+  padding: 0 20px;
+  font-size: 14px;
+  line-height: 1;
 }
 .gem-event__bar .gem-event__cta {
   margin-top: 0;
   flex-shrink: 0;
+  /* 배지는 대문자+자간이라 같은 px에서도 커 보여, CTA 글자를 한 단계 키워 시각적으로 맞춘다 */
+  font-size: 16px;
 }
 @media (max-width: 860px) {
+  /* 모바일: 가로 배너는 키가 낮아 첫 화면 전체를 차지하면 위아래가 비어 보인다.
+     섹션 높이를 내용만큼으로 줄이고, 바로 아래 히어로가 이어지게 한다. */
+  .gem-event--banner {
+    min-height: 0;
+    padding-top: calc(var(--gem-header-h) + 16px);
+    padding-bottom: 8px;
+  }
+  /* 카드 여백을 줄여 배너 이미지를 최대한 넓게 */
+  .gem-event__card--banner {
+    padding: 12px;
+    gap: 14px;
+    border-radius: 18px;
+  }
+  .gem-event--banner .gem-event__banner {
+    max-width: none;
+    border-radius: 10px;
+  }
+  .gem-event--banner + .gem-hero .gem-hero__grid {
+    padding-top: 32px;
+  }
+  /* 한 줄에 안 들어가는 아주 좁은 화면에서는 넘치지 않고 줄바꿈 */
   .gem-event__bar {
-    flex-direction: column;
-    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .gem-event__bar .gem-event__badge,
+  .gem-event__bar .gem-event__cta {
+    height: 36px;
+    padding: 0 12px;
+    gap: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  .gem-event__bar .gem-event__badge {
+    letter-spacing: 0.04em;
+  }
+  .gem-event__bar .gem-event__cta {
+    width: auto;
+    font-size: 13px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

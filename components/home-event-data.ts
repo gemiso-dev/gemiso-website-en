@@ -17,7 +17,7 @@ export type HomeEvent = {
 };
 
 export const HOME_EVENT: HomeEvent = {
-  eyebrow: "Gold Sponsor · Upcoming Event",
+  eyebrow: "Upcoming Event",
   title: "GEMISO is a Gold Sponsor of the 2027 Silicon Valley Video Summit",
   desc: "Join us at the fifth annual Silicon Valley Video Summit, where the people shaping enterprise video meet. Visit the GEMISO tabletop to see what’s next in AI-driven video production.",
   meta: [
