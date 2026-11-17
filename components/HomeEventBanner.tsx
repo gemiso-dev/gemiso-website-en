@@ -7,13 +7,13 @@ import { asset } from "@/components/site-config";
  * 자동 종료 없음 — 내릴 때는 app/page.tsx에서 <HomeEventBanner />를 지운다.
  *
  * - 배너 이미지(`ev.image`)가 있으면: 가로형 배너를 카드 전체 폭으로 보여주고,
- *   일정·장소는 배너에 들어 있으므로 아래에 배지·제목·CTA만 한 줄로 둔다.
+ *   일정·장소는 배너에 들어 있으므로 아래에 배지·CTA만 한 줄로 둔다.
  * - 없으면: CSS 스폰서 포스터 + 일정·장소 표를 2단으로 보여준다.
  */
 export default function HomeEventBanner() {
   if (ev.image) {
     return (
-      <section className="gem-event" aria-label="Upcoming event">
+      <section className="gem-event gem-event--banner" aria-label="Upcoming event">
         <div className="gem-container">
           <Reveal className="gem-event__card gem-event__card--banner">
             <a
@@ -26,13 +26,10 @@ export default function HomeEventBanner() {
             </a>
 
             <div className="gem-event__bar">
-              <div>
-                <span className="gem-event__badge">
-                  <span className="gem-event__dot" aria-hidden="true" />
-                  {ev.eyebrow}
-                </span>
-                <h2 className="gem-event__title">{ev.title}</h2>
-              </div>
+              <span className="gem-event__badge">
+                <span className="gem-event__dot" aria-hidden="true" />
+                {ev.eyebrow}
+              </span>
               <EventCta />
             </div>
           </Reveal>
