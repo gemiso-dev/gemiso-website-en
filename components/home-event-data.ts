@@ -26,6 +26,7 @@ export const HOME_EVENT: HomeEvent = {
   ],
   href: "https://events.sportsvideo.org/2027-silicon-valley-video-summit/",
   cta: "Event Details",
+  image: "/assets/events/svvs-2027-banner.jpg",
   imageAlt:
-    "GEMISO — Gold Sponsor, 2027 Silicon Valley Video Summit, January 26, 2027, Computer History Museum",
+    "GEMISO at the Silicon Valley Video Summit — January 26, 2027, Computer History Museum, 1401 N. Shoreline Blvd., Mountain View, CA 94043. Come see us at the Show!",
 };
